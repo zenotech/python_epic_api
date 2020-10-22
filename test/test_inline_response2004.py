@@ -11,14 +11,14 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.inline_response2004 import InlineResponse2004  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.desktop_node_application import DesktopNodeApplication
+globals()['DesktopNodeApplication'] = DesktopNodeApplication
+from epiccore.model.inline_response2004 import InlineResponse2004
+
 
 class TestInlineResponse2004(unittest.TestCase):
     """InlineResponse2004 unit test stubs"""
@@ -29,63 +29,11 @@ class TestInlineResponse2004(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test InlineResponse2004
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.inline_response2004.InlineResponse2004()  # noqa: E501
-        if include_optional :
-            return InlineResponse2004(
-                count = 56, 
-                next = '0', 
-                previous = '0', 
-                results = [
-                    epic_api.models.job_auth_status.JobAuthStatus(
-                        required = True, 
-                        state = '0', 
-                        job = epic_api.models.job.Job(
-                            id = '0', 
-                            name = '0', 
-                            app = '0', 
-                            cost = '0', 
-                            submitted_by = '0', 
-                            submitted_at = '0', 
-                            finished = True, 
-                            project = 1, 
-                            invoice_reference = '0', ), 
-                        user_profile = epic_api.models.user_profile.User profile(
-                            display_name = '0', ), 
-                        permissions = '0', )
-                    ]
-            )
-        else :
-            return InlineResponse2004(
-                count = 56,
-                results = [
-                    epic_api.models.job_auth_status.JobAuthStatus(
-                        required = True, 
-                        state = '0', 
-                        job = epic_api.models.job.Job(
-                            id = '0', 
-                            name = '0', 
-                            app = '0', 
-                            cost = '0', 
-                            submitted_by = '0', 
-                            submitted_at = '0', 
-                            finished = True, 
-                            project = 1, 
-                            invoice_reference = '0', ), 
-                        user_profile = epic_api.models.user_profile.User profile(
-                            display_name = '0', ), 
-                        permissions = '0', )
-                    ],
-        )
-
     def testInlineResponse2004(self):
         """Test InlineResponse2004"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = InlineResponse2004()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

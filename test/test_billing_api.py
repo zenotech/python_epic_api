@@ -11,20 +11,17 @@
 """
 
 
-from __future__ import absolute_import
-
 import unittest
 
-import epic_api
-from epic_api.api.billing_api import BillingApi  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api.billing_api import BillingApi  # noqa: E501
 
 
 class TestBillingApi(unittest.TestCase):
     """BillingApi unit test stubs"""
 
     def setUp(self):
-        self.api = epic_api.api.billing_api.BillingApi()  # noqa: E501
+        self.api = BillingApi()  # noqa: E501
 
     def tearDown(self):
         pass

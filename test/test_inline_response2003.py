@@ -11,14 +11,14 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.inline_response2003 import InlineResponse2003  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.desktop_node_app import DesktopNodeApp
+globals()['DesktopNodeApp'] = DesktopNodeApp
+from epiccore.model.inline_response2003 import InlineResponse2003
+
 
 class TestInlineResponse2003(unittest.TestCase):
     """InlineResponse2003 unit test stubs"""
@@ -29,51 +29,11 @@ class TestInlineResponse2003(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test InlineResponse2003
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.inline_response2003.InlineResponse2003()  # noqa: E501
-        if include_optional :
-            return InlineResponse2003(
-                count = 56, 
-                next = '0', 
-                previous = '0', 
-                results = [
-                    epic_api.models.job.Job(
-                        id = '0', 
-                        name = '0', 
-                        app = '0', 
-                        cost = '0', 
-                        submitted_by = '0', 
-                        submitted_at = '0', 
-                        finished = True, 
-                        project = 1, 
-                        invoice_reference = '0', )
-                    ]
-            )
-        else :
-            return InlineResponse2003(
-                count = 56,
-                results = [
-                    epic_api.models.job.Job(
-                        id = '0', 
-                        name = '0', 
-                        app = '0', 
-                        cost = '0', 
-                        submitted_by = '0', 
-                        submitted_at = '0', 
-                        finished = True, 
-                        project = 1, 
-                        invoice_reference = '0', )
-                    ],
-        )
-
     def testInlineResponse2003(self):
         """Test InlineResponse2003"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = InlineResponse2003()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

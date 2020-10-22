@@ -11,20 +11,17 @@
 """
 
 
-from __future__ import absolute_import
-
 import unittest
 
-import epic_api
-from epic_api.api.job_api import JobApi  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api.job_api import JobApi  # noqa: E501
 
 
 class TestJobApi(unittest.TestCase):
     """JobApi unit test stubs"""
 
     def setUp(self):
-        self.api = epic_api.api.job_api.JobApi()  # noqa: E501
+        self.api = JobApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -37,6 +34,12 @@ class TestJobApi(unittest.TestCase):
 
     def test_job_auth_update(self):
         """Test case for job_auth_update
+
+        """
+        pass
+
+    def test_job_cancel(self):
+        """Test case for job_cancel
 
         """
         pass
@@ -61,6 +64,30 @@ class TestJobApi(unittest.TestCase):
 
     def test_job_read(self):
         """Test case for job_read
+
+        """
+        pass
+
+    def test_job_steps_cancel(self):
+        """Test case for job_steps_cancel
+
+        """
+        pass
+
+    def test_job_steps_list(self):
+        """Test case for job_steps_list
+
+        """
+        pass
+
+    def test_job_steps_logs(self):
+        """Test case for job_steps_logs
+
+        """
+        pass
+
+    def test_job_steps_read(self):
+        """Test case for job_steps_read
 
         """
         pass

@@ -1,4 +1,4 @@
-# epic_api.BillingApi
+# epiccore.BillingApi
 
 All URIs are relative to *https://epic.zenotech.com/api/v2*
 
@@ -19,29 +19,42 @@ Return the current limits for the users billing profile
 
 * Api Key Authentication (Bearer):
 ```python
-from __future__ import print_function
 import time
-import epic_api
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api import billing_api
+from epiccore.model.limits import Limits
 from pprint import pprint
-configuration = epic_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = epiccore.Configuration(
+    host = "https://epic.zenotech.com/api/v2"
+)
 
-# Defining host is optional and default to https://epic.zenotech.com/api/v2
-configuration.host = "https://epic.zenotech.com/api/v2"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = epiccore.Configuration(
+    host = "https://epic.zenotech.com/api/v2",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with epic_api.ApiClient(configuration) as api_client:
+with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epic_api.BillingApi(api_client)
-    
+    api_instance = billing_api.BillingApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
     try:
         api_response = api_instance.billing_limits_list()
         pprint(api_response)
-    except ApiException as e:
+    except epiccore.ApiException as e:
         print("Exception when calling BillingApi->billing_limits_list: %s\n" % e)
 ```
 
@@ -79,30 +92,75 @@ Update billing limits for the users billing profile and associated teams
 
 * Api Key Authentication (Bearer):
 ```python
-from __future__ import print_function
 import time
-import epic_api
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api import billing_api
+from epiccore.model.limits import Limits
 from pprint import pprint
-configuration = epic_api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = epiccore.Configuration(
+    host = "https://epic.zenotech.com/api/v2"
+)
 
-# Defining host is optional and default to https://epic.zenotech.com/api/v2
-configuration.host = "https://epic.zenotech.com/api/v2"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = epiccore.Configuration(
+    host = "https://epic.zenotech.com/api/v2",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with epic_api.ApiClient(configuration) as api_client:
+with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epic_api.BillingApi(api_client)
-    data = epic_api.Limits() # Limits | 
+    api_instance = billing_api.BillingApi(api_client)
+    data = Limits(
+        limits=[
+            Limit(
+                team=Team(
+                    id=1,
+                    name="name_example",
+                    number_of_members=1,
+                    root_folder=1,
+                    user_role="user_role_example",
+                ),
+                budget=Budget(
+                    monthly_limit="monthly_limit_example",
+                ),
+                project=Project(
+                    pk=1,
+                    project_id="project_id_example",
+                    description="description_example",
+                    closed=True,
+                ),
+                jobauth=JobAuth(
+                    enabled=False,
+                    all_jobs=False,
+                    cost_threshold="cost_threshold_example",
+                    description_str="description_str_example",
+                ),
+                id=-1,
+            ),
+        ],
+        max_limit="max_limit_example",
+        max_limit_str="max_limit_str_example",
+        total="total_example",
+        total_str="total_str_example",
+    ) # Limits | 
 
+    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.billing_limits_partial_update(data)
         pprint(api_response)
-    except ApiException as e:
+    except epiccore.ApiException as e:
         print("Exception when calling BillingApi->billing_limits_partial_update: %s\n" % e)
 ```
 
@@ -110,7 +168,7 @@ with epic_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Limits**](Limits.md)|  | 
+ **data** | [**Limits**](Limits.md)|  |
 
 ### Return type
 

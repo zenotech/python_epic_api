@@ -11,14 +11,14 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.inline_response2002 import InlineResponse2002  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.batch_application_version_resource import BatchApplicationVersionResource
+globals()['BatchApplicationVersionResource'] = BatchApplicationVersionResource
+from epiccore.model.inline_response2002 import InlineResponse2002
+
 
 class TestInlineResponse2002(unittest.TestCase):
     """InlineResponse2002 unit test stubs"""
@@ -29,43 +29,11 @@ class TestInlineResponse2002(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test InlineResponse2002
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.inline_response2002.InlineResponse2002()  # noqa: E501
-        if include_optional :
-            return InlineResponse2002(
-                count = 56, 
-                next = '0', 
-                previous = '0', 
-                results = [
-                    epic_api.models.viz_node_type.VizNodeType(
-                        id = 56, 
-                        name = '0', 
-                        description = '0', 
-                        cores = 0, 
-                        gpus = 0, )
-                    ]
-            )
-        else :
-            return InlineResponse2002(
-                count = 56,
-                results = [
-                    epic_api.models.viz_node_type.VizNodeType(
-                        id = 56, 
-                        name = '0', 
-                        description = '0', 
-                        cores = 0, 
-                        gpus = 0, )
-                    ],
-        )
-
     def testInlineResponse2002(self):
         """Test InlineResponse2002"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = InlineResponse2002()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

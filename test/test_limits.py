@@ -11,14 +11,14 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.limits import Limits  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.limit import Limit
+globals()['Limit'] = Limit
+from epiccore.model.limits import Limits
+
 
 class TestLimits(unittest.TestCase):
     """Limits unit test stubs"""
@@ -29,53 +29,11 @@ class TestLimits(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test Limits
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.limits.Limits()  # noqa: E501
-        if include_optional :
-            return Limits(
-                limits = [
-                    epic_api.models.limit.Limit(
-                        team = epic_api.models.team.Team(
-                            name = '0', ), 
-                        budget = epic_api.models.budget.Budget(
-                            monthly_limit = '0', ), 
-                        jobauth = epic_api.models.jobauth.Jobauth(
-                            enabled = True, 
-                            all_jobs = True, 
-                            cost_threshold = '0', 
-                            description_str = '0', ), 
-                        id = -1, )
-                    ], 
-                max_limit = '0', 
-                max_limit_str = '0', 
-                total = '0', 
-                total_str = '0'
-            )
-        else :
-            return Limits(
-                limits = [
-                    epic_api.models.limit.Limit(
-                        team = epic_api.models.team.Team(
-                            name = '0', ), 
-                        budget = epic_api.models.budget.Budget(
-                            monthly_limit = '0', ), 
-                        jobauth = epic_api.models.jobauth.Jobauth(
-                            enabled = True, 
-                            all_jobs = True, 
-                            cost_threshold = '0', 
-                            description_str = '0', ), 
-                        id = -1, )
-                    ],
-        )
-
     def testLimits(self):
         """Test Limits"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = Limits()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

@@ -11,20 +11,17 @@
 """
 
 
-from __future__ import absolute_import
-
 import unittest
 
-import epic_api
-from epic_api.api.jobauth_api import JobauthApi  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api.jobauth_api import JobauthApi  # noqa: E501
 
 
 class TestJobauthApi(unittest.TestCase):
     """JobauthApi unit test stubs"""
 
     def setUp(self):
-        self.api = epic_api.api.jobauth_api.JobauthApi()  # noqa: E501
+        self.api = JobauthApi()  # noqa: E501
 
     def tearDown(self):
         pass

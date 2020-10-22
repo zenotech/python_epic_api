@@ -11,14 +11,16 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.job_auth_status import JobAuthStatus  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.job import Job
+from epiccore.model.user_name import UserName
+globals()['Job'] = Job
+globals()['UserName'] = UserName
+from epiccore.model.job_auth_status import JobAuthStatus
+
 
 class TestJobAuthStatus(unittest.TestCase):
     """JobAuthStatus unit test stubs"""
@@ -29,39 +31,11 @@ class TestJobAuthStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test JobAuthStatus
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.job_auth_status.JobAuthStatus()  # noqa: E501
-        if include_optional :
-            return JobAuthStatus(
-                required = True, 
-                state = '0', 
-                job = epic_api.models.job.Job(
-                    id = '0', 
-                    name = '0', 
-                    app = '0', 
-                    cost = '0', 
-                    submitted_by = '0', 
-                    submitted_at = '0', 
-                    finished = True, 
-                    project = 1, 
-                    invoice_reference = '0', ), 
-                user_profile = epic_api.models.user_profile.User profile(
-                    display_name = '0', ), 
-                permissions = '0'
-            )
-        else :
-            return JobAuthStatus(
-                state = '0',
-        )
-
     def testJobAuthStatus(self):
         """Test JobAuthStatus"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = JobAuthStatus()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

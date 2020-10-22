@@ -11,14 +11,14 @@
 """
 
 
-from __future__ import absolute_import
-
+import sys
 import unittest
-import datetime
 
-import epic_api
-from epic_api.models.inline_response200 import InlineResponse200  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.model.batch_application_list import BatchApplicationList
+globals()['BatchApplicationList'] = BatchApplicationList
+from epiccore.model.inline_response200 import InlineResponse200
+
 
 class TestInlineResponse200(unittest.TestCase):
     """InlineResponse200 unit test stubs"""
@@ -29,55 +29,11 @@ class TestInlineResponse200(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional):
-        """Test InlineResponse200
-            include_option is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # model = epic_api.models.inline_response200.InlineResponse200()  # noqa: E501
-        if include_optional :
-            return InlineResponse200(
-                count = 56, 
-                next = '0', 
-                previous = '0', 
-                results = [
-                    epic_api.models.batch_application_list.BatchApplicationList(
-                        id = 56, 
-                        product = epic_api.models.product.Product(
-                            name = '0', 
-                            image = '0', 
-                            description = '0', 
-                            small_print = '0', ), 
-                        permissions = '0', 
-                        versions = '0', 
-                        restricted = True, 
-                        public = True, 
-                        supports_cases = True, )
-                    ]
-            )
-        else :
-            return InlineResponse200(
-                count = 56,
-                results = [
-                    epic_api.models.batch_application_list.BatchApplicationList(
-                        id = 56, 
-                        product = epic_api.models.product.Product(
-                            name = '0', 
-                            image = '0', 
-                            description = '0', 
-                            small_print = '0', ), 
-                        permissions = '0', 
-                        versions = '0', 
-                        restricted = True, 
-                        public = True, 
-                        supports_cases = True, )
-                    ],
-        )
-
     def testInlineResponse200(self):
         """Test InlineResponse200"""
-        inst_req_only = self.make_instance(include_optional=False)
-        inst_req_and_optional = self.make_instance(include_optional=True)
+        # FIXME: construct object with mandatory attributes with example values
+        # model = InlineResponse200()  # noqa: E501
+        pass
 
 
 if __name__ == '__main__':

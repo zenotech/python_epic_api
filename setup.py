@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "epic-api"
+NAME = "epiccore"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -22,7 +22,12 @@ VERSION = "1.0.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = [
+  "urllib3 >= 1.15",
+  "certifi",
+  "python-dateutil",
+  "nulltype",
+]
 
 setup(
     name=NAME,
@@ -32,6 +37,7 @@ setup(
     author_email="support@zenotech.com",
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "EPIC API"],
+    python_requires=">=3.5",
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,

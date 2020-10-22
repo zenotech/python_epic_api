@@ -11,20 +11,17 @@
 """
 
 
-from __future__ import absolute_import
-
 import unittest
 
-import epic_api
-from epic_api.api.catalog_api import CatalogApi  # noqa: E501
-from epic_api.rest import ApiException
+import epiccore
+from epiccore.api.catalog_api import CatalogApi  # noqa: E501
 
 
 class TestCatalogApi(unittest.TestCase):
     """CatalogApi unit test stubs"""
 
     def setUp(self):
-        self.api = epic_api.api.catalog_api.CatalogApi()  # noqa: E501
+        self.api = CatalogApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -37,6 +34,66 @@ class TestCatalogApi(unittest.TestCase):
 
     def test_catalog_applications_read(self):
         """Test case for catalog_applications_read
+
+        """
+        pass
+
+    def test_catalog_applications_versions_list(self):
+        """Test case for catalog_applications_versions_list
+
+        """
+        pass
+
+    def test_catalog_applications_versions_read(self):
+        """Test case for catalog_applications_versions_read
+
+        """
+        pass
+
+    def test_catalog_applications_versions_resources_list(self):
+        """Test case for catalog_applications_versions_resources_list
+
+        """
+        pass
+
+    def test_catalog_applications_versions_resources_read(self):
+        """Test case for catalog_applications_versions_resources_read
+
+        """
+        pass
+
+    def test_catalog_desktop_applications_list(self):
+        """Test case for catalog_desktop_applications_list
+
+        """
+        pass
+
+    def test_catalog_desktop_applications_read(self):
+        """Test case for catalog_desktop_applications_read
+
+        """
+        pass
+
+    def test_catalog_desktop_list(self):
+        """Test case for catalog_desktop_list
+
+        """
+        pass
+
+    def test_catalog_desktop_read(self):
+        """Test case for catalog_desktop_read
+
+        """
+        pass
+
+    def test_catalog_viz_applications_list(self):
+        """Test case for catalog_viz_applications_list
+
+        """
+        pass
+
+    def test_catalog_viz_applications_read(self):
+        """Test case for catalog_viz_applications_read
 
         """
         pass
