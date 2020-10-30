@@ -1,11 +1,8 @@
 #!/usr/bin/env python
-
+import os
 import setuptools
 
-
-from get_version import get_version
-__version__ = get_version(__file__)
-del get_version
+version = os.environ.get('RELEASE_VERSION', '0.0.0')
 
 if __name__ == "__main__":
-    setuptools.setup(version=__version__)
+    setuptools.setup(version=version)
