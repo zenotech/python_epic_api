@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.desktop_node_connection_type import DesktopNodeConnectionType
-globals()['DesktopNodeConnectionType'] = DesktopNodeConnectionType
-from epiccore.model.desktop_node_application_version import DesktopNodeApplicationVersion
-
+from epiccore.models.desktop_node_application_version import DesktopNodeApplicationVersion  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestDesktopNodeApplicationVersion(unittest.TestCase):
     """DesktopNodeApplicationVersion unit test stubs"""
@@ -29,11 +29,32 @@ class TestDesktopNodeApplicationVersion(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test DesktopNodeApplicationVersion
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.desktop_node_application_version.DesktopNodeApplicationVersion()  # noqa: E501
+        if include_optional :
+            return DesktopNodeApplicationVersion(
+                id = 56, 
+                application_version = '0', 
+                connection_types = [
+                    epiccore.models.desktop_node_connection_type.DesktopNodeConnectionType(
+                        id = 56, 
+                        name = '0', 
+                        description = '0', )
+                    ]
+            )
+        else :
+            return DesktopNodeApplicationVersion(
+                application_version = '0',
+        )
+
     def testDesktopNodeApplicationVersion(self):
         """Test DesktopNodeApplicationVersion"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = DesktopNodeApplicationVersion()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

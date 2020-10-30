@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.desktop_api import DesktopApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestDesktopApi(unittest.TestCase):
     """DesktopApi unit test stubs"""
 
     def setUp(self):
-        self.api = DesktopApi()  # noqa: E501
+        self.api = epiccore.api.desktop_api.DesktopApi()  # noqa: E501
 
     def tearDown(self):
         pass

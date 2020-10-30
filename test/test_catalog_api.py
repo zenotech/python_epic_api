@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.catalog_api import CatalogApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestCatalogApi(unittest.TestCase):
     """CatalogApi unit test stubs"""
 
     def setUp(self):
-        self.api = CatalogApi()  # noqa: E501
+        self.api = epiccore.api.catalog_api.CatalogApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -38,26 +41,14 @@ class TestCatalogApi(unittest.TestCase):
         """
         pass
 
-    def test_catalog_applications_versions_list(self):
-        """Test case for catalog_applications_versions_list
+    def test_catalog_clusters_list(self):
+        """Test case for catalog_clusters_list
 
         """
         pass
 
-    def test_catalog_applications_versions_read(self):
-        """Test case for catalog_applications_versions_read
-
-        """
-        pass
-
-    def test_catalog_applications_versions_resources_list(self):
-        """Test case for catalog_applications_versions_resources_list
-
-        """
-        pass
-
-    def test_catalog_applications_versions_resources_read(self):
-        """Test case for catalog_applications_versions_resources_read
+    def test_catalog_clusters_read(self):
+        """Test case for catalog_clusters_read
 
         """
         pass

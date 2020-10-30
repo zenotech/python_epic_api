@@ -1,6 +1,6 @@
 # epiccore.ProfileApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,15 +18,15 @@ Return details about the settings for the users billing profile
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import profile_api
-from epiccore.model.profile_summary import ProfileSummary
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -36,7 +36,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -47,13 +47,12 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = profile_api.ProfileApi(api_client)
-
-    # example, this endpoint has no required or optional parameters
+    api_instance = epiccore.ProfileApi(api_client)
+    
     try:
         api_response = api_instance.profile_settings_list()
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling ProfileApi->profile_settings_list: %s\n" % e)
 ```
 

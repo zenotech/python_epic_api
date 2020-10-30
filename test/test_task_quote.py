@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.task_quote import TaskQuote
-
+from epiccore.models.task_quote import TaskQuote  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestTaskQuote(unittest.TestCase):
     """TaskQuote unit test stubs"""
@@ -27,11 +29,31 @@ class TestTaskQuote(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test TaskQuote
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.task_quote.TaskQuote()  # noqa: E501
+        if include_optional :
+            return TaskQuote(
+                reference = '0', 
+                queue_id = -1, 
+                iaas_cost = '0', 
+                software_cost = '0', 
+                service_charge = '0', 
+                discount = '0', 
+                tax = '0', 
+                total = '0'
+            )
+        else :
+            return TaskQuote(
+        )
+
     def testTaskQuote(self):
         """Test TaskQuote"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = TaskQuote()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

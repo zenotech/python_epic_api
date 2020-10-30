@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.product_name import ProductName
-globals()['ProductName'] = ProductName
-from epiccore.model.batch_application_list import BatchApplicationList
-
+from epiccore.models.batch_application_list import BatchApplicationList  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestBatchApplicationList(unittest.TestCase):
     """BatchApplicationList unit test stubs"""
@@ -29,11 +29,42 @@ class TestBatchApplicationList(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test BatchApplicationList
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.batch_application_list.BatchApplicationList()  # noqa: E501
+        if include_optional :
+            return BatchApplicationList(
+                id = 56, 
+                product = epiccore.models.product_name.ProductName(
+                    name = '0', 
+                    image = '0', 
+                    description = '0', 
+                    small_print = '0', ), 
+                versions = [
+                    epiccore.models.batch_application_version_details.BatchApplicationVersionDetails(
+                        id = 56, 
+                        version = '0', 
+                        queue_ids = [
+                            56
+                            ], )
+                    ]
+            )
+        else :
+            return BatchApplicationList(
+                product = epiccore.models.product_name.ProductName(
+                    name = '0', 
+                    image = '0', 
+                    description = '0', 
+                    small_print = '0', ),
+        )
+
     def testBatchApplicationList(self):
         """Test BatchApplicationList"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = BatchApplicationList()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

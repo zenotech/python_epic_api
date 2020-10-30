@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.licenses_api import LicensesApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestLicensesApi(unittest.TestCase):
     """LicensesApi unit test stubs"""
 
     def setUp(self):
-        self.api = LicensesApi()  # noqa: E501
+        self.api = epiccore.api.licenses_api.LicensesApi()  # noqa: E501
 
     def tearDown(self):
         pass

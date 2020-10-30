@@ -1,6 +1,6 @@
 # epiccore.TeamsApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **teams_memberships_list**
-> InlineResponse20013 teams_memberships_list()
+> InlineResponse20012 teams_memberships_list(limit=limit, offset=offset)
 
 
 
@@ -21,15 +21,15 @@ List the team memberships for your user account
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import teams_api
-from epiccore.model.inline_response20013 import InlineResponse20013
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -39,7 +39,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -50,16 +50,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = teams_api.TeamsApi(api_client)
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.TeamsApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.teams_memberships_list(limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling TeamsApi->teams_memberships_list: %s\n" % e)
 ```
 
@@ -67,12 +65,12 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -101,15 +99,15 @@ See the details for a team membership. Memberships of all teams you are a of mem
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import teams_api
-from epiccore.model.team_membership import TeamMembership
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,7 +117,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -130,14 +128,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = teams_api.TeamsApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.TeamsApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.teams_memberships_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling TeamsApi->teams_memberships_read: %s\n" % e)
 ```
 
@@ -145,7 +142,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -168,7 +165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_userteams_list**
-> InlineResponse20014 teams_userteams_list()
+> InlineResponse20013 teams_userteams_list(limit=limit, offset=offset)
 
 
 
@@ -178,15 +175,15 @@ List the teams you are a member of.
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import teams_api
-from epiccore.model.inline_response20014 import InlineResponse20014
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -196,7 +193,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -207,16 +204,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = teams_api.TeamsApi(api_client)
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.TeamsApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.teams_userteams_list(limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling TeamsApi->teams_userteams_list: %s\n" % e)
 ```
 
@@ -224,12 +219,12 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -258,15 +253,15 @@ See the details for a team. You must be a member of the team to see the details.
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import teams_api
-from epiccore.model.team_details import TeamDetails
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -276,7 +271,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -287,14 +282,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = teams_api.TeamsApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.TeamsApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.teams_userteams_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling TeamsApi->teams_userteams_read: %s\n" % e)
 ```
 
@@ -302,7 +296,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 

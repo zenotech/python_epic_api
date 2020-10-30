@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.profile_api import ProfileApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestProfileApi(unittest.TestCase):
     """ProfileApi unit test stubs"""
 
     def setUp(self):
-        self.api = ProfileApi()  # noqa: E501
+        self.api = epiccore.api.profile_api.ProfileApi()  # noqa: E501
 
     def tearDown(self):
         pass

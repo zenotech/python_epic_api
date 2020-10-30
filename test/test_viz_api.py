@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.viz_api import VizApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestVizApi(unittest.TestCase):
     """VizApi unit test stubs"""
 
     def setUp(self):
-        self.api = VizApi()  # noqa: E501
+        self.api = epiccore.api.viz_api.VizApi()  # noqa: E501
 
     def tearDown(self):
         pass

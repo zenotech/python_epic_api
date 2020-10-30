@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.batch_application_list import BatchApplicationList
-globals()['BatchApplicationList'] = BatchApplicationList
-from epiccore.model.inline_response200 import InlineResponse200
-
+from epiccore.models.inline_response200 import InlineResponse200  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestInlineResponse200(unittest.TestCase):
     """InlineResponse200 unit test stubs"""
@@ -29,11 +29,61 @@ class TestInlineResponse200(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test InlineResponse200
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.inline_response200.InlineResponse200()  # noqa: E501
+        if include_optional :
+            return InlineResponse200(
+                count = 56, 
+                next = '0', 
+                previous = '0', 
+                results = [
+                    epiccore.models.batch_application_list.BatchApplicationList(
+                        id = 56, 
+                        product = epiccore.models.product_name.ProductName(
+                            name = '0', 
+                            image = '0', 
+                            description = '0', 
+                            small_print = '0', ), 
+                        versions = [
+                            epiccore.models.batch_application_version_details.BatchApplicationVersionDetails(
+                                id = 56, 
+                                version = '0', 
+                                queue_ids = [
+                                    56
+                                    ], )
+                            ], )
+                    ]
+            )
+        else :
+            return InlineResponse200(
+                count = 56,
+                results = [
+                    epiccore.models.batch_application_list.BatchApplicationList(
+                        id = 56, 
+                        product = epiccore.models.product_name.ProductName(
+                            name = '0', 
+                            image = '0', 
+                            description = '0', 
+                            small_print = '0', ), 
+                        versions = [
+                            epiccore.models.batch_application_version_details.BatchApplicationVersionDetails(
+                                id = 56, 
+                                version = '0', 
+                                queue_ids = [
+                                    56
+                                    ], )
+                            ], )
+                    ],
+        )
+
     def testInlineResponse200(self):
         """Test InlineResponse200"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse200()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

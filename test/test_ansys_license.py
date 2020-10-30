@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.ansys_license import AnsysLicense
-
+from epiccore.models.ansys_license import AnsysLicense  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestAnsysLicense(unittest.TestCase):
     """AnsysLicense unit test stubs"""
@@ -27,11 +29,31 @@ class TestAnsysLicense(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test AnsysLicense
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.ansys_license.AnsysLicense()  # noqa: E501
+        if include_optional :
+            return AnsysLicense(
+                display_name = '0', 
+                flexlm_host = '0', 
+                flexlm_port = 1024, 
+                ansysli_host = '0', 
+                ansysli_port = 1024
+            )
+        else :
+            return AnsysLicense(
+                display_name = '0',
+                flexlm_host = '0',
+                ansysli_host = '0',
+        )
+
     def testAnsysLicense(self):
         """Test AnsysLicense"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = AnsysLicense()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

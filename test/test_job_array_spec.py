@@ -11,18 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.data_spec import DataSpec
-from epiccore.model.job_configuration import JobConfiguration
-from epiccore.model.job_data_binding import JobDataBinding
-globals()['DataSpec'] = DataSpec
-globals()['JobConfiguration'] = JobConfiguration
-globals()['JobDataBinding'] = JobDataBinding
-from epiccore.model.job_array_spec import JobArraySpec
-
+from epiccore.models.job_array_spec import JobArraySpec  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestJobArraySpec(unittest.TestCase):
     """JobArraySpec unit test stubs"""
@@ -33,11 +29,78 @@ class TestJobArraySpec(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test JobArraySpec
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.job_array_spec.JobArraySpec()  # noqa: E501
+        if include_optional :
+            return JobArraySpec(
+                name = 'Job Array', 
+                config = epiccore.models.job_configuration.JobConfiguration(
+                    upload = [
+                        'complete'
+                        ], 
+                    overwrite_existing = True, 
+                    data_sync_interval = 0, ), 
+                jobs = [
+                    epiccore.models.job_data_binding.JobDataBinding(
+                        name = '0', 
+                        spec = epiccore.models.job_spec.JobSpec(
+                            application_version = 1, 
+                            project = -1, 
+                            tasks = [
+                                epiccore.models.job_task_spec.JobTaskSpec(
+                                    reference = '0', 
+                                    partitions = 1, 
+                                    runtime = 1, 
+                                    task_distribution = 'core', 
+                                    hyperthreading = True, )
+                                ], ), 
+                        app_options = epiccore.models.app_options.App options(), 
+                        cluster = epiccore.models.job_cluster_spec.JobClusterSpec(
+                            queue = 1, ), 
+                        input_data = epiccore.models.data_spec.DataSpec(
+                            path = '0', ), )
+                    ], 
+                common_data = epiccore.models.data_spec.DataSpec(
+                    path = '0', )
+            )
+        else :
+            return JobArraySpec(
+                config = epiccore.models.job_configuration.JobConfiguration(
+                    upload = [
+                        'complete'
+                        ], 
+                    overwrite_existing = True, 
+                    data_sync_interval = 0, ),
+                jobs = [
+                    epiccore.models.job_data_binding.JobDataBinding(
+                        name = '0', 
+                        spec = epiccore.models.job_spec.JobSpec(
+                            application_version = 1, 
+                            project = -1, 
+                            tasks = [
+                                epiccore.models.job_task_spec.JobTaskSpec(
+                                    reference = '0', 
+                                    partitions = 1, 
+                                    runtime = 1, 
+                                    task_distribution = 'core', 
+                                    hyperthreading = True, )
+                                ], ), 
+                        app_options = epiccore.models.app_options.App options(), 
+                        cluster = epiccore.models.job_cluster_spec.JobClusterSpec(
+                            queue = 1, ), 
+                        input_data = epiccore.models.data_spec.DataSpec(
+                            path = '0', ), )
+                    ],
+        )
+
     def testJobArraySpec(self):
         """Test JobArraySpec"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = JobArraySpec()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

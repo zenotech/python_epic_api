@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.job_cluster_spec import JobClusterSpec
-
+from epiccore.models.job_cluster_spec import JobClusterSpec  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestJobClusterSpec(unittest.TestCase):
     """JobClusterSpec unit test stubs"""
@@ -27,11 +29,25 @@ class TestJobClusterSpec(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test JobClusterSpec
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.job_cluster_spec.JobClusterSpec()  # noqa: E501
+        if include_optional :
+            return JobClusterSpec(
+                queue = 1
+            )
+        else :
+            return JobClusterSpec(
+                queue = 1,
+        )
+
     def testJobClusterSpec(self):
         """Test JobClusterSpec"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = JobClusterSpec()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

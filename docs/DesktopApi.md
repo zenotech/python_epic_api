@@ -1,6 +1,6 @@
 # epiccore.DesktopApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,15 +21,15 @@ Launch a Desktop Node given a DesktopNodeLaunchSpec
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import desktop_api
-from epiccore.model.desktop_node_launch_spec import DesktopNodeLaunchSpec
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -39,7 +39,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -50,25 +50,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = desktop_api.DesktopApi(api_client)
-    data = DesktopNodeLaunchSpec(
-        node_type=1,
-        application_version=1,
-        connection=1,
-        folder=1,
-        project=-1,
-        runtime=1,
-        mount_type="mount_type_example",
-        secure_ip=False,
-        ip_address="ip_address_example",
-        invoice_reference="invoice_reference_example",
-    ) # DesktopNodeLaunchSpec | 
+    api_instance = epiccore.DesktopApi(api_client)
+    data = epiccore.DesktopNodeLaunchSpec() # DesktopNodeLaunchSpec | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.desktop_create(data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DesktopApi->desktop_create: %s\n" % e)
 ```
 
@@ -76,7 +64,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**DesktopNodeLaunchSpec**](DesktopNodeLaunchSpec.md)|  |
+ **data** | [**DesktopNodeLaunchSpec**](DesktopNodeLaunchSpec.md)|  | 
 
 ### Return type
 
@@ -99,7 +87,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **desktop_list**
-> InlineResponse2007 desktop_list()
+> InlineResponse2006 desktop_list(limit=limit, offset=offset)
 
 
 
@@ -107,15 +95,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import desktop_api
-from epiccore.model.inline_response2007 import InlineResponse2007
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -125,7 +113,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -136,16 +124,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = desktop_api.DesktopApi(api_client)
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.DesktopApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.desktop_list(limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DesktopApi->desktop_list: %s\n" % e)
 ```
 
@@ -153,12 +139,12 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -187,16 +173,15 @@ Provides a price quote based upon the given VizNodeLaunchSpec. This will also pr
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import desktop_api
-from epiccore.model.price_quote import PriceQuote
-from epiccore.model.desktop_node_launch_spec import DesktopNodeLaunchSpec
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -206,7 +191,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -217,25 +202,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = desktop_api.DesktopApi(api_client)
-    data = DesktopNodeLaunchSpec(
-        node_type=1,
-        application_version=1,
-        connection=1,
-        folder=1,
-        project=-1,
-        runtime=1,
-        mount_type="mount_type_example",
-        secure_ip=False,
-        ip_address="ip_address_example",
-        invoice_reference="invoice_reference_example",
-    ) # DesktopNodeLaunchSpec | 
+    api_instance = epiccore.DesktopApi(api_client)
+    data = epiccore.DesktopNodeLaunchSpec() # DesktopNodeLaunchSpec | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.desktop_quote(data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DesktopApi->desktop_quote: %s\n" % e)
 ```
 
@@ -243,7 +216,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**DesktopNodeLaunchSpec**](DesktopNodeLaunchSpec.md)|  |
+ **data** | [**DesktopNodeLaunchSpec**](DesktopNodeLaunchSpec.md)|  | 
 
 ### Return type
 
@@ -274,15 +247,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import desktop_api
-from epiccore.model.desktop_node import DesktopNode
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -292,7 +265,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -303,14 +276,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = desktop_api.DesktopApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.DesktopApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.desktop_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DesktopApi->desktop_read: %s\n" % e)
 ```
 
@@ -318,7 +290,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 

@@ -1,3 +1,16 @@
-# do not import all apis into this module because that uses a lot of memory and stack frames
-# if you need the ability to import all apis from one package, import them with
-# from {{packageName}.apis import DefaultApi, PetApi
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from epiccore.api.billing_api import BillingApi
+from epiccore.api.catalog_api import CatalogApi
+from epiccore.api.data_api import DataApi
+from epiccore.api.desktop_api import DesktopApi
+from epiccore.api.job_api import JobApi
+from epiccore.api.jobauth_api import JobauthApi
+from epiccore.api.licenses_api import LicensesApi
+from epiccore.api.profile_api import ProfileApi
+from epiccore.api.projects_api import ProjectsApi
+from epiccore.api.teams_api import TeamsApi
+from epiccore.api.viz_api import VizApi

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **modified** | **datetime** | Last modified time | [optional] [readonly] 
 **name** | **str** | Folder name | [optional] [readonly] 
 **obj_key** | **str** | S3 key reference | [optional] [readonly] 
-**last_modified** | **datetime, none_type** | Last modified time | [optional] 
+**last_modified** | **datetime** | Last modified time | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

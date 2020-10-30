@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.job_auth import JobAuth
-
+from epiccore.models.job_auth import JobAuth  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestJobAuth(unittest.TestCase):
     """JobAuth unit test stubs"""
@@ -27,11 +29,27 @@ class TestJobAuth(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test JobAuth
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.job_auth.JobAuth()  # noqa: E501
+        if include_optional :
+            return JobAuth(
+                enabled = True, 
+                all_jobs = True, 
+                cost_threshold = '0', 
+                description_str = '0'
+            )
+        else :
+            return JobAuth(
+        )
+
     def testJobAuth(self):
         """Test JobAuth"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = JobAuth()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

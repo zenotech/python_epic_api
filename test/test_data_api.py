@@ -11,17 +11,20 @@
 """
 
 
+from __future__ import absolute_import
+
 import unittest
 
 import epiccore
 from epiccore.api.data_api import DataApi  # noqa: E501
+from epiccore.rest import ApiException
 
 
 class TestDataApi(unittest.TestCase):
     """DataApi unit test stubs"""
 
     def setUp(self):
-        self.api = DataApi()  # noqa: E501
+        self.api = epiccore.api.data_api.DataApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -1,6 +1,6 @@
 # epiccore.BillingApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,15 +19,15 @@ Return the current limits for the users billing profile
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import billing_api
-from epiccore.model.limits import Limits
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -37,7 +37,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -48,13 +48,12 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = billing_api.BillingApi(api_client)
-
-    # example, this endpoint has no required or optional parameters
+    api_instance = epiccore.BillingApi(api_client)
+    
     try:
         api_response = api_instance.billing_limits_list()
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling BillingApi->billing_limits_list: %s\n" % e)
 ```
 
@@ -92,15 +91,15 @@ Update billing limits for the users billing profile and associated teams
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import billing_api
-from epiccore.model.limits import Limits
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -110,7 +109,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -121,46 +120,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = billing_api.BillingApi(api_client)
-    data = Limits(
-        limits=[
-            Limit(
-                team=Team(
-                    id=1,
-                    name="name_example",
-                    number_of_members=1,
-                    root_folder=1,
-                    user_role="user_role_example",
-                ),
-                budget=Budget(
-                    monthly_limit="monthly_limit_example",
-                ),
-                project=Project(
-                    pk=1,
-                    project_id="project_id_example",
-                    description="description_example",
-                    closed=True,
-                ),
-                jobauth=JobAuth(
-                    enabled=False,
-                    all_jobs=False,
-                    cost_threshold="cost_threshold_example",
-                    description_str="description_str_example",
-                ),
-                id=-1,
-            ),
-        ],
-        max_limit="max_limit_example",
-        max_limit_str="max_limit_str_example",
-        total="total_example",
-        total_str="total_str_example",
-    ) # Limits | 
+    api_instance = epiccore.BillingApi(api_client)
+    data = epiccore.Limits() # Limits | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.billing_limits_partial_update(data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling BillingApi->billing_limits_partial_update: %s\n" % e)
 ```
 
@@ -168,7 +134,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Limits**](Limits.md)|  |
+ **data** | [**Limits**](Limits.md)|  | 
 
 ### Return type
 

@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.team_membership import TeamMembership
-globals()['TeamMembership'] = TeamMembership
-from epiccore.model.inline_response20013 import InlineResponse20013
-
+from epiccore.models.inline_response20013 import InlineResponse20013  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestInlineResponse20013(unittest.TestCase):
     """InlineResponse20013 unit test stubs"""
@@ -29,11 +29,43 @@ class TestInlineResponse20013(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test InlineResponse20013
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.inline_response20013.InlineResponse20013()  # noqa: E501
+        if include_optional :
+            return InlineResponse20013(
+                count = 56, 
+                next = '0', 
+                previous = '0', 
+                results = [
+                    epiccore.models.team.Team(
+                        id = 56, 
+                        name = '0', 
+                        number_of_members = 56, 
+                        root_folder = 56, 
+                        user_role = '0', )
+                    ]
+            )
+        else :
+            return InlineResponse20013(
+                count = 56,
+                results = [
+                    epiccore.models.team.Team(
+                        id = 56, 
+                        name = '0', 
+                        number_of_members = 56, 
+                        root_folder = 56, 
+                        user_role = '0', )
+                    ],
+        )
+
     def testInlineResponse20013(self):
         """Test InlineResponse20013"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse20013()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

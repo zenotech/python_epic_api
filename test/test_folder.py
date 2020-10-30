@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.folder import Folder
-
+from epiccore.models.folder import Folder  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestFolder(unittest.TestCase):
     """Folder unit test stubs"""
@@ -27,11 +29,29 @@ class TestFolder(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test Folder
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.folder.Folder()  # noqa: E501
+        if include_optional :
+            return Folder(
+                id = 56, 
+                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                name = '0', 
+                obj_key = '0', 
+                last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+            )
+        else :
+            return Folder(
+        )
+
     def testFolder(self):
         """Test Folder"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = Folder()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

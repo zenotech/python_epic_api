@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.job_task_spec import JobTaskSpec
-globals()['JobTaskSpec'] = JobTaskSpec
-from epiccore.model.job_spec import JobSpec
-
+from epiccore.models.job_spec import JobSpec  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestJobSpec(unittest.TestCase):
     """JobSpec unit test stubs"""
@@ -29,11 +29,42 @@ class TestJobSpec(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test JobSpec
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.job_spec.JobSpec()  # noqa: E501
+        if include_optional :
+            return JobSpec(
+                application_version = 1, 
+                project = -1, 
+                tasks = [
+                    epiccore.models.job_task_spec.JobTaskSpec(
+                        reference = '0', 
+                        partitions = 1, 
+                        runtime = 1, 
+                        task_distribution = 'core', 
+                        hyperthreading = True, )
+                    ]
+            )
+        else :
+            return JobSpec(
+                application_version = 1,
+                tasks = [
+                    epiccore.models.job_task_spec.JobTaskSpec(
+                        reference = '0', 
+                        partitions = 1, 
+                        runtime = 1, 
+                        task_distribution = 'core', 
+                        hyperthreading = True, )
+                    ],
+        )
+
     def testJobSpec(self):
         """Test JobSpec"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = JobSpec()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

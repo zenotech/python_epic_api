@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.price_quote import PriceQuote
-
+from epiccore.models.price_quote import PriceQuote  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestPriceQuote(unittest.TestCase):
     """PriceQuote unit test stubs"""
@@ -27,11 +29,26 @@ class TestPriceQuote(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test PriceQuote
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.price_quote.PriceQuote()  # noqa: E501
+        if include_optional :
+            return PriceQuote(
+                cost = '0', 
+                ok = True, 
+                reason = '0'
+            )
+        else :
+            return PriceQuote(
+        )
+
     def testPriceQuote(self):
         """Test PriceQuote"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = PriceQuote()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name for this job | 
 **spec** | [**JobSpec**](JobSpec.md) |  | 
-**app_options** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Application specific options | 
+**app_options** | **object** | Application specific options | 
 **cluster** | [**JobClusterSpec**](JobClusterSpec.md) |  | 
 **input_data** | [**DataSpec**](DataSpec.md) |  | 
 

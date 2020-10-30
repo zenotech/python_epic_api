@@ -11,20 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.budget import Budget
-from epiccore.model.job_auth import JobAuth
-from epiccore.model.project import Project
-from epiccore.model.team import Team
-globals()['Budget'] = Budget
-globals()['JobAuth'] = JobAuth
-globals()['Project'] = Project
-globals()['Team'] = Team
-from epiccore.model.limit import Limit
-
+from epiccore.models.limit import Limit  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestLimit(unittest.TestCase):
     """Limit unit test stubs"""
@@ -35,11 +29,43 @@ class TestLimit(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test Limit
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.limit.Limit()  # noqa: E501
+        if include_optional :
+            return Limit(
+                team = epiccore.models.team.Team(
+                    id = 56, 
+                    name = '0', 
+                    number_of_members = 56, 
+                    root_folder = 56, 
+                    user_role = '0', ), 
+                budget = epiccore.models.budget.Budget(
+                    monthly_limit = '0', ), 
+                project = epiccore.models.project.Project(
+                    pk = 56, 
+                    project_id = '0', 
+                    description = '0', 
+                    closed = True, ), 
+                jobauth = epiccore.models.job_auth.JobAuth(
+                    enabled = True, 
+                    all_jobs = True, 
+                    cost_threshold = '0', 
+                    description_str = '0', ), 
+                id = -1
+            )
+        else :
+            return Limit(
+                id = -1,
+        )
+
     def testLimit(self):
         """Test Limit"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = Limit()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

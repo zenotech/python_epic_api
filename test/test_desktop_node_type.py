@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.desktop_node_type import DesktopNodeType
-
+from epiccore.models.desktop_node_type import DesktopNodeType  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestDesktopNodeType(unittest.TestCase):
     """DesktopNodeType unit test stubs"""
@@ -27,11 +29,28 @@ class TestDesktopNodeType(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test DesktopNodeType
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.desktop_node_type.DesktopNodeType()  # noqa: E501
+        if include_optional :
+            return DesktopNodeType(
+                id = 56, 
+                name = '0', 
+                description = '0', 
+                cores = 0, 
+                gpus = 0
+            )
+        else :
+            return DesktopNodeType(
+        )
+
     def testDesktopNodeType(self):
         """Test DesktopNodeType"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = DesktopNodeType()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

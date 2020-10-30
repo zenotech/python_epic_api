@@ -1,6 +1,6 @@
 # epiccore.DataApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **data_folder_list**
-> InlineResponse2006 data_folder_list()
+> InlineResponse2005 data_folder_list(limit=limit, offset=offset)
 
 
 
@@ -19,15 +19,15 @@ List all folders your user has access to
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import data_api
-from epiccore.model.inline_response2006 import InlineResponse2006
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -37,7 +37,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -48,16 +48,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = data_api.DataApi(api_client)
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.DataApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.data_folder_list(limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DataApi->data_folder_list: %s\n" % e)
 ```
 
@@ -65,12 +63,12 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -99,15 +97,15 @@ See the details for a particular folder
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import data_api
-from epiccore.model.folder_details import FolderDetails
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -117,7 +115,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -128,14 +126,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = data_api.DataApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.DataApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.data_folder_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling DataApi->data_folder_read: %s\n" % e)
 ```
 
@@ -143,7 +140,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 

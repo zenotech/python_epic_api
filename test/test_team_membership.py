@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.team_membership import TeamMembership
-
+from epiccore.models.team_membership import TeamMembership  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestTeamMembership(unittest.TestCase):
     """TeamMembership unit test stubs"""
@@ -27,11 +29,26 @@ class TestTeamMembership(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test TeamMembership
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.team_membership.TeamMembership()  # noqa: E501
+        if include_optional :
+            return TeamMembership(
+                id = 56, 
+                name = '0', 
+                role = 'user'
+            )
+        else :
+            return TeamMembership(
+        )
+
     def testTeamMembership(self):
         """Test TeamMembership"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = TeamMembership()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

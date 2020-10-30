@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.sla import SLA
-globals()['SLA'] = SLA
-from epiccore.model.batch_queue_details import BatchQueueDetails
-
+from epiccore.models.batch_queue_details import BatchQueueDetails  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestBatchQueueDetails(unittest.TestCase):
     """BatchQueueDetails unit test stubs"""
@@ -29,11 +29,38 @@ class TestBatchQueueDetails(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test BatchQueueDetails
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.batch_queue_details.BatchQueueDetails()  # noqa: E501
+        if include_optional :
+            return BatchQueueDetails(
+                id = 56, 
+                display_name = '0', 
+                display_description = '0', 
+                max_runtime = 0, 
+                max_allocation = 0, 
+                reported_avail_tasks = 0, 
+                reported_max_tasks = 0, 
+                sla = epiccore.models.sla.SLA(
+                    name = '0', 
+                    description = '0', ), 
+                maintenance_mode = True, 
+                resource_config = '0'
+            )
+        else :
+            return BatchQueueDetails(
+                sla = epiccore.models.sla.SLA(
+                    name = '0', 
+                    description = '0', ),
+        )
+
     def testBatchQueueDetails(self):
         """Test BatchQueueDetails"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = BatchQueueDetails()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

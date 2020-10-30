@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.job import Job
-globals()['Job'] = Job
-from epiccore.model.inline_response2008 import InlineResponse2008
-
+from epiccore.models.inline_response2008 import InlineResponse2008  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestInlineResponse2008(unittest.TestCase):
     """InlineResponse2008 unit test stubs"""
@@ -29,11 +29,55 @@ class TestInlineResponse2008(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test InlineResponse2008
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.inline_response2008.InlineResponse2008()  # noqa: E501
+        if include_optional :
+            return InlineResponse2008(
+                count = 56, 
+                next = '0', 
+                previous = '0', 
+                results = [
+                    epiccore.models.job_step.JobStep(
+                        id = 56, 
+                        run_if_previous_step_fails = True, 
+                        step_name = '0', 
+                        node_count = 1, 
+                        num_tasks = 1, 
+                        tasks_per_node = 1, 
+                        threads_per_task = 1, 
+                        max_runtime = 1, 
+                        status = '0', 
+                        exit_code = -2147483648, 
+                        start_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                    ]
+            )
+        else :
+            return InlineResponse2008(
+                count = 56,
+                results = [
+                    epiccore.models.job_step.JobStep(
+                        id = 56, 
+                        run_if_previous_step_fails = True, 
+                        step_name = '0', 
+                        node_count = 1, 
+                        num_tasks = 1, 
+                        tasks_per_node = 1, 
+                        threads_per_task = 1, 
+                        max_runtime = 1, 
+                        status = '0', 
+                        exit_code = -2147483648, 
+                        start_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                    ],
+        )
+
     def testInlineResponse2008(self):
         """Test InlineResponse2008"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse2008()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.data_spec import DataSpec
-
+from epiccore.models.data_spec import DataSpec  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestDataSpec(unittest.TestCase):
     """DataSpec unit test stubs"""
@@ -27,11 +29,25 @@ class TestDataSpec(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test DataSpec
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.data_spec.DataSpec()  # noqa: E501
+        if include_optional :
+            return DataSpec(
+                path = '0'
+            )
+        else :
+            return DataSpec(
+                path = '0',
+        )
+
     def testDataSpec(self):
         """Test DataSpec"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = DataSpec()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

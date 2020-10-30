@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.job_auth_status import JobAuthStatus
-globals()['JobAuthStatus'] = JobAuthStatus
-from epiccore.model.inline_response20010 import InlineResponse20010
-
+from epiccore.models.inline_response20010 import InlineResponse20010  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestInlineResponse20010(unittest.TestCase):
     """InlineResponse20010 unit test stubs"""
@@ -29,11 +29,41 @@ class TestInlineResponse20010(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test InlineResponse20010
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.inline_response20010.InlineResponse20010()  # noqa: E501
+        if include_optional :
+            return InlineResponse20010(
+                count = 56, 
+                next = '0', 
+                previous = '0', 
+                results = [
+                    epiccore.models.license.License(
+                        teams = '0', 
+                        license_type = 'zenotech_zcfd', 
+                        id = '0', 
+                        display_name = '0', )
+                    ]
+            )
+        else :
+            return InlineResponse20010(
+                count = 56,
+                results = [
+                    epiccore.models.license.License(
+                        teams = '0', 
+                        license_type = 'zenotech_zcfd', 
+                        id = '0', 
+                        display_name = '0', )
+                    ],
+        )
+
     def testInlineResponse20010(self):
         """Test InlineResponse20010"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse20010()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

@@ -11,12 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.desktop_node_launch_spec import DesktopNodeLaunchSpec
-
+from epiccore.models.desktop_node_launch_spec import DesktopNodeLaunchSpec  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestDesktopNodeLaunchSpec(unittest.TestCase):
     """DesktopNodeLaunchSpec unit test stubs"""
@@ -27,11 +29,39 @@ class TestDesktopNodeLaunchSpec(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test DesktopNodeLaunchSpec
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.desktop_node_launch_spec.DesktopNodeLaunchSpec()  # noqa: E501
+        if include_optional :
+            return DesktopNodeLaunchSpec(
+                node_type = 1, 
+                application_version = 1, 
+                connection = 1, 
+                folder = 1, 
+                project = -1, 
+                runtime = 1, 
+                mount_type = '012345', 
+                secure_ip = True, 
+                ip_address = '0', 
+                invoice_reference = '0'
+            )
+        else :
+            return DesktopNodeLaunchSpec(
+                node_type = 1,
+                application_version = 1,
+                connection = 1,
+                folder = 1,
+                runtime = 1,
+                mount_type = '012345',
+        )
+
     def testDesktopNodeLaunchSpec(self):
         """Test DesktopNodeLaunchSpec"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = DesktopNodeLaunchSpec()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

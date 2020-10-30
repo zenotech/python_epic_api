@@ -11,14 +11,14 @@
 """
 
 
-import sys
+from __future__ import absolute_import
+
 import unittest
+import datetime
 
 import epiccore
-from epiccore.model.project import Project
-globals()['Project'] = Project
-from epiccore.model.inline_response20012 import InlineResponse20012
-
+from epiccore.models.inline_response20012 import InlineResponse20012  # noqa: E501
+from epiccore.rest import ApiException
 
 class TestInlineResponse20012(unittest.TestCase):
     """InlineResponse20012 unit test stubs"""
@@ -29,11 +29,39 @@ class TestInlineResponse20012(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test InlineResponse20012
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = epiccore.models.inline_response20012.InlineResponse20012()  # noqa: E501
+        if include_optional :
+            return InlineResponse20012(
+                count = 56, 
+                next = '0', 
+                previous = '0', 
+                results = [
+                    epiccore.models.team_membership.TeamMembership(
+                        id = 56, 
+                        name = '0', 
+                        role = 'user', )
+                    ]
+            )
+        else :
+            return InlineResponse20012(
+                count = 56,
+                results = [
+                    epiccore.models.team_membership.TeamMembership(
+                        id = 56, 
+                        name = '0', 
+                        role = 'user', )
+                    ],
+        )
+
     def testInlineResponse20012(self):
         """Test InlineResponse20012"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = InlineResponse20012()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

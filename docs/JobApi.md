@@ -1,6 +1,6 @@
 # epiccore.JobApi
 
-All URIs are relative to *https://epic.zenotech.com/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,15 +26,15 @@ Method | HTTP request | Description
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job_auth_status import JobAuthStatus
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -44,7 +44,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -55,14 +55,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_auth_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_auth_read: %s\n" % e)
 ```
 
@@ -70,7 +69,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -101,15 +100,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job_auth_status import JobAuthStatus
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,7 +118,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -130,57 +129,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
-    data = JobAuthStatus(
-        required=True,
-        state="state_example",
-        job=Job(
-            id=1,
-            name="name_example",
-            app="app_example",
-            application_version=1,
-            cost="cost_example",
-            status="status_example",
-            submitted_by="submitted_by_example",
-            submitted_at="submitted_at_example",
-            finished=True,
-            resource=BatchQueueDetails(
-                id=1,
-                display_name="display_name_example",
-                display_description="display_description_example",
-                max_runtime=0,
-                max_allocation=0,
-                reported_avail_tasks=0,
-                reported_max_tasks=0,
-                sla=SLA(
-                    name="name_example",
-                    description="description_example",
-                ),
-                maintenance_mode="maintenance_mode_example",
-                resource_config="resource_config_example",
-            ),
-            project=1,
-            invoice_reference="invoice_reference_example",
-            config=JobConfiguration(
-                upload=[
-                    "complete",
-                ],
-                overwrite_existing=True,
-                data_sync_interval=0,
-            ),
-        ),
-        user_profile=UserName(
-            display_name="display_name_example",
-        ),
-        permissions="permissions_example",
-    ) # JobAuthStatus | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
+data = epiccore.JobAuthStatus() # JobAuthStatus | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_auth_update(id, data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_auth_update: %s\n" % e)
 ```
 
@@ -188,8 +144,8 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **data** | [**JobAuthStatus**](JobAuthStatus.md)|  |
+ **id** | **str**|  | 
+ **data** | [**JobAuthStatus**](JobAuthStatus.md)|  | 
 
 ### Return type
 
@@ -222,14 +178,15 @@ Cancel a job
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -239,7 +196,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -250,14 +207,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
-    data = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
+data = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_instance.job_cancel(id, data)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_cancel: %s\n" % e)
 ```
 
@@ -265,8 +221,8 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  |
+ **id** | **str**|  | 
+ **data** | **object**|  | 
 
 ### Return type
 
@@ -289,7 +245,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_create**
-> [Job] job_create(data)
+> list[Job] job_create(data)
 
 
 
@@ -297,16 +253,15 @@ void (empty response body)
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job import Job
-from epiccore.model.job_array_spec import JobArraySpec
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -316,7 +271,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -327,51 +282,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    data = JobArraySpec(
-        name="Job Array",
-        config=JobConfiguration(
-            upload=[
-                "complete",
-            ],
-            overwrite_existing=True,
-            data_sync_interval=0,
-        ),
-        jobs=[
-            JobDataBinding(
-                name="name_example",
-                spec=JobSpec(
-                    application_version=1,
-                    project=-1,
-                    tasks=[
-                        JobTaskSpec(
-                            reference="reference_example",
-                            partitions=1,
-                            runtime=1,
-                            task_distribution="core",
-                            hyperthreading=True,
-                        ),
-                    ],
-                ),
-                app_options={},
-                cluster=JobClusterSpec(
-                    queue=1,
-                ),
-                input_data=DataSpec(
-                    path="path_example",
-                ),
-            ),
-        ],
-        common_data=DataSpec(
-            path="path_example",
-        ),
-    ) # JobArraySpec | 
+    api_instance = epiccore.JobApi(api_client)
+    data = epiccore.JobArraySpec() # JobArraySpec | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_create(data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_create: %s\n" % e)
 ```
 
@@ -379,11 +296,11 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**JobArraySpec**](JobArraySpec.md)|  |
+ **data** | [**JobArraySpec**](JobArraySpec.md)|  | 
 
 ### Return type
 
-[**[Job]**](Job.md)
+[**list[Job]**](Job.md)
 
 ### Authorization
 
@@ -402,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_list**
-> InlineResponse2008 job_list()
+> InlineResponse2007 job_list(limit=limit, offset=offset)
 
 
 
@@ -410,15 +327,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.inline_response2008 import InlineResponse2008
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -428,7 +345,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -439,16 +356,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.JobApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.job_list(limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_list: %s\n" % e)
 ```
 
@@ -456,12 +371,12 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -490,16 +405,15 @@ Provides a price quote based upon the given BatchJobLaunchSpec. Quotes will be r
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job_quote import JobQuote
-from epiccore.model.job_spec import JobSpec
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -509,7 +423,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -520,26 +434,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    data = JobSpec(
-        application_version=1,
-        project=-1,
-        tasks=[
-            JobTaskSpec(
-                reference="reference_example",
-                partitions=1,
-                runtime=1,
-                task_distribution="core",
-                hyperthreading=True,
-            ),
-        ],
-    ) # JobSpec | 
+    api_instance = epiccore.JobApi(api_client)
+    data = epiccore.JobSpec() # JobSpec | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_quote(data)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_quote: %s\n" % e)
 ```
 
@@ -547,7 +448,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**JobSpec**](JobSpec.md)|  |
+ **data** | [**JobSpec**](JobSpec.md)|  | 
 
 ### Return type
 
@@ -578,15 +479,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job import Job
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -596,7 +497,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -607,14 +508,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_read(id)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_read: %s\n" % e)
 ```
 
@@ -622,7 +522,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -655,14 +555,15 @@ Cancel a job step
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -672,7 +573,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -683,15 +584,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
-    job_pk = "job_pk_example" # str | 
-    data = {} # {str: (bool, date, datetime, dict, float, int, list, str, none_type)} | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
+job_pk = 'job_pk_example' # str | 
+data = None # object | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_instance.job_steps_cancel(id, job_pk, data)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_steps_cancel: %s\n" % e)
 ```
 
@@ -699,9 +599,9 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **job_pk** | **str**|  |
- **data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**|  |
+ **id** | **str**|  | 
+ **job_pk** | **str**|  | 
+ **data** | **object**|  | 
 
 ### Return type
 
@@ -724,7 +624,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_steps_list**
-> InlineResponse2009 job_steps_list(job_pk)
+> InlineResponse2008 job_steps_list(job_pk, limit=limit, offset=offset)
 
 
 
@@ -732,15 +632,15 @@ void (empty response body)
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.inline_response2009 import InlineResponse2009
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -750,7 +650,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -761,24 +661,15 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    job_pk = "job_pk_example" # str | 
-    limit = 1 # int | Number of results to return per page. (optional)
-    offset = 1 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.JobApi(api_client)
+    job_pk = 'job_pk_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.job_steps_list(job_pk)
-        pprint(api_response)
-    except epiccore.ApiException as e:
-        print("Exception when calling JobApi->job_steps_list: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         api_response = api_instance.job_steps_list(job_pk, limit=limit, offset=offset)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_steps_list: %s\n" % e)
 ```
 
@@ -786,13 +677,13 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job_pk** | **str**|  |
- **limit** | **int**| Number of results to return per page. | [optional]
- **offset** | **int**| The initial index from which to return the results. | [optional]
+ **job_pk** | **str**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -821,15 +712,15 @@ Fetch logs for a job step
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job_log import JobLog
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -839,7 +730,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -850,15 +741,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
-    job_pk = "job_pk_example" # str | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
+job_pk = 'job_pk_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_steps_logs(id, job_pk)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_steps_logs: %s\n" % e)
 ```
 
@@ -866,8 +756,8 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **job_pk** | **str**|  |
+ **id** | **str**|  | 
+ **job_pk** | **str**|  | 
 
 ### Return type
 
@@ -886,6 +776,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**204** | Request received |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -898,15 +789,15 @@ Name | Type | Description  | Notes
 
 * Api Key Authentication (Bearer):
 ```python
+from __future__ import print_function
 import time
 import epiccore
-from epiccore.api import job_api
-from epiccore.model.job_step import JobStep
+from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -916,7 +807,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -927,15 +818,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = job_api.JobApi(api_client)
-    id = "id_example" # str | 
-    job_pk = "job_pk_example" # str | 
+    api_instance = epiccore.JobApi(api_client)
+    id = 'id_example' # str | 
+job_pk = 'job_pk_example' # str | 
 
-    # example passing only required values which don't have defaults set
     try:
         api_response = api_instance.job_steps_read(id, job_pk)
         pprint(api_response)
-    except epiccore.ApiException as e:
+    except ApiException as e:
         print("Exception when calling JobApi->job_steps_read: %s\n" % e)
 ```
 
@@ -943,8 +833,8 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **job_pk** | **str**|  |
+ **id** | **str**|  | 
+ **job_pk** | **str**|  | 
 
 ### Return type
 
