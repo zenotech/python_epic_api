@@ -40,6 +40,7 @@ class TestJob(unittest.TestCase):
                 id = 56, 
                 name = '0', 
                 app = '0', 
+                app_options = epiccore.models.app_options.App options(), 
                 application_version = 1, 
                 cost = '0', 
                 status = '0', 

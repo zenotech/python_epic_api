@@ -159,8 +159,6 @@ class ProductName(object):
         :param small_print: The small_print of this ProductName.  # noqa: E501
         :type small_print: str
         """
-        if self.local_vars_configuration.client_side_validation and small_print is None:  # noqa: E501
-            raise ValueError("Invalid value for `small_print`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 small_print is not None and len(small_print) > 1000):
             raise ValueError("Invalid value for `small_print`, length must be less than or equal to `1000`")  # noqa: E501

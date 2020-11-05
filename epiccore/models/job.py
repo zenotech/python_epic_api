@@ -37,6 +37,7 @@ class Job(object):
         'id': 'int',
         'name': 'str',
         'app': 'str',
+        'app_options': 'object',
         'application_version': 'int',
         'cost': 'str',
         'status': 'str',
@@ -53,6 +54,7 @@ class Job(object):
         'id': 'id',
         'name': 'name',
         'app': 'app',
+        'app_options': 'app_options',
         'application_version': 'application_version',
         'cost': 'cost',
         'status': 'status',
@@ -65,7 +67,7 @@ class Job(object):
         'config': 'config'
     }
 
-    def __init__(self, id=None, name=None, app=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, local_vars_configuration=None):  # noqa: E501
         """Job - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class Job(object):
         self._id = None
         self._name = None
         self._app = None
+        self._app_options = None
         self._application_version = None
         self._cost = None
         self._status = None
@@ -92,6 +95,8 @@ class Job(object):
             self.name = name
         if app is not None:
             self.app = app
+        if app_options is not None:
+            self.app_options = app_options
         if application_version is not None:
             self.application_version = application_version
         if cost is not None:
@@ -187,6 +192,29 @@ class Job(object):
             raise ValueError("Invalid value for `app`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._app = app
+
+    @property
+    def app_options(self):
+        """Gets the app_options of this Job.  # noqa: E501
+
+        Job app options  # noqa: E501
+
+        :return: The app_options of this Job.  # noqa: E501
+        :rtype: object
+        """
+        return self._app_options
+
+    @app_options.setter
+    def app_options(self, app_options):
+        """Sets the app_options of this Job.
+
+        Job app options  # noqa: E501
+
+        :param app_options: The app_options of this Job.  # noqa: E501
+        :type app_options: object
+        """
+
+        self._app_options = app_options
 
     @property
     def application_version(self):

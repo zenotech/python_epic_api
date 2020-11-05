@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** | The ID for this job | [optional] [readonly] 
 **name** | **str** | Name of this job | [optional] [readonly] 
 **app** | **str** | Name of the application that this job uses | [optional] [readonly] 
+**app_options** | **object** | Job app options | [optional] [readonly] 
 **application_version** | **int** | Application version ID | [optional] [readonly] 
 **cost** | **str** | Maximum cost for running this job | [optional] [readonly] 
 **status** | **str** | Current status of this job | [optional] [readonly] 

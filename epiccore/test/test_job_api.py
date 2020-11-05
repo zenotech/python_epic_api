@@ -59,6 +59,12 @@ class TestJobApi(unittest.TestCase):
         """
         pass
 
+    def test_job_partial_update(self):
+        """Test case for job_partial_update
+
+        """
+        pass
+
     def test_job_quote(self):
         """Test case for job_quote
 

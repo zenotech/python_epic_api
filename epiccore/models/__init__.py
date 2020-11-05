@@ -46,6 +46,7 @@ from epiccore.models.inline_response2007 import InlineResponse2007
 from epiccore.models.inline_response2008 import InlineResponse2008
 from epiccore.models.inline_response2009 import InlineResponse2009
 from epiccore.models.job import Job
+from epiccore.models.job_app_options import JobAppOptions
 from epiccore.models.job_array_spec import JobArraySpec
 from epiccore.models.job_auth import JobAuth
 from epiccore.models.job_auth_status import JobAuthStatus
