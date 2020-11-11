@@ -36,16 +36,18 @@ class JobLog(object):
     openapi_types = {
         'stdout': 'str',
         'stderr': 'str',
-        'app': 'str'
+        'app': 'str',
+        'last_update': 'str'
     }
 
     attribute_map = {
         'stdout': 'stdout',
         'stderr': 'stderr',
-        'app': 'app'
+        'app': 'app',
+        'last_update': 'last_update'
     }
 
-    def __init__(self, stdout=None, stderr=None, app=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, stdout=None, stderr=None, app=None, last_update=None, local_vars_configuration=None):  # noqa: E501
         """JobLog - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class JobLog(object):
         self._stdout = None
         self._stderr = None
         self._app = None
+        self._last_update = None
         self.discriminator = None
 
         if stdout is not None:
@@ -62,6 +65,8 @@ class JobLog(object):
             self.stderr = stderr
         if app is not None:
             self.app = app
+        if last_update is not None:
+            self.last_update = last_update
 
     @property
     def stdout(self):
@@ -134,6 +139,29 @@ class JobLog(object):
             raise ValueError("Invalid value for `app`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._app = app
+
+    @property
+    def last_update(self):
+        """Gets the last_update of this JobLog.  # noqa: E501
+
+        Last time the logs were updated  # noqa: E501
+
+        :return: The last_update of this JobLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_update
+
+    @last_update.setter
+    def last_update(self, last_update):
+        """Sets the last_update of this JobLog.
+
+        Last time the logs were updated  # noqa: E501
+
+        :param last_update: The last_update of this JobLog.  # noqa: E501
+        :type last_update: str
+        """
+
+        self._last_update = last_update
 
     def to_dict(self):
         """Returns the model properties as a dict"""

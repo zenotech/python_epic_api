@@ -41,16 +41,22 @@ class TestInlineResponse2006(unittest.TestCase):
                 next = '0', 
                 previous = '0', 
                 results = [
-                    epiccore.models.desktop_node.DesktopNode(
-                        id = 56, )
+                    epiccore.models.project.Project(
+                        pk = 56, 
+                        project_id = '0', 
+                        description = '0', 
+                        closed = True, )
                     ]
             )
         else :
             return InlineResponse2006(
                 count = 56,
                 results = [
-                    epiccore.models.desktop_node.DesktopNode(
-                        id = 56, )
+                    epiccore.models.project.Project(
+                        pk = 56, 
+                        project_id = '0', 
+                        description = '0', 
+                        closed = True, )
                     ],
         )
 

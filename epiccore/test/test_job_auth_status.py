@@ -70,7 +70,21 @@ class TestJobAuthStatus(unittest.TestCase):
                             'complete'
                             ], 
                         overwrite_existing = True, 
-                        data_sync_interval = 0, ), ), 
+                        data_sync_interval = 0, ), 
+                    job_steps = epiccore.models.job_step.JobStep(
+                        id = 56, 
+                        run_if_previous_step_fails = True, 
+                        step_name = '0', 
+                        node_count = 1, 
+                        num_tasks = 1, 
+                        tasks_per_node = 1, 
+                        threads_per_task = 1, 
+                        max_runtime = 1, 
+                        status = '0', 
+                        exit_code = -2147483648, 
+                        start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        wallclock = 1.337, ), ), 
                 user_profile = epiccore.models.user_name.UserName(
                     display_name = '0', ), 
                 permissions = '0'

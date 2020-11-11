@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import epiccore
-from epiccore.models.job_step import JobStep  # noqa: E501
+from epiccore.models.job_step_details import JobStepDetails  # noqa: E501
 from epiccore.rest import ApiException
 
-class TestJobStep(unittest.TestCase):
-    """JobStep unit test stubs"""
+class TestJobStepDetails(unittest.TestCase):
+    """JobStepDetails unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,14 +30,15 @@ class TestJobStep(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test JobStep
+        """Test JobStepDetails
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = epiccore.models.job_step.JobStep()  # noqa: E501
+        # model = epiccore.models.job_step_details.JobStepDetails()  # noqa: E501
         if include_optional :
-            return JobStep(
+            return JobStepDetails(
                 id = 56, 
+                instance = 56, 
                 run_if_previous_step_fails = True, 
                 step_name = '0', 
                 node_count = 1, 
@@ -49,15 +50,21 @@ class TestJobStep(unittest.TestCase):
                 exit_code = -2147483648, 
                 start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                 end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                wallclock = 1.337
+                wallclock = 1.337, 
+                logs = epiccore.models.job_log.JobLog(
+                    stdout = '0', 
+                    stderr = '0', 
+                    app = '0', 
+                    last_update = '0', )
             )
         else :
-            return JobStep(
+            return JobStepDetails(
+                instance = 56,
                 step_name = '0',
         )
 
-    def testJobStep(self):
-        """Test JobStep"""
+    def testJobStepDetails(self):
+        """Test JobStepDetails"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

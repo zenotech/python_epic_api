@@ -41,24 +41,116 @@ class TestInlineResponse2004(unittest.TestCase):
                 next = '0', 
                 previous = '0', 
                 results = [
-                    epiccore.models.desktop_node_type.DesktopNodeType(
-                        id = 56, 
-                        name = '0', 
-                        description = '0', 
-                        cores = 0, 
-                        gpus = 0, )
+                    epiccore.models.job_auth_status.JobAuthStatus(
+                        required = True, 
+                        state = '0', 
+                        job = epiccore.models.job.Job(
+                            id = 56, 
+                            name = '0', 
+                            app = '0', 
+                            app_options = epiccore.models.app_options.App options(), 
+                            application_version = 1, 
+                            cost = '0', 
+                            status = '0', 
+                            submitted_by = '0', 
+                            submitted_at = '0', 
+                            finished = True, 
+                            resource = epiccore.models.batch_queue_details.BatchQueueDetails(
+                                id = 56, 
+                                display_name = '0', 
+                                display_description = '0', 
+                                max_runtime = 0, 
+                                max_allocation = 0, 
+                                reported_avail_tasks = 0, 
+                                reported_max_tasks = 0, 
+                                sla = epiccore.models.sla.SLA(
+                                    name = '0', 
+                                    description = '0', ), 
+                                maintenance_mode = True, 
+                                resource_config = '0', ), 
+                            project = 1, 
+                            invoice_reference = '0', 
+                            config = epiccore.models.job_configuration.JobConfiguration(
+                                upload = [
+                                    'complete'
+                                    ], 
+                                overwrite_existing = True, 
+                                data_sync_interval = 0, ), 
+                            job_steps = epiccore.models.job_step.JobStep(
+                                id = 56, 
+                                run_if_previous_step_fails = True, 
+                                step_name = '0', 
+                                node_count = 1, 
+                                num_tasks = 1, 
+                                tasks_per_node = 1, 
+                                threads_per_task = 1, 
+                                max_runtime = 1, 
+                                status = '0', 
+                                exit_code = -2147483648, 
+                                start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                wallclock = 1.337, ), ), 
+                        user_profile = epiccore.models.user_name.UserName(
+                            display_name = '0', ), 
+                        permissions = '0', )
                     ]
             )
         else :
             return InlineResponse2004(
                 count = 56,
                 results = [
-                    epiccore.models.desktop_node_type.DesktopNodeType(
-                        id = 56, 
-                        name = '0', 
-                        description = '0', 
-                        cores = 0, 
-                        gpus = 0, )
+                    epiccore.models.job_auth_status.JobAuthStatus(
+                        required = True, 
+                        state = '0', 
+                        job = epiccore.models.job.Job(
+                            id = 56, 
+                            name = '0', 
+                            app = '0', 
+                            app_options = epiccore.models.app_options.App options(), 
+                            application_version = 1, 
+                            cost = '0', 
+                            status = '0', 
+                            submitted_by = '0', 
+                            submitted_at = '0', 
+                            finished = True, 
+                            resource = epiccore.models.batch_queue_details.BatchQueueDetails(
+                                id = 56, 
+                                display_name = '0', 
+                                display_description = '0', 
+                                max_runtime = 0, 
+                                max_allocation = 0, 
+                                reported_avail_tasks = 0, 
+                                reported_max_tasks = 0, 
+                                sla = epiccore.models.sla.SLA(
+                                    name = '0', 
+                                    description = '0', ), 
+                                maintenance_mode = True, 
+                                resource_config = '0', ), 
+                            project = 1, 
+                            invoice_reference = '0', 
+                            config = epiccore.models.job_configuration.JobConfiguration(
+                                upload = [
+                                    'complete'
+                                    ], 
+                                overwrite_existing = True, 
+                                data_sync_interval = 0, ), 
+                            job_steps = epiccore.models.job_step.JobStep(
+                                id = 56, 
+                                run_if_previous_step_fails = True, 
+                                step_name = '0', 
+                                node_count = 1, 
+                                num_tasks = 1, 
+                                tasks_per_node = 1, 
+                                threads_per_task = 1, 
+                                max_runtime = 1, 
+                                status = '0', 
+                                exit_code = -2147483648, 
+                                start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                wallclock = 1.337, ), ), 
+                        user_profile = epiccore.models.user_name.UserName(
+                            display_name = '0', ), 
+                        permissions = '0', )
                     ],
         )
 

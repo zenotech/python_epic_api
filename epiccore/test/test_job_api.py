@@ -77,30 +77,6 @@ class TestJobApi(unittest.TestCase):
         """
         pass
 
-    def test_job_steps_cancel(self):
-        """Test case for job_steps_cancel
-
-        """
-        pass
-
-    def test_job_steps_list(self):
-        """Test case for job_steps_list
-
-        """
-        pass
-
-    def test_job_steps_logs(self):
-        """Test case for job_steps_logs
-
-        """
-        pass
-
-    def test_job_steps_read(self):
-        """Test case for job_steps_read
-
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

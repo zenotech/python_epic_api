@@ -39,7 +39,8 @@ class TestJobLog(unittest.TestCase):
             return JobLog(
                 stdout = '0', 
                 stderr = '0', 
-                app = '0'
+                app = '0', 
+                last_update = '0'
             )
         else :
             return JobLog(

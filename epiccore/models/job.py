@@ -47,7 +47,8 @@ class Job(object):
         'resource': 'BatchQueueDetails',
         'project': 'int',
         'invoice_reference': 'str',
-        'config': 'JobConfiguration'
+        'config': 'JobConfiguration',
+        'job_steps': 'JobStep'
     }
 
     attribute_map = {
@@ -64,10 +65,11 @@ class Job(object):
         'resource': 'resource',
         'project': 'project',
         'invoice_reference': 'invoice_reference',
-        'config': 'config'
+        'config': 'config',
+        'job_steps': 'job_steps'
     }
 
-    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, job_steps=None, local_vars_configuration=None):  # noqa: E501
         """Job - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class Job(object):
         self._project = None
         self._invoice_reference = None
         self._config = None
+        self._job_steps = None
         self.discriminator = None
 
         if id is not None:
@@ -117,6 +120,8 @@ class Job(object):
             self.invoice_reference = invoice_reference
         if config is not None:
             self.config = config
+        if job_steps is not None:
+            self.job_steps = job_steps
 
     @property
     def id(self):
@@ -465,6 +470,27 @@ class Job(object):
         """
 
         self._config = config
+
+    @property
+    def job_steps(self):
+        """Gets the job_steps of this Job.  # noqa: E501
+
+
+        :return: The job_steps of this Job.  # noqa: E501
+        :rtype: JobStep
+        """
+        return self._job_steps
+
+    @job_steps.setter
+    def job_steps(self, job_steps):
+        """Sets the job_steps of this Job.
+
+
+        :param job_steps: The job_steps of this Job.  # noqa: E501
+        :type job_steps: JobStep
+        """
+
+        self._job_steps = job_steps
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -41,26 +41,40 @@ class TestInlineResponse2005(unittest.TestCase):
                 next = '0', 
                 previous = '0', 
                 results = [
-                    epiccore.models.folder.Folder(
+                    epiccore.models.job_step.JobStep(
                         id = 56, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        name = '0', 
-                        obj_key = '0', 
-                        last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        run_if_previous_step_fails = True, 
+                        step_name = '0', 
+                        node_count = 1, 
+                        num_tasks = 1, 
+                        tasks_per_node = 1, 
+                        threads_per_task = 1, 
+                        max_runtime = 1, 
+                        status = '0', 
+                        exit_code = -2147483648, 
+                        start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        wallclock = 1.337, )
                     ]
             )
         else :
             return InlineResponse2005(
                 count = 56,
                 results = [
-                    epiccore.models.folder.Folder(
+                    epiccore.models.job_step.JobStep(
                         id = 56, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        name = '0', 
-                        obj_key = '0', 
-                        last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        run_if_previous_step_fails = True, 
+                        step_name = '0', 
+                        node_count = 1, 
+                        num_tasks = 1, 
+                        tasks_per_node = 1, 
+                        threads_per_task = 1, 
+                        max_runtime = 1, 
+                        status = '0', 
+                        exit_code = -2147483648, 
+                        start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        wallclock = 1.337, )
                     ],
         )
 

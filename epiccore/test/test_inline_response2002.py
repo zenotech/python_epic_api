@@ -41,42 +41,26 @@ class TestInlineResponse2002(unittest.TestCase):
                 next = '0', 
                 previous = '0', 
                 results = [
-                    epiccore.models.desktop_node_app.DesktopNodeApp(
+                    epiccore.models.folder.Folder(
+                        id = 56, 
+                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '0', 
-                        description = '0', 
-                        versions = [
-                            epiccore.models.desktop_node_application_version.DesktopNodeApplicationVersion(
-                                id = 56, 
-                                application_version = '0', 
-                                connection_types = [
-                                    epiccore.models.desktop_node_connection_type.DesktopNodeConnectionType(
-                                        id = 56, 
-                                        name = '0', 
-                                        description = '0', )
-                                    ], )
-                            ], 
-                        image = '0', )
+                        obj_key = '0', 
+                        last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ]
             )
         else :
             return InlineResponse2002(
                 count = 56,
                 results = [
-                    epiccore.models.desktop_node_app.DesktopNodeApp(
+                    epiccore.models.folder.Folder(
+                        id = 56, 
+                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         name = '0', 
-                        description = '0', 
-                        versions = [
-                            epiccore.models.desktop_node_application_version.DesktopNodeApplicationVersion(
-                                id = 56, 
-                                application_version = '0', 
-                                connection_types = [
-                                    epiccore.models.desktop_node_connection_type.DesktopNodeConnectionType(
-                                        id = 56, 
-                                        name = '0', 
-                                        description = '0', )
-                                    ], )
-                            ], 
-                        image = '0', )
+                        obj_key = '0', 
+                        last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
         )
 

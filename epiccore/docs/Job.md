@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **project** | **int** | Project ID to bill this job against | [optional] 
 **invoice_reference** | **str** | Invoice reference - this text will appear on the monthly invoice against this jobs charges | [optional] 
 **config** | [**JobConfiguration**](JobConfiguration.md) |  | [optional] 
+**job_steps** | [**JobStep**](JobStep.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

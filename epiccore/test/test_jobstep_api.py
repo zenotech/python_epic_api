@@ -16,39 +16,45 @@ from __future__ import absolute_import
 import unittest
 
 import epiccore
-from epiccore.api.viz_api import VizApi  # noqa: E501
+from epiccore.api.jobstep_api import JobstepApi  # noqa: E501
 from epiccore.rest import ApiException
 
 
-class TestVizApi(unittest.TestCase):
-    """VizApi unit test stubs"""
+class TestJobstepApi(unittest.TestCase):
+    """JobstepApi unit test stubs"""
 
     def setUp(self):
-        self.api = epiccore.api.viz_api.VizApi()  # noqa: E501
+        self.api = epiccore.api.jobstep_api.JobstepApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_viz_create(self):
-        """Test case for viz_create
+    def test_jobstep_cancel(self):
+        """Test case for jobstep_cancel
 
         """
         pass
 
-    def test_viz_list(self):
-        """Test case for viz_list
+    def test_jobstep_list(self):
+        """Test case for jobstep_list
 
         """
         pass
 
-    def test_viz_quote(self):
-        """Test case for viz_quote
+    def test_jobstep_logs_read(self):
+        """Test case for jobstep_logs_read
 
         """
         pass
 
-    def test_viz_read(self):
-        """Test case for viz_read
+    def test_jobstep_logs_update(self):
+        """Test case for jobstep_logs_update
+
+        """
+        pass
+
+    def test_jobstep_read(self):
+        """Test case for jobstep_read
 
         """
         pass

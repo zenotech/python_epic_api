@@ -41,76 +41,20 @@ class TestInlineResponse2007(unittest.TestCase):
                 next = '0', 
                 previous = '0', 
                 results = [
-                    epiccore.models.job.Job(
+                    epiccore.models.team_membership.TeamMembership(
                         id = 56, 
                         name = '0', 
-                        app = '0', 
-                        app_options = epiccore.models.app_options.App options(), 
-                        application_version = 1, 
-                        cost = '0', 
-                        status = '0', 
-                        submitted_by = '0', 
-                        submitted_at = '0', 
-                        finished = True, 
-                        resource = epiccore.models.batch_queue_details.BatchQueueDetails(
-                            id = 56, 
-                            display_name = '0', 
-                            display_description = '0', 
-                            max_runtime = 0, 
-                            max_allocation = 0, 
-                            reported_avail_tasks = 0, 
-                            reported_max_tasks = 0, 
-                            sla = epiccore.models.sla.SLA(
-                                name = '0', 
-                                description = '0', ), 
-                            maintenance_mode = True, 
-                            resource_config = '0', ), 
-                        project = 1, 
-                        invoice_reference = '0', 
-                        config = epiccore.models.job_configuration.JobConfiguration(
-                            upload = [
-                                'complete'
-                                ], 
-                            overwrite_existing = True, 
-                            data_sync_interval = 0, ), )
+                        role = 'user', )
                     ]
             )
         else :
             return InlineResponse2007(
                 count = 56,
                 results = [
-                    epiccore.models.job.Job(
+                    epiccore.models.team_membership.TeamMembership(
                         id = 56, 
                         name = '0', 
-                        app = '0', 
-                        app_options = epiccore.models.app_options.App options(), 
-                        application_version = 1, 
-                        cost = '0', 
-                        status = '0', 
-                        submitted_by = '0', 
-                        submitted_at = '0', 
-                        finished = True, 
-                        resource = epiccore.models.batch_queue_details.BatchQueueDetails(
-                            id = 56, 
-                            display_name = '0', 
-                            display_description = '0', 
-                            max_runtime = 0, 
-                            max_allocation = 0, 
-                            reported_avail_tasks = 0, 
-                            reported_max_tasks = 0, 
-                            sla = epiccore.models.sla.SLA(
-                                name = '0', 
-                                description = '0', ), 
-                            maintenance_mode = True, 
-                            resource_config = '0', ), 
-                        project = 1, 
-                        invoice_reference = '0', 
-                        config = epiccore.models.job_configuration.JobConfiguration(
-                            upload = [
-                                'complete'
-                                ], 
-                            overwrite_existing = True, 
-                            data_sync_interval = 0, ), )
+                        role = 'user', )
                     ],
         )
 

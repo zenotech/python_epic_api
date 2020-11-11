@@ -53,60 +53,6 @@ class TestCatalogApi(unittest.TestCase):
         """
         pass
 
-    def test_catalog_desktop_applications_list(self):
-        """Test case for catalog_desktop_applications_list
-
-        """
-        pass
-
-    def test_catalog_desktop_applications_read(self):
-        """Test case for catalog_desktop_applications_read
-
-        """
-        pass
-
-    def test_catalog_desktop_list(self):
-        """Test case for catalog_desktop_list
-
-        """
-        pass
-
-    def test_catalog_desktop_read(self):
-        """Test case for catalog_desktop_read
-
-        """
-        pass
-
-    def test_catalog_viz_applications_list(self):
-        """Test case for catalog_viz_applications_list
-
-        """
-        pass
-
-    def test_catalog_viz_applications_read(self):
-        """Test case for catalog_viz_applications_read
-
-        """
-        pass
-
-    def test_catalog_viz_list(self):
-        """Test case for catalog_viz_list
-
-        """
-        pass
-
-    def test_catalog_viz_read(self):
-        """Test case for catalog_viz_read
-
-        """
-        pass
-
-    def test_catalog_viznodetype_read(self):
-        """Test case for catalog_viznodetype_read
-
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

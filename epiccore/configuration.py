@@ -114,7 +114,7 @@ conf = epiccore.Configuration(
                  ):
         """Constructor
         """
-        self._base_path = "http://localhost:82/api/v2" if host is None else host
+        self._base_path = "https://epic-qa.zenotech.com/api/v2" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -414,7 +414,7 @@ conf = epiccore.Configuration(
         """
         return [
             {
-                'url': "http://localhost:82/api/v2",
+                'url': "https://epic-qa.zenotech.com/api/v2",
                 'description': "No description provided",
             }
         ]

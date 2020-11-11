@@ -1,6 +1,6 @@
 # epiccore.DataApi
 
-All URIs are relative to *http://localhost:82/api/v2*
+All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **data_folder_list**
-> InlineResponse2005 data_folder_list(limit=limit, offset=offset)
+> InlineResponse2002 data_folder_list(limit=limit, offset=offset)
 
 
 
@@ -24,10 +24,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:82/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "http://localhost:82/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -37,7 +37,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "http://localhost:82/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -102,10 +102,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:82/api/v2
+# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "http://localhost:82/api/v2"
+    host = "https://epic-qa.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,7 +115,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "http://localhost:82/api/v2",
+    host = "https://epic-qa.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
