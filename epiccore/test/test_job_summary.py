@@ -17,11 +17,11 @@ import unittest
 import datetime
 
 import epiccore
-from epiccore.models.job_auth_status import JobAuthStatus  # noqa: E501
+from epiccore.models.job_summary import JobSummary  # noqa: E501
 from epiccore.rest import ApiException
 
-class TestJobAuthStatus(unittest.TestCase):
-    """JobAuthStatus unit test stubs"""
+class TestJobSummary(unittest.TestCase):
+    """JobSummary unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,32 +30,26 @@ class TestJobAuthStatus(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test JobAuthStatus
+        """Test JobSummary
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = epiccore.models.job_auth_status.JobAuthStatus()  # noqa: E501
+        # model = epiccore.models.job_summary.JobSummary()  # noqa: E501
         if include_optional :
-            return JobAuthStatus(
-                required = True, 
-                state = 'PENDING', 
-                job = epiccore.models.job_summary.JobSummary(
-                    id = 56, 
-                    name = '0', 
-                    app = '0', 
-                    cost = '0', 
-                    submitted_by = '0', 
-                    submitted_at = '0', ), 
-                user_profile = epiccore.models.user_name.UserName(
-                    display_name = '0', ), 
-                permissions = '0'
+            return JobSummary(
+                id = 56, 
+                name = '0', 
+                app = '0', 
+                cost = '0', 
+                submitted_by = '0', 
+                submitted_at = '0'
             )
         else :
-            return JobAuthStatus(
+            return JobSummary(
         )
 
-    def testJobAuthStatus(self):
-        """Test JobAuthStatus"""
+    def testJobSummary(self):
+        """Test JobSummary"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

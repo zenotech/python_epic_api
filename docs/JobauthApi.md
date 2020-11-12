@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **jobauth_list**
-> InlineResponse2009 jobauth_list(limit=limit, offset=offset)
+> InlineResponse2004 jobauth_list(limit=limit, offset=offset)
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -89,6 +89,8 @@ Name | Type | Description  | Notes
 > JobAuthStatus jobauth_read(job)
 
 
+
+Get the authorisation status for job with ID {id}
 
 ### Example
 
@@ -163,6 +165,8 @@ Name | Type | Description  | Notes
 > JobAuthStatus jobauth_update(job, data)
 
 
+
+Update the authorisation status for job  with ID {id}
 
 ### Example
 

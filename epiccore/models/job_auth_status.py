@@ -36,7 +36,7 @@ class JobAuthStatus(object):
     openapi_types = {
         'required': 'bool',
         'state': 'str',
-        'job': 'Job',
+        'job': 'JobSummary',
         'user_profile': 'UserName',
         'permissions': 'str'
     }
@@ -64,7 +64,8 @@ class JobAuthStatus(object):
 
         if required is not None:
             self.required = required
-        self.state = state
+        if state is not None:
+            self.state = state
         if job is not None:
             self.job = job
         if user_profile is not None:
@@ -99,7 +100,6 @@ class JobAuthStatus(object):
     def state(self):
         """Gets the state of this JobAuthStatus.  # noqa: E501
 
-        Current authorisation state for this job. Valid values are 'PENDING', 'AUTHORISED', 'REJECTED'  # noqa: E501
 
         :return: The state of this JobAuthStatus.  # noqa: E501
         :rtype: str
@@ -110,19 +110,16 @@ class JobAuthStatus(object):
     def state(self, state):
         """Sets the state of this JobAuthStatus.
 
-        Current authorisation state for this job. Valid values are 'PENDING', 'AUTHORISED', 'REJECTED'  # noqa: E501
 
         :param state: The state of this JobAuthStatus.  # noqa: E501
         :type state: str
         """
-        if self.local_vars_configuration.client_side_validation and state is None:  # noqa: E501
-            raise ValueError("Invalid value for `state`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                state is not None and len(state) > 10):
-            raise ValueError("Invalid value for `state`, length must be less than or equal to `10`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                state is not None and len(state) < 1):
-            raise ValueError("Invalid value for `state`, length must be greater than or equal to `1`")  # noqa: E501
+        allowed_values = ["PENDING", "AUTHORISED", "REJECTED"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and state not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
+                .format(state, allowed_values)
+            )
 
         self._state = state
 
@@ -132,7 +129,7 @@ class JobAuthStatus(object):
 
 
         :return: The job of this JobAuthStatus.  # noqa: E501
-        :rtype: Job
+        :rtype: JobSummary
         """
         return self._job
 
@@ -142,7 +139,7 @@ class JobAuthStatus(object):
 
 
         :param job: The job of this JobAuthStatus.  # noqa: E501
-        :type job: Job
+        :type job: JobSummary
         """
 
         self._job = job

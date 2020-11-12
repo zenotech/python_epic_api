@@ -1,10 +1,10 @@
-# JobStep
+# JobStepDetails
 
-The job steps associated with this Job
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | jobstep id | [optional] [readonly] 
+**instance** | **int** | The id of the parent job for this step | 
 **run_if_previous_step_fails** | **bool** | Whether this job step will run if the previous step fails | [optional] 
 **step_name** | **str** | The name of this job step | 
 **node_count** | **int** | Number of nodes this job step will run on | [optional] 
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **start** | **datetime** | Time this job step started running | [optional] 
 **end** | **datetime** | Time this job step finished running | [optional] 
 **wallclock** | **float** | The CPU wallclock time used for this job step | [optional] 
+**logs** | [**JobLog**](JobLog.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

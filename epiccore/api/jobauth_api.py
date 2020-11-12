@@ -172,6 +172,7 @@ class JobauthApi(object):
     def jobauth_read(self, job, **kwargs):  # noqa: E501
         """jobauth_read  # noqa: E501
 
+        Get the authorisation status for job with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -201,6 +202,7 @@ class JobauthApi(object):
     def jobauth_read_with_http_info(self, job, **kwargs):  # noqa: E501
         """jobauth_read  # noqa: E501
 
+        Get the authorisation status for job with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -301,6 +303,7 @@ class JobauthApi(object):
     def jobauth_update(self, job, data, **kwargs):  # noqa: E501
         """jobauth_update  # noqa: E501
 
+        Update the authorisation status for job  with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -332,6 +335,7 @@ class JobauthApi(object):
     def jobauth_update_with_http_info(self, job, data, **kwargs):  # noqa: E501
         """jobauth_update  # noqa: E501
 
+        Update the authorisation status for job  with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

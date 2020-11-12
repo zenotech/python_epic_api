@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **teams_memberships_list**
-> InlineResponse20012 teams_memberships_list(limit=limit, offset=offset)
+> InlineResponse2007 teams_memberships_list(limit=limit, offset=offset)
 
 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_userteams_list**
-> InlineResponse20013 teams_userteams_list(limit=limit, offset=offset)
+> InlineResponse2008 teams_userteams_list(limit=limit, offset=offset)
 
 
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 

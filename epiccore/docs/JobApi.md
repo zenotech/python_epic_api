@@ -19,6 +19,8 @@ Method | HTTP request | Description
 
 
 
+Get the authorisation status for job with ID {id}
+
 ### Example
 
 * Api Key Authentication (Bearer):
@@ -92,6 +94,8 @@ Name | Type | Description  | Notes
 > JobAuthStatus job_auth_update(id, data)
 
 
+
+Update the authorisation status for job  with ID {id}
 
 ### Example
 

@@ -40,6 +40,7 @@ class JobApi(object):
     def job_auth_read(self, id, **kwargs):  # noqa: E501
         """job_auth_read  # noqa: E501
 
+        Get the authorisation status for job with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -69,6 +70,7 @@ class JobApi(object):
     def job_auth_read_with_http_info(self, id, **kwargs):  # noqa: E501
         """job_auth_read  # noqa: E501
 
+        Get the authorisation status for job with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -169,6 +171,7 @@ class JobApi(object):
     def job_auth_update(self, id, data, **kwargs):  # noqa: E501
         """job_auth_update  # noqa: E501
 
+        Update the authorisation status for job  with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -200,6 +203,7 @@ class JobApi(object):
     def job_auth_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
         """job_auth_update  # noqa: E501
 
+        Update the authorisation status for job  with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -90,6 +90,8 @@ Name | Type | Description  | Notes
 
 
 
+Get the authorisation status for job with ID {id}
+
 ### Example
 
 * Api Key Authentication (Bearer):
@@ -163,6 +165,8 @@ Name | Type | Description  | Notes
 > JobAuthStatus jobauth_update(job, data)
 
 
+
+Update the authorisation status for job  with ID {id}
 
 ### Example
 

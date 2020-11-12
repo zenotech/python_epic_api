@@ -45,6 +45,7 @@ from epiccore.models.job_quote import JobQuote
 from epiccore.models.job_spec import JobSpec
 from epiccore.models.job_step import JobStep
 from epiccore.models.job_step_details import JobStepDetails
+from epiccore.models.job_summary import JobSummary
 from epiccore.models.job_task_spec import JobTaskSpec
 from epiccore.models.limit import Limit
 from epiccore.models.limits import Limits

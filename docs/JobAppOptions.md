@@ -1,12 +1,9 @@
-# InlineResponse20010
+# JobAppOptions
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | 
-**next** | **str** |  | [optional] 
-**previous** | **str** |  | [optional] 
-**results** | [**list[License]**](License.md) |  | 
+**app_options** | **object** | Application specific options to update | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
