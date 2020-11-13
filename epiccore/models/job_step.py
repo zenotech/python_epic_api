@@ -46,7 +46,7 @@ class JobStep(object):
         'exit_code': 'int',
         'start': 'datetime',
         'end': 'datetime',
-        'wallclock': 'float'
+        'wallclock': 'str'
     }
 
     attribute_map = {
@@ -434,10 +434,9 @@ class JobStep(object):
     def wallclock(self):
         """Gets the wallclock of this JobStep.  # noqa: E501
 
-        The CPU wallclock time used for this job step  # noqa: E501
 
         :return: The wallclock of this JobStep.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._wallclock
 
@@ -445,11 +444,15 @@ class JobStep(object):
     def wallclock(self, wallclock):
         """Sets the wallclock of this JobStep.
 
-        The CPU wallclock time used for this job step  # noqa: E501
 
         :param wallclock: The wallclock of this JobStep.  # noqa: E501
-        :type wallclock: float
+        :type wallclock: str
         """
+        if self.local_vars_configuration.client_side_validation and wallclock is None:  # noqa: E501
+            raise ValueError("Invalid value for `wallclock`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                wallclock is not None and len(wallclock) < 1):
+            raise ValueError("Invalid value for `wallclock`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._wallclock = wallclock
 
