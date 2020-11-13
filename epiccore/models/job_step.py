@@ -448,11 +448,6 @@ class JobStep(object):
         :param wallclock: The wallclock of this JobStep.  # noqa: E501
         :type wallclock: str
         """
-        if self.local_vars_configuration.client_side_validation and wallclock is None:  # noqa: E501
-            raise ValueError("Invalid value for `wallclock`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                wallclock is not None and len(wallclock) < 1):
-            raise ValueError("Invalid value for `wallclock`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._wallclock = wallclock
 
