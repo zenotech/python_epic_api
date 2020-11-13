@@ -36,7 +36,7 @@ import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
     host = "https://epic.zenotech.com/api/v2"
@@ -73,7 +73,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
+All URIs are relative to *https://epic.zenotech.com/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,5 @@
 # JobStep
 
-The job steps associated with this Job
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

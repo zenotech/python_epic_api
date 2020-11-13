@@ -1,6 +1,6 @@
 # epiccore.JobApi
 
-All URIs are relative to *https://epic-qa.zenotech.com/api/v2*
+All URIs are relative to *https://epic.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,10 +30,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -43,7 +43,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -106,10 +106,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,7 +119,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -184,10 +184,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,7 +197,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -259,10 +259,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -272,7 +272,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -333,10 +333,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -346,7 +346,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -409,10 +409,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -422,7 +422,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -487,10 +487,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -500,7 +500,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
@@ -561,10 +561,10 @@ import time
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://epic-qa.zenotech.com/api/v2
+# Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2"
+    host = "https://epic.zenotech.com/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -574,7 +574,7 @@ configuration = epiccore.Configuration(
 
 # Configure API key authorization: Bearer
 configuration = epiccore.Configuration(
-    host = "https://epic-qa.zenotech.com/api/v2",
+    host = "https://epic.zenotech.com/api/v2",
     api_key = {
         'Bearer': 'YOUR_API_KEY'
     }
