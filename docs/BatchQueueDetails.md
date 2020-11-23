@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **reported_max_tasks** | **int** |  | [optional] 
 **sla** | [**SLA**](SLA.md) |  | 
 **maintenance_mode** | **bool** |  | [optional] [readonly] 
-**resource_config** | **str** |  | [optional] [readonly] 
+**resource_config** | [**ClusterNodeConfig**](ClusterNodeConfig.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

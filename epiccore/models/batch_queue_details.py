@@ -43,7 +43,7 @@ class BatchQueueDetails(object):
         'reported_max_tasks': 'int',
         'sla': 'SLA',
         'maintenance_mode': 'bool',
-        'resource_config': 'str'
+        'resource_config': 'ClusterNodeConfig'
     }
 
     attribute_map = {
@@ -91,8 +91,7 @@ class BatchQueueDetails(object):
         self.sla = sla
         if maintenance_mode is not None:
             self.maintenance_mode = maintenance_mode
-        if resource_config is not None:
-            self.resource_config = resource_config
+        self.resource_config = resource_config
 
     @property
     def id(self):
@@ -324,7 +323,7 @@ class BatchQueueDetails(object):
 
 
         :return: The resource_config of this BatchQueueDetails.  # noqa: E501
-        :rtype: str
+        :rtype: ClusterNodeConfig
         """
         return self._resource_config
 
@@ -334,8 +333,10 @@ class BatchQueueDetails(object):
 
 
         :param resource_config: The resource_config of this BatchQueueDetails.  # noqa: E501
-        :type resource_config: str
+        :type resource_config: ClusterNodeConfig
         """
+        if self.local_vars_configuration.client_side_validation and resource_config is None:  # noqa: E501
+            raise ValueError("Invalid value for `resource_config`, must not be `None`")  # noqa: E501
 
         self._resource_config = resource_config
 

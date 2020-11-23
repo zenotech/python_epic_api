@@ -124,12 +124,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AcceleratorConfig](docs/AcceleratorConfig.md)
  - [AnsysLicense](docs/AnsysLicense.md)
  - [BatchApplicationDetails](docs/BatchApplicationDetails.md)
  - [BatchApplicationList](docs/BatchApplicationList.md)
  - [BatchApplicationVersionDetails](docs/BatchApplicationVersionDetails.md)
  - [BatchQueueDetails](docs/BatchQueueDetails.md)
  - [Budget](docs/Budget.md)
+ - [ClusterNodeConfig](docs/ClusterNodeConfig.md)
  - [Cost](docs/Cost.md)
  - [CostThreshold](docs/CostThreshold.md)
  - [CurrentSpend](docs/CurrentSpend.md)

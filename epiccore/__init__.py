@@ -40,12 +40,14 @@ from epiccore.exceptions import ApiKeyError
 from epiccore.exceptions import ApiAttributeError
 from epiccore.exceptions import ApiException
 # import models into sdk package
+from epiccore.models.accelerator_config import AcceleratorConfig
 from epiccore.models.ansys_license import AnsysLicense
 from epiccore.models.batch_application_details import BatchApplicationDetails
 from epiccore.models.batch_application_list import BatchApplicationList
 from epiccore.models.batch_application_version_details import BatchApplicationVersionDetails
 from epiccore.models.batch_queue_details import BatchQueueDetails
 from epiccore.models.budget import Budget
+from epiccore.models.cluster_node_config import ClusterNodeConfig
 from epiccore.models.cost import Cost
 from epiccore.models.cost_threshold import CostThreshold
 from epiccore.models.current_spend import CurrentSpend
