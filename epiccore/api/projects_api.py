@@ -64,7 +64,7 @@ class ProjectsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: InlineResponse2006
+        :rtype: InlineResponse20011
         """
         kwargs['_return_http_data_only'] = True
         return self.projects_list_with_http_info(**kwargs)  # noqa: E501
@@ -103,7 +103,7 @@ class ProjectsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(InlineResponse2006, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(InlineResponse20011, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -162,7 +162,7 @@ class ProjectsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2006',  # noqa: E501
+            response_type='InlineResponse20011',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -89,7 +89,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobstep_list**
-> InlineResponse2005 jobstep_list(parent_job=parent_job, limit=limit, offset=offset)
+> InlineResponse2009 jobstep_list(parent_job=parent_job, limit=limit, offset=offset)
 
 
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 

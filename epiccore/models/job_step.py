@@ -46,7 +46,7 @@ class JobStep(object):
         'exit_code': 'int',
         'start': 'datetime',
         'end': 'datetime',
-        'wallclock': 'str'
+        'wallclock': 'float'
     }
 
     attribute_map = {
@@ -434,9 +434,10 @@ class JobStep(object):
     def wallclock(self):
         """Gets the wallclock of this JobStep.  # noqa: E501
 
+        The CPU wallclock time used for this job step  # noqa: E501
 
         :return: The wallclock of this JobStep.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._wallclock
 
@@ -444,9 +445,10 @@ class JobStep(object):
     def wallclock(self, wallclock):
         """Sets the wallclock of this JobStep.
 
+        The CPU wallclock time used for this job step  # noqa: E501
 
         :param wallclock: The wallclock of this JobStep.  # noqa: E501
-        :type wallclock: str
+        :type wallclock: float
         """
 
         self._wallclock = wallclock

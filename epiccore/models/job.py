@@ -48,7 +48,7 @@ class Job(object):
         'project': 'int',
         'invoice_reference': 'str',
         'config': 'JobConfiguration',
-        'job_steps': 'list[JobStep]'
+        'job_steps': 'JobStep'
     }
 
     attribute_map = {
@@ -475,10 +475,9 @@ class Job(object):
     def job_steps(self):
         """Gets the job_steps of this Job.  # noqa: E501
 
-        The job steps associated with this Job  # noqa: E501
 
         :return: The job_steps of this Job.  # noqa: E501
-        :rtype: list[JobStep]
+        :rtype: JobStep
         """
         return self._job_steps
 
@@ -486,10 +485,9 @@ class Job(object):
     def job_steps(self, job_steps):
         """Sets the job_steps of this Job.
 
-        The job steps associated with this Job  # noqa: E501
 
         :param job_steps: The job_steps of this Job.  # noqa: E501
-        :type job_steps: list[JobStep]
+        :type job_steps: JobStep
         """
 
         self._job_steps = job_steps

@@ -86,6 +86,9 @@ class JobLog(object):
         :param stdout: The stdout of this JobLog.  # noqa: E501
         :type stdout: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                stdout is not None and len(stdout) < 1):
+            raise ValueError("Invalid value for `stdout`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._stdout = stdout
 
@@ -107,6 +110,9 @@ class JobLog(object):
         :param stderr: The stderr of this JobLog.  # noqa: E501
         :type stderr: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                stderr is not None and len(stderr) < 1):
+            raise ValueError("Invalid value for `stderr`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._stderr = stderr
 
@@ -128,6 +134,9 @@ class JobLog(object):
         :param app: The app of this JobLog.  # noqa: E501
         :type app: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                app is not None and len(app) < 1):
+            raise ValueError("Invalid value for `app`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._app = app
 

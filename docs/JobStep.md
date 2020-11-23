@@ -1,5 +1,6 @@
 # JobStep
 
+The job steps associated with this Job
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 **exit_code** | **int** | Unix exit code for this job step | [optional] 
 **start** | **datetime** | Time this job step started running | [optional] 
 **end** | **datetime** | Time this job step finished running | [optional] 
-**wallclock** | **str** |  | [optional] [readonly] 
+**wallclock** | **float** | The CPU wallclock time used for this job step | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

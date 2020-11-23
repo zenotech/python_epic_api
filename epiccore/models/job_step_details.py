@@ -47,7 +47,7 @@ class JobStepDetails(object):
         'exit_code': 'int',
         'start': 'datetime',
         'end': 'datetime',
-        'wallclock': 'str',
+        'wallclock': 'float',
         'logs': 'JobLog'
     }
 
@@ -468,9 +468,10 @@ class JobStepDetails(object):
     def wallclock(self):
         """Gets the wallclock of this JobStepDetails.  # noqa: E501
 
+        The CPU wallclock time used for this job step  # noqa: E501
 
         :return: The wallclock of this JobStepDetails.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._wallclock
 
@@ -478,9 +479,10 @@ class JobStepDetails(object):
     def wallclock(self, wallclock):
         """Sets the wallclock of this JobStepDetails.
 
+        The CPU wallclock time used for this job step  # noqa: E501
 
         :param wallclock: The wallclock of this JobStepDetails.  # noqa: E501
-        :type wallclock: str
+        :type wallclock: float
         """
 
         self._wallclock = wallclock

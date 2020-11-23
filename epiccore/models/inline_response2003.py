@@ -37,7 +37,7 @@ class InlineResponse2003(object):
         'count': 'int',
         'next': 'str',
         'previous': 'str',
-        'results': 'list[Job]'
+        'results': 'list[DesktopNodeApplication]'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class InlineResponse2003(object):
 
 
         :return: The results of this InlineResponse2003.  # noqa: E501
-        :rtype: list[Job]
+        :rtype: list[DesktopNodeApplication]
         """
         return self._results
 
@@ -145,7 +145,7 @@ class InlineResponse2003(object):
 
 
         :param results: The results of this InlineResponse2003.  # noqa: E501
-        :type results: list[Job]
+        :type results: list[DesktopNodeApplication]
         """
         if self.local_vars_configuration.client_side_validation and results is None:  # noqa: E501
             raise ValueError("Invalid value for `results`, must not be `None`")  # noqa: E501

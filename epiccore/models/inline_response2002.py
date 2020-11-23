@@ -37,7 +37,7 @@ class InlineResponse2002(object):
         'count': 'int',
         'next': 'str',
         'previous': 'str',
-        'results': 'list[Folder]'
+        'results': 'list[DesktopNodeApp]'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class InlineResponse2002(object):
 
 
         :return: The results of this InlineResponse2002.  # noqa: E501
-        :rtype: list[Folder]
+        :rtype: list[DesktopNodeApp]
         """
         return self._results
 
@@ -145,7 +145,7 @@ class InlineResponse2002(object):
 
 
         :param results: The results of this InlineResponse2002.  # noqa: E501
-        :type results: list[Folder]
+        :type results: list[DesktopNodeApp]
         """
         if self.local_vars_configuration.client_side_validation and results is None:  # noqa: E501
             raise ValueError("Invalid value for `results`, must not be `None`")  # noqa: E501

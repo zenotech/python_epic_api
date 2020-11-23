@@ -615,7 +615,7 @@ class JobApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: InlineResponse2003
+        :rtype: InlineResponse2007
         """
         kwargs['_return_http_data_only'] = True
         return self.job_list_with_http_info(**kwargs)  # noqa: E501
@@ -653,7 +653,7 @@ class JobApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(InlineResponse2003, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(InlineResponse2007, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -712,7 +712,7 @@ class JobApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2003',  # noqa: E501
+            response_type='InlineResponse2007',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

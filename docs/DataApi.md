@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **data_folder_list**
-> InlineResponse2002 data_folder_list(limit=limit, offset=offset)
+> InlineResponse2005 data_folder_list(limit=limit, offset=offset)
 
 
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

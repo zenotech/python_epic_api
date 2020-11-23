@@ -37,7 +37,7 @@ class InlineResponse2007(object):
         'count': 'int',
         'next': 'str',
         'previous': 'str',
-        'results': 'list[TeamMembership]'
+        'results': 'list[Job]'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class InlineResponse2007(object):
 
 
         :return: The results of this InlineResponse2007.  # noqa: E501
-        :rtype: list[TeamMembership]
+        :rtype: list[Job]
         """
         return self._results
 
@@ -145,7 +145,7 @@ class InlineResponse2007(object):
 
 
         :param results: The results of this InlineResponse2007.  # noqa: E501
-        :type results: list[TeamMembership]
+        :type results: list[Job]
         """
         if self.local_vars_configuration.client_side_validation and results is None:  # noqa: E501
             raise ValueError("Invalid value for `results`, must not be `None`")  # noqa: E501
