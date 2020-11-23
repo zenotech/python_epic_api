@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -37,7 +37,6 @@ class Team(object):
         'id': 'int',
         'name': 'str',
         'number_of_members': 'int',
-        'root_folder': 'int',
         'user_role': 'str'
     }
 
@@ -45,11 +44,10 @@ class Team(object):
         'id': 'id',
         'name': 'name',
         'number_of_members': 'number_of_members',
-        'root_folder': 'root_folder',
         'user_role': 'user_role'
     }
 
-    def __init__(self, id=None, name=None, number_of_members=None, root_folder=None, user_role=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, number_of_members=None, user_role=None, local_vars_configuration=None):  # noqa: E501
         """Team - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,7 +56,6 @@ class Team(object):
         self._id = None
         self._name = None
         self._number_of_members = None
-        self._root_folder = None
         self._user_role = None
         self.discriminator = None
 
@@ -68,8 +65,6 @@ class Team(object):
             self.name = name
         if number_of_members is not None:
             self.number_of_members = number_of_members
-        if root_folder is not None:
-            self.root_folder = root_folder
         if user_role is not None:
             self.user_role = user_role
 
@@ -144,29 +139,6 @@ class Team(object):
         """
 
         self._number_of_members = number_of_members
-
-    @property
-    def root_folder(self):
-        """Gets the root_folder of this Team.  # noqa: E501
-
-        The ID of the root data folder for this team  # noqa: E501
-
-        :return: The root_folder of this Team.  # noqa: E501
-        :rtype: int
-        """
-        return self._root_folder
-
-    @root_folder.setter
-    def root_folder(self, root_folder):
-        """Sets the root_folder of this Team.
-
-        The ID of the root data folder for this team  # noqa: E501
-
-        :param root_folder: The root_folder of this Team.  # noqa: E501
-        :type root_folder: int
-        """
-
-        self._root_folder = root_folder
 
     @property
     def user_role(self):

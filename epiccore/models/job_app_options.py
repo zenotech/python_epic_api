@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -34,23 +34,27 @@ class JobAppOptions(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'app_options': 'object'
+        'app_options': 'object',
+        'config': 'JobConfiguration'
     }
 
     attribute_map = {
-        'app_options': 'app_options'
+        'app_options': 'app_options',
+        'config': 'config'
     }
 
-    def __init__(self, app_options=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_options=None, config=None, local_vars_configuration=None):  # noqa: E501
         """JobAppOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._app_options = None
+        self._config = None
         self.discriminator = None
 
         self.app_options = app_options
+        self.config = config
 
     @property
     def app_options(self):
@@ -72,10 +76,31 @@ class JobAppOptions(object):
         :param app_options: The app_options of this JobAppOptions.  # noqa: E501
         :type app_options: object
         """
-        if self.local_vars_configuration.client_side_validation and app_options is None:  # noqa: E501
-            raise ValueError("Invalid value for `app_options`, must not be `None`")  # noqa: E501
 
         self._app_options = app_options
+
+    @property
+    def config(self):
+        """Gets the config of this JobAppOptions.  # noqa: E501
+
+
+        :return: The config of this JobAppOptions.  # noqa: E501
+        :rtype: JobConfiguration
+        """
+        return self._config
+
+    @config.setter
+    def config(self, config):
+        """Sets the config of this JobAppOptions.
+
+
+        :param config: The config of this JobAppOptions.  # noqa: E501
+        :type config: JobConfiguration
+        """
+        if self.local_vars_configuration.client_side_validation and config is None:  # noqa: E501
+            raise ValueError("Invalid value for `config`, must not be `None`")  # noqa: E501
+
+        self._config = config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

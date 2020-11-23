@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -34,31 +34,42 @@ class DesktopNodeApp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'id': 'int',
         'name': 'str',
         'description': 'str',
         'versions': 'list[DesktopNodeApplicationVersion]',
-        'image': 'str'
+        'image': 'str',
+        'connection_types': 'list[DesktopNodeConnectionType]',
+        'node_types': 'list[DesktopNodeType]'
     }
 
     attribute_map = {
+        'id': 'id',
         'name': 'name',
         'description': 'description',
         'versions': 'versions',
-        'image': 'image'
+        'image': 'image',
+        'connection_types': 'connection_types',
+        'node_types': 'node_types'
     }
 
-    def __init__(self, name=None, description=None, versions=None, image=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, versions=None, image=None, connection_types=None, node_types=None, local_vars_configuration=None):  # noqa: E501
         """DesktopNodeApp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._id = None
         self._name = None
         self._description = None
         self._versions = None
         self._image = None
+        self._connection_types = None
+        self._node_types = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
         if description is not None:
@@ -67,6 +78,31 @@ class DesktopNodeApp(object):
             self.versions = versions
         if image is not None:
             self.image = image
+        if connection_types is not None:
+            self.connection_types = connection_types
+        if node_types is not None:
+            self.node_types = node_types
+
+    @property
+    def id(self):
+        """Gets the id of this DesktopNodeApp.  # noqa: E501
+
+
+        :return: The id of this DesktopNodeApp.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DesktopNodeApp.
+
+
+        :param id: The id of this DesktopNodeApp.  # noqa: E501
+        :type id: int
+        """
+
+        self._id = id
 
     @property
     def name(self):
@@ -174,6 +210,52 @@ class DesktopNodeApp(object):
             raise ValueError("Invalid value for `image`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._image = image
+
+    @property
+    def connection_types(self):
+        """Gets the connection_types of this DesktopNodeApp.  # noqa: E501
+
+        List of connection types available for this application  # noqa: E501
+
+        :return: The connection_types of this DesktopNodeApp.  # noqa: E501
+        :rtype: list[DesktopNodeConnectionType]
+        """
+        return self._connection_types
+
+    @connection_types.setter
+    def connection_types(self, connection_types):
+        """Sets the connection_types of this DesktopNodeApp.
+
+        List of connection types available for this application  # noqa: E501
+
+        :param connection_types: The connection_types of this DesktopNodeApp.  # noqa: E501
+        :type connection_types: list[DesktopNodeConnectionType]
+        """
+
+        self._connection_types = connection_types
+
+    @property
+    def node_types(self):
+        """Gets the node_types of this DesktopNodeApp.  # noqa: E501
+
+        List of nodes types available for this application  # noqa: E501
+
+        :return: The node_types of this DesktopNodeApp.  # noqa: E501
+        :rtype: list[DesktopNodeType]
+        """
+        return self._node_types
+
+    @node_types.setter
+    def node_types(self, node_types):
+        """Sets the node_types of this DesktopNodeApp.
+
+        List of nodes types available for this application  # noqa: E501
+
+        :param node_types: The node_types of this DesktopNodeApp.  # noqa: E501
+        :type node_types: list[DesktopNodeType]
+        """
+
+        self._node_types = node_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

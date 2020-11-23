@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -34,7 +34,7 @@ class PriceQuote(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'cost': 'str',
+        'cost': 'Cost',
         'ok': 'bool',
         'reason': 'str'
     }
@@ -67,10 +67,9 @@ class PriceQuote(object):
     def cost(self):
         """Gets the cost of this PriceQuote.  # noqa: E501
 
-        The cost of the requested resource. May only be present if the ok field is true.  # noqa: E501
 
         :return: The cost of this PriceQuote.  # noqa: E501
-        :rtype: str
+        :rtype: Cost
         """
         return self._cost
 
@@ -78,10 +77,9 @@ class PriceQuote(object):
     def cost(self, cost):
         """Sets the cost of this PriceQuote.
 
-        The cost of the requested resource. May only be present if the ok field is true.  # noqa: E501
 
         :param cost: The cost of this PriceQuote.  # noqa: E501
-        :type cost: str
+        :type cost: Cost
         """
 
         self._cost = cost

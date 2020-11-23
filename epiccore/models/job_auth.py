@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -36,7 +36,7 @@ class JobAuth(object):
     openapi_types = {
         'enabled': 'bool',
         'all_jobs': 'bool',
-        'cost_threshold': 'str',
+        'cost_threshold': 'CostThreshold',
         'description_str': 'str'
     }
 
@@ -118,10 +118,9 @@ class JobAuth(object):
     def cost_threshold(self):
         """Gets the cost_threshold of this JobAuth.  # noqa: E501
 
-        If job authorisation is enabled and all_jobs is false, jobs costing above this value will require authorisation.  # noqa: E501
 
         :return: The cost_threshold of this JobAuth.  # noqa: E501
-        :rtype: str
+        :rtype: CostThreshold
         """
         return self._cost_threshold
 
@@ -129,10 +128,9 @@ class JobAuth(object):
     def cost_threshold(self, cost_threshold):
         """Sets the cost_threshold of this JobAuth.
 
-        If job authorisation is enabled and all_jobs is false, jobs costing above this value will require authorisation.  # noqa: E501
 
         :param cost_threshold: The cost_threshold of this JobAuth.  # noqa: E501
-        :type cost_threshold: str
+        :type cost_threshold: CostThreshold
         """
 
         self._cost_threshold = cost_threshold

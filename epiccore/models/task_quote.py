@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -36,12 +36,12 @@ class TaskQuote(object):
     openapi_types = {
         'reference': 'str',
         'queue_id': 'int',
-        'iaas_cost': 'str',
-        'software_cost': 'str',
-        'service_charge': 'str',
-        'discount': 'str',
-        'tax': 'str',
-        'total': 'str'
+        'iaas_cost': 'IaasCost',
+        'software_cost': 'SoftwareCost',
+        'service_charge': 'ServiceCharge',
+        'discount': 'Discount',
+        'tax': 'Tax',
+        'total': 'Total1'
     }
 
     attribute_map = {
@@ -147,10 +147,9 @@ class TaskQuote(object):
     def iaas_cost(self):
         """Gets the iaas_cost of this TaskQuote.  # noqa: E501
 
-        The cost of the HPC resource.  # noqa: E501
 
         :return: The iaas_cost of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: IaasCost
         """
         return self._iaas_cost
 
@@ -158,10 +157,9 @@ class TaskQuote(object):
     def iaas_cost(self, iaas_cost):
         """Sets the iaas_cost of this TaskQuote.
 
-        The cost of the HPC resource.  # noqa: E501
 
         :param iaas_cost: The iaas_cost of this TaskQuote.  # noqa: E501
-        :type iaas_cost: str
+        :type iaas_cost: IaasCost
         """
 
         self._iaas_cost = iaas_cost
@@ -170,10 +168,9 @@ class TaskQuote(object):
     def software_cost(self):
         """Gets the software_cost of this TaskQuote.  # noqa: E501
 
-        The cost of the application.  # noqa: E501
 
         :return: The software_cost of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: SoftwareCost
         """
         return self._software_cost
 
@@ -181,10 +178,9 @@ class TaskQuote(object):
     def software_cost(self, software_cost):
         """Sets the software_cost of this TaskQuote.
 
-        The cost of the application.  # noqa: E501
 
         :param software_cost: The software_cost of this TaskQuote.  # noqa: E501
-        :type software_cost: str
+        :type software_cost: SoftwareCost
         """
 
         self._software_cost = software_cost
@@ -193,10 +189,9 @@ class TaskQuote(object):
     def service_charge(self):
         """Gets the service_charge of this TaskQuote.  # noqa: E501
 
-        The EPIC service charge for the job.  # noqa: E501
 
         :return: The service_charge of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: ServiceCharge
         """
         return self._service_charge
 
@@ -204,10 +199,9 @@ class TaskQuote(object):
     def service_charge(self, service_charge):
         """Sets the service_charge of this TaskQuote.
 
-        The EPIC service charge for the job.  # noqa: E501
 
         :param service_charge: The service_charge of this TaskQuote.  # noqa: E501
-        :type service_charge: str
+        :type service_charge: ServiceCharge
         """
 
         self._service_charge = service_charge
@@ -216,10 +210,9 @@ class TaskQuote(object):
     def discount(self):
         """Gets the discount of this TaskQuote.  # noqa: E501
 
-        The reduction due to discounts.  # noqa: E501
 
         :return: The discount of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: Discount
         """
         return self._discount
 
@@ -227,10 +220,9 @@ class TaskQuote(object):
     def discount(self, discount):
         """Sets the discount of this TaskQuote.
 
-        The reduction due to discounts.  # noqa: E501
 
         :param discount: The discount of this TaskQuote.  # noqa: E501
-        :type discount: str
+        :type discount: Discount
         """
 
         self._discount = discount
@@ -239,10 +231,9 @@ class TaskQuote(object):
     def tax(self):
         """Gets the tax of this TaskQuote.  # noqa: E501
 
-        The tax due for the job.  # noqa: E501
 
         :return: The tax of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: Tax
         """
         return self._tax
 
@@ -250,10 +241,9 @@ class TaskQuote(object):
     def tax(self, tax):
         """Sets the tax of this TaskQuote.
 
-        The tax due for the job.  # noqa: E501
 
         :param tax: The tax of this TaskQuote.  # noqa: E501
-        :type tax: str
+        :type tax: Tax
         """
 
         self._tax = tax
@@ -262,10 +252,9 @@ class TaskQuote(object):
     def total(self):
         """Gets the total of this TaskQuote.  # noqa: E501
 
-        The total cost of the job.  # noqa: E501
 
         :return: The total of this TaskQuote.  # noqa: E501
-        :rtype: str
+        :rtype: Total1
         """
         return self._total
 
@@ -273,10 +262,9 @@ class TaskQuote(object):
     def total(self, total):
         """Sets the total of this TaskQuote.
 
-        The total cost of the job.  # noqa: E501
 
         :param total: The total of this TaskQuote.  # noqa: E501
-        :type total: str
+        :type total: Total1
         """
 
         self._total = total

@@ -1,11 +1,11 @@
-# TeamMembership
+# IaasCost
 
+The cost of the HPC resource.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ID for this team | [optional] [readonly] 
-**name** | **str** | Name of this team | [optional] [readonly] 
-**role** | **str** | Role in the team | [optional] [readonly] 
+**amount** | **float** | Amount of the currency | 
+**currency** | **str** | Type of currency | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

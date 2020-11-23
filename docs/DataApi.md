@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **data_folder_list**
-> InlineResponse2005 data_folder_list(limit=limit, offset=offset)
+> InlineResponse2003 data_folder_list(name=name, path=path, limit=limit, offset=offset)
 
 
 
@@ -49,11 +49,13 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.DataApi(api_client)
-    limit = 56 # int | Number of results to return per page. (optional)
+    name = 'name_example' # str | Filter by folder name (optional)
+path = 'path_example' # str | Filter by folder path (optional)
+limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
-        api_response = api_instance.data_folder_list(limit=limit, offset=offset)
+        api_response = api_instance.data_folder_list(name=name, path=path, limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DataApi->data_folder_list: %s\n" % e)
@@ -63,12 +65,14 @@ offset = 56 # int | The initial index from which to return the results. (optiona
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filter by folder name | [optional] 
+ **path** | **str**| Filter by folder path | [optional] 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

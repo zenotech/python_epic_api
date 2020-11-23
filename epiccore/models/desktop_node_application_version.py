@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -35,17 +35,15 @@ class DesktopNodeApplicationVersion(object):
     """
     openapi_types = {
         'id': 'int',
-        'application_version': 'str',
-        'connection_types': 'list[DesktopNodeConnectionType]'
+        'application_version': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'application_version': 'application_version',
-        'connection_types': 'connection_types'
+        'application_version': 'application_version'
     }
 
-    def __init__(self, id=None, application_version=None, connection_types=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, application_version=None, local_vars_configuration=None):  # noqa: E501
         """DesktopNodeApplicationVersion - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,14 +51,11 @@ class DesktopNodeApplicationVersion(object):
 
         self._id = None
         self._application_version = None
-        self._connection_types = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         self.application_version = application_version
-        if connection_types is not None:
-            self.connection_types = connection_types
 
     @property
     def id(self):
@@ -115,29 +110,6 @@ class DesktopNodeApplicationVersion(object):
             raise ValueError("Invalid value for `application_version`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._application_version = application_version
-
-    @property
-    def connection_types(self):
-        """Gets the connection_types of this DesktopNodeApplicationVersion.  # noqa: E501
-
-        List of connection types for this VizNodeApplicationVersion  # noqa: E501
-
-        :return: The connection_types of this DesktopNodeApplicationVersion.  # noqa: E501
-        :rtype: list[DesktopNodeConnectionType]
-        """
-        return self._connection_types
-
-    @connection_types.setter
-    def connection_types(self, connection_types):
-        """Sets the connection_types of this DesktopNodeApplicationVersion.
-
-        List of connection types for this VizNodeApplicationVersion  # noqa: E501
-
-        :param connection_types: The connection_types of this DesktopNodeApplicationVersion.  # noqa: E501
-        :type connection_types: list[DesktopNodeConnectionType]
-        """
-
-        self._connection_types = connection_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

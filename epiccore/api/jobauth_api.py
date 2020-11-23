@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -63,7 +63,7 @@ class JobauthApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: InlineResponse2008
+        :rtype: InlineResponse2006
         """
         kwargs['_return_http_data_only'] = True
         return self.jobauth_list_with_http_info(**kwargs)  # noqa: E501
@@ -101,7 +101,7 @@ class JobauthApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(InlineResponse2008, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(InlineResponse2006, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -160,7 +160,7 @@ class JobauthApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2008',  # noqa: E501
+            response_type='InlineResponse2006',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

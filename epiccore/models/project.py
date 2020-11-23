@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -61,7 +61,8 @@ class Project(object):
 
         if pk is not None:
             self.pk = pk
-        self.project_id = project_id
+        if project_id is not None:
+            self.project_id = project_id
         self.description = description
         if closed is not None:
             self.closed = closed
@@ -105,11 +106,6 @@ class Project(object):
         :param project_id: The project_id of this Project.  # noqa: E501
         :type project_id: str
         """
-        if self.local_vars_configuration.client_side_validation and project_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `project_id`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                project_id is not None and len(project_id) > 100):
-            raise ValueError("Invalid value for `project_id`, length must be less than or equal to `100`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 project_id is not None and len(project_id) < 1):
             raise ValueError("Invalid value for `project_id`, length must be greater than or equal to `1`")  # noqa: E501

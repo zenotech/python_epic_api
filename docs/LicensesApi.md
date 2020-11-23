@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **licenses_list**
-> InlineResponse20010 licenses_list(limit=limit, offset=offset)
+> InlineResponse2008 licenses_list(limit=limit, offset=offset)
 
 
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 

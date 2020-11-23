@@ -14,4 +14,3 @@ from epiccore.api.licenses_api import LicensesApi
 from epiccore.api.profile_api import ProfileApi
 from epiccore.api.projects_api import ProjectsApi
 from epiccore.api.teams_api import TeamsApi
-from epiccore.api.viz_api import VizApi

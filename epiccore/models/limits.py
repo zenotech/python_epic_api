@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -35,9 +35,9 @@ class Limits(object):
     """
     openapi_types = {
         'limits': 'list[Limit]',
-        'max_limit': 'str',
+        'max_limit': 'MaxLimit',
         'max_limit_str': 'str',
-        'total': 'str',
+        'total': 'Total',
         'total_str': 'str'
     }
 
@@ -101,10 +101,9 @@ class Limits(object):
     def max_limit(self):
         """Gets the max_limit of this Limits.  # noqa: E501
 
-        Maximum monthly spend limit for the current user's billing profile. The sum of all user/team limits may not exceed this value  # noqa: E501
 
         :return: The max_limit of this Limits.  # noqa: E501
-        :rtype: str
+        :rtype: MaxLimit
         """
         return self._max_limit
 
@@ -112,10 +111,9 @@ class Limits(object):
     def max_limit(self, max_limit):
         """Sets the max_limit of this Limits.
 
-        Maximum monthly spend limit for the current user's billing profile. The sum of all user/team limits may not exceed this value  # noqa: E501
 
         :param max_limit: The max_limit of this Limits.  # noqa: E501
-        :type max_limit: str
+        :type max_limit: MaxLimit
         """
 
         self._max_limit = max_limit
@@ -153,10 +151,9 @@ class Limits(object):
     def total(self):
         """Gets the total of this Limits.  # noqa: E501
 
-        The current total monthly spend limit for the current user's billing profile.  # noqa: E501
 
         :return: The total of this Limits.  # noqa: E501
-        :rtype: str
+        :rtype: Total
         """
         return self._total
 
@@ -164,10 +161,9 @@ class Limits(object):
     def total(self, total):
         """Sets the total of this Limits.
 
-        The current total monthly spend limit for the current user's billing profile.  # noqa: E501
 
         :param total: The total of this Limits.  # noqa: E501
-        :type total: str
+        :type total: Total
         """
 
         self._total = total

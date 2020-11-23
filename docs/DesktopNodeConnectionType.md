@@ -1,6 +1,5 @@
 # DesktopNodeConnectionType
 
-List of connection types for this VizNodeApplicationVersion
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -87,9 +87,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **desktop_list**
-> InlineResponse2006 desktop_list(limit=limit, offset=offset)
+> InlineResponse2004 desktop_list(limit=limit, offset=offset)
 
 
+
+List Desktop instances
 
 ### Example
 
@@ -144,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -239,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **desktop_read**
-> DesktopNode desktop_read(id)
+> DesktopInstance desktop_read(id)
 
 
 
@@ -294,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DesktopNode**](DesktopNode.md)
+[**DesktopInstance**](DesktopInstance.md)
 
 ### Authorization
 

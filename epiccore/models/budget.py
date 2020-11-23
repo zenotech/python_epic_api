@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -34,7 +34,7 @@ class Budget(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'monthly_limit': 'str'
+        'monthly_limit': 'MonthlyLimit'
     }
 
     attribute_map = {
@@ -56,10 +56,9 @@ class Budget(object):
     def monthly_limit(self):
         """Gets the monthly_limit of this Budget.  # noqa: E501
 
-        Monthly limit for this team / user  # noqa: E501
 
         :return: The monthly_limit of this Budget.  # noqa: E501
-        :rtype: str
+        :rtype: MonthlyLimit
         """
         return self._monthly_limit
 
@@ -67,10 +66,9 @@ class Budget(object):
     def monthly_limit(self, monthly_limit):
         """Sets the monthly_limit of this Budget.
 
-        Monthly limit for this team / user  # noqa: E501
 
         :param monthly_limit: The monthly_limit of this Budget.  # noqa: E501
-        :type monthly_limit: str
+        :type monthly_limit: MonthlyLimit
         """
         if self.local_vars_configuration.client_side_validation and monthly_limit is None:  # noqa: E501
             raise ValueError("Invalid value for `monthly_limit`, must not be `None`")  # noqa: E501

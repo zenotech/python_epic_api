@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_list**
-> InlineResponse2007 job_list(limit=limit, offset=offset)
+> InlineResponse2005 job_list(limit=limit, offset=offset)
 
 
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 

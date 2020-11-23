@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -48,7 +48,7 @@ class Job(object):
         'project': 'int',
         'invoice_reference': 'str',
         'config': 'JobConfiguration',
-        'job_steps': 'JobStep'
+        'job_steps': 'list[JobStep]'
     }
 
     attribute_map = {
@@ -475,9 +475,10 @@ class Job(object):
     def job_steps(self):
         """Gets the job_steps of this Job.  # noqa: E501
 
+        The job steps associated with this Job  # noqa: E501
 
         :return: The job_steps of this Job.  # noqa: E501
-        :rtype: JobStep
+        :rtype: list[JobStep]
         """
         return self._job_steps
 
@@ -485,9 +486,10 @@ class Job(object):
     def job_steps(self, job_steps):
         """Sets the job_steps of this Job.
 
+        The job steps associated with this Job  # noqa: E501
 
         :param job_steps: The job_steps of this Job.  # noqa: E501
-        :type job_steps: JobStep
+        :type job_steps: list[JobStep]
         """
 
         self._job_steps = job_steps

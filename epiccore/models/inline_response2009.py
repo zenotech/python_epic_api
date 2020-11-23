@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -37,7 +37,7 @@ class InlineResponse2009(object):
         'count': 'int',
         'next': 'str',
         'previous': 'str',
-        'results': 'list[JobStep]'
+        'results': 'list[Project]'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class InlineResponse2009(object):
 
 
         :return: The results of this InlineResponse2009.  # noqa: E501
-        :rtype: list[JobStep]
+        :rtype: list[Project]
         """
         return self._results
 
@@ -145,7 +145,7 @@ class InlineResponse2009(object):
 
 
         :param results: The results of this InlineResponse2009.  # noqa: E501
-        :type results: list[JobStep]
+        :type results: list[Project]
         """
         if self.local_vars_configuration.client_side_validation and results is None:  # noqa: E501
             raise ValueError("Invalid value for `results`, must not be `None`")  # noqa: E501

@@ -5,7 +5,7 @@ Project that this budget applies to
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **int** |  | [optional] [readonly] 
-**project_id** | **str** |  | 
+**project_id** | **str** |  | [optional] [readonly] 
 **description** | **str** |  | [optional] 
 **closed** | **bool** |  | [optional] 
 

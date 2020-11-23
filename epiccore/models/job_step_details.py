@@ -3,7 +3,7 @@
 """
     EPIC API
 
-    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Used by the EPIC CLI (https://github.com/zenotech/epic-cli).                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
+    REST API for interacting with EPIC (https://epic.zenotech.com) services. <br />                             Please note this API is in BETA and does not yet contain                             all EPIC functionality.  # noqa: E501
 
     The version of the OpenAPI document: v2
     Contact: support@zenotech.com
@@ -47,7 +47,7 @@ class JobStepDetails(object):
         'exit_code': 'int',
         'start': 'datetime',
         'end': 'datetime',
-        'wallclock': 'float',
+        'wallclock': 'str',
         'logs': 'JobLog'
     }
 
@@ -468,10 +468,9 @@ class JobStepDetails(object):
     def wallclock(self):
         """Gets the wallclock of this JobStepDetails.  # noqa: E501
 
-        The CPU wallclock time used for this job step  # noqa: E501
 
         :return: The wallclock of this JobStepDetails.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._wallclock
 
@@ -479,10 +478,9 @@ class JobStepDetails(object):
     def wallclock(self, wallclock):
         """Sets the wallclock of this JobStepDetails.
 
-        The CPU wallclock time used for this job step  # noqa: E501
 
         :param wallclock: The wallclock of this JobStepDetails.  # noqa: E501
-        :type wallclock: float
+        :type wallclock: str
         """
 
         self._wallclock = wallclock
