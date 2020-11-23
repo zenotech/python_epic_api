@@ -35,8 +35,9 @@ class BatchQueueDetails(object):
     """
     openapi_types = {
         'id': 'int',
-        'display_name': 'str',
-        'display_description': 'str',
+        'name': 'str',
+        'description': 'str',
+        'cluster_name': 'str',
         'max_runtime': 'int',
         'max_allocation': 'int',
         'reported_avail_tasks': 'int',
@@ -48,8 +49,9 @@ class BatchQueueDetails(object):
 
     attribute_map = {
         'id': 'id',
-        'display_name': 'display_name',
-        'display_description': 'display_description',
+        'name': 'name',
+        'description': 'description',
+        'cluster_name': 'cluster_name',
         'max_runtime': 'max_runtime',
         'max_allocation': 'max_allocation',
         'reported_avail_tasks': 'reported_avail_tasks',
@@ -59,15 +61,16 @@ class BatchQueueDetails(object):
         'resource_config': 'resource_config'
     }
 
-    def __init__(self, id=None, display_name=None, display_description=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, cluster_name=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, local_vars_configuration=None):  # noqa: E501
         """BatchQueueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
-        self._display_name = None
-        self._display_description = None
+        self._name = None
+        self._description = None
+        self._cluster_name = None
         self._max_runtime = None
         self._max_allocation = None
         self._reported_avail_tasks = None
@@ -79,9 +82,11 @@ class BatchQueueDetails(object):
 
         if id is not None:
             self.id = id
-        if display_name is not None:
-            self.display_name = display_name
-        self.display_description = display_description
+        if name is not None:
+            self.name = name
+        self.description = description
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
         if max_runtime is not None:
             self.max_runtime = max_runtime
         if max_allocation is not None:
@@ -115,55 +120,82 @@ class BatchQueueDetails(object):
         self._id = id
 
     @property
-    def display_name(self):
-        """Gets the display_name of this BatchQueueDetails.  # noqa: E501
+    def name(self):
+        """Gets the name of this BatchQueueDetails.  # noqa: E501
 
 
-        :return: The display_name of this BatchQueueDetails.  # noqa: E501
+        :return: The name of this BatchQueueDetails.  # noqa: E501
         :rtype: str
         """
-        return self._display_name
+        return self._name
 
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this BatchQueueDetails.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this BatchQueueDetails.
 
 
-        :param display_name: The display_name of this BatchQueueDetails.  # noqa: E501
-        :type display_name: str
+        :param name: The name of this BatchQueueDetails.  # noqa: E501
+        :type name: str
         """
         if (self.local_vars_configuration.client_side_validation and
-                display_name is not None and len(display_name) > 100):
-            raise ValueError("Invalid value for `display_name`, length must be less than or equal to `100`")  # noqa: E501
+                name is not None and len(name) > 100):
+            raise ValueError("Invalid value for `name`, length must be less than or equal to `100`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                display_name is not None and len(display_name) < 1):
-            raise ValueError("Invalid value for `display_name`, length must be greater than or equal to `1`")  # noqa: E501
+                name is not None and len(name) < 1):
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._display_name = display_name
+        self._name = name
 
     @property
-    def display_description(self):
-        """Gets the display_description of this BatchQueueDetails.  # noqa: E501
+    def description(self):
+        """Gets the description of this BatchQueueDetails.  # noqa: E501
 
 
-        :return: The display_description of this BatchQueueDetails.  # noqa: E501
+        :return: The description of this BatchQueueDetails.  # noqa: E501
         :rtype: str
         """
-        return self._display_description
+        return self._description
 
-    @display_description.setter
-    def display_description(self, display_description):
-        """Sets the display_description of this BatchQueueDetails.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this BatchQueueDetails.
 
 
-        :param display_description: The display_description of this BatchQueueDetails.  # noqa: E501
-        :type display_description: str
+        :param description: The description of this BatchQueueDetails.  # noqa: E501
+        :type description: str
         """
         if (self.local_vars_configuration.client_side_validation and
-                display_description is not None and len(display_description) > 1000):
-            raise ValueError("Invalid value for `display_description`, length must be less than or equal to `1000`")  # noqa: E501
+                description is not None and len(description) > 1000):
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `1000`")  # noqa: E501
 
-        self._display_description = display_description
+        self._description = description
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this BatchQueueDetails.  # noqa: E501
+
+
+        :return: The cluster_name of this BatchQueueDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this BatchQueueDetails.
+
+
+        :param cluster_name: The cluster_name of this BatchQueueDetails.  # noqa: E501
+        :type cluster_name: str
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                cluster_name is not None and len(cluster_name) > 100):
+            raise ValueError("Invalid value for `cluster_name`, length must be less than or equal to `100`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cluster_name is not None and len(cluster_name) < 1):
+            raise ValueError("Invalid value for `cluster_name`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._cluster_name = cluster_name
 
     @property
     def max_runtime(self):

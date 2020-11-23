@@ -4,8 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**display_name** | **str** |  | [optional] 
-**display_description** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**cluster_name** | **str** |  | [optional] [readonly] 
 **max_runtime** | **int** |  | [optional] 
 **max_allocation** | **int** |  | [optional] 
 **reported_avail_tasks** | **int** |  | [optional] 

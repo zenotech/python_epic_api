@@ -37,8 +37,8 @@ class ClusterNodeConfig(object):
         'accelerator': 'AcceleratorConfig',
         'cpus': 'int',
         'cores_per_cpu': 'int',
-        'threads_per_core': 'str',
-        'memory': 'int'
+        'threads_per_core': 'int',
+        'memory': 'str'
     }
 
     attribute_map = {
@@ -69,7 +69,8 @@ class ClusterNodeConfig(object):
             self.cores_per_cpu = cores_per_cpu
         if threads_per_core is not None:
             self.threads_per_core = threads_per_core
-        self.memory = memory
+        if memory is not None:
+            self.memory = memory
 
     @property
     def accelerator(self):
@@ -114,8 +115,8 @@ class ClusterNodeConfig(object):
                 cpus is not None and cpus > 2147483647):  # noqa: E501
             raise ValueError("Invalid value for `cpus`, must be a value less than or equal to `2147483647`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                cpus is not None and cpus < 0):  # noqa: E501
-            raise ValueError("Invalid value for `cpus`, must be a value greater than or equal to `0`")  # noqa: E501
+                cpus is not None and cpus < 1):  # noqa: E501
+            raise ValueError("Invalid value for `cpus`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._cpus = cpus
 
@@ -141,8 +142,8 @@ class ClusterNodeConfig(object):
                 cores_per_cpu is not None and cores_per_cpu > 2147483647):  # noqa: E501
             raise ValueError("Invalid value for `cores_per_cpu`, must be a value less than or equal to `2147483647`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                cores_per_cpu is not None and cores_per_cpu < 0):  # noqa: E501
-            raise ValueError("Invalid value for `cores_per_cpu`, must be a value greater than or equal to `0`")  # noqa: E501
+                cores_per_cpu is not None and cores_per_cpu < 1):  # noqa: E501
+            raise ValueError("Invalid value for `cores_per_cpu`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._cores_per_cpu = cores_per_cpu
 
@@ -152,7 +153,7 @@ class ClusterNodeConfig(object):
 
 
         :return: The threads_per_core of this ClusterNodeConfig.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._threads_per_core
 
@@ -162,8 +163,11 @@ class ClusterNodeConfig(object):
 
 
         :param threads_per_core: The threads_per_core of this ClusterNodeConfig.  # noqa: E501
-        :type threads_per_core: str
+        :type threads_per_core: int
         """
+        if (self.local_vars_configuration.client_side_validation and
+                threads_per_core is not None and threads_per_core < 1):  # noqa: E501
+            raise ValueError("Invalid value for `threads_per_core`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._threads_per_core = threads_per_core
 
@@ -173,7 +177,7 @@ class ClusterNodeConfig(object):
 
 
         :return: The memory of this ClusterNodeConfig.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._memory
 
@@ -183,10 +187,8 @@ class ClusterNodeConfig(object):
 
 
         :param memory: The memory of this ClusterNodeConfig.  # noqa: E501
-        :type memory: int
+        :type memory: str
         """
-        if self.local_vars_configuration.client_side_validation and memory is None:  # noqa: E501
-            raise ValueError("Invalid value for `memory`, must not be `None`")  # noqa: E501
 
         self._memory = memory
 

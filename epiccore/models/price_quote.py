@@ -35,31 +35,31 @@ class PriceQuote(object):
     """
     openapi_types = {
         'cost': 'Cost',
-        'ok': 'bool',
+        'valid': 'bool',
         'reason': 'str'
     }
 
     attribute_map = {
         'cost': 'cost',
-        'ok': 'ok',
+        'valid': 'valid',
         'reason': 'reason'
     }
 
-    def __init__(self, cost=None, ok=None, reason=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cost=None, valid=None, reason=None, local_vars_configuration=None):  # noqa: E501
         """PriceQuote - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cost = None
-        self._ok = None
+        self._valid = None
         self._reason = None
         self.discriminator = None
 
         if cost is not None:
             self.cost = cost
-        if ok is not None:
-            self.ok = ok
+        if valid is not None:
+            self.valid = valid
         if reason is not None:
             self.reason = reason
 
@@ -85,27 +85,27 @@ class PriceQuote(object):
         self._cost = cost
 
     @property
-    def ok(self):
-        """Gets the ok of this PriceQuote.  # noqa: E501
+    def valid(self):
+        """Gets the valid of this PriceQuote.  # noqa: E501
 
         Whether the requested spec represents a valid configuration that could be launched  # noqa: E501
 
-        :return: The ok of this PriceQuote.  # noqa: E501
+        :return: The valid of this PriceQuote.  # noqa: E501
         :rtype: bool
         """
-        return self._ok
+        return self._valid
 
-    @ok.setter
-    def ok(self, ok):
-        """Sets the ok of this PriceQuote.
+    @valid.setter
+    def valid(self, valid):
+        """Sets the valid of this PriceQuote.
 
         Whether the requested spec represents a valid configuration that could be launched  # noqa: E501
 
-        :param ok: The ok of this PriceQuote.  # noqa: E501
-        :type ok: bool
+        :param valid: The valid of this PriceQuote.  # noqa: E501
+        :type valid: bool
         """
 
-        self._ok = ok
+        self._valid = valid
 
     @property
     def reason(self):

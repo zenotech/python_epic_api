@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_clusters_list**
-> InlineResponse2001 catalog_clusters_list(cluster_name=cluster_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
+> InlineResponse2001 catalog_clusters_list(cluster_name=cluster_name, queue_name=queue_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
 
 
 
@@ -210,12 +210,13 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
     cluster_name = 'cluster_name_example' # str | Filter by cluster name (optional)
+queue_name = 'queue_name_example' # str | Filter by queue name (optional)
 allowed_apps = 'allowed_apps_example' # str | Filter by application id available on queue (optional)
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
-        api_response = api_instance.catalog_clusters_list(cluster_name=cluster_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
+        api_response = api_instance.catalog_clusters_list(cluster_name=cluster_name, queue_name=queue_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CatalogApi->catalog_clusters_list: %s\n" % e)
@@ -226,6 +227,7 @@ offset = 56 # int | The initial index from which to return the results. (optiona
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster_name** | **str**| Filter by cluster name | [optional] 
+ **queue_name** | **str**| Filter by queue name | [optional] 
  **allowed_apps** | **str**| Filter by application id available on queue | [optional] 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 

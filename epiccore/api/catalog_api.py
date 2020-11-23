@@ -321,6 +321,8 @@ class CatalogApi(object):
 
         :param cluster_name: Filter by cluster name
         :type cluster_name: str
+        :param queue_name: Filter by queue name
+        :type queue_name: str
         :param allowed_apps: Filter by application id available on queue
         :type allowed_apps: str
         :param limit: Number of results to return per page.
@@ -357,6 +359,8 @@ class CatalogApi(object):
 
         :param cluster_name: Filter by cluster name
         :type cluster_name: str
+        :param queue_name: Filter by queue name
+        :type queue_name: str
         :param allowed_apps: Filter by application id available on queue
         :type allowed_apps: str
         :param limit: Number of results to return per page.
@@ -390,6 +394,7 @@ class CatalogApi(object):
 
         all_params = [
             'cluster_name',
+            'queue_name',
             'allowed_apps',
             'limit',
             'offset'
@@ -420,6 +425,8 @@ class CatalogApi(object):
         query_params = []
         if 'cluster_name' in local_var_params and local_var_params['cluster_name'] is not None:  # noqa: E501
             query_params.append(('cluster_name', local_var_params['cluster_name']))  # noqa: E501
+        if 'queue_name' in local_var_params and local_var_params['queue_name'] is not None:  # noqa: E501
+            query_params.append(('queue_name', local_var_params['queue_name']))  # noqa: E501
         if 'allowed_apps' in local_var_params and local_var_params['allowed_apps'] is not None:  # noqa: E501
             query_params.append(('allowed_apps', local_var_params['allowed_apps']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501

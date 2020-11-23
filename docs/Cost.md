@@ -1,6 +1,6 @@
 # Cost
 
-The cost of the requested resource. May only be present if the ok field is true.
+The cost of the requested resource. May only be present if the valid field is true.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
