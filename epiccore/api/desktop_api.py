@@ -317,7 +317,7 @@ class DesktopApi(object):
         >>> result = thread.get()
 
         :param data: (required)
-        :type data: DesktopNodeLaunchSpec
+        :type data: DesktopNodeQuote
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -347,7 +347,7 @@ class DesktopApi(object):
         >>> result = thread.get()
 
         :param data: (required)
-        :type data: DesktopNodeLaunchSpec
+        :type data: DesktopNodeQuote
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code

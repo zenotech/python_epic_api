@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
  - [DesktopNodeApplicationVersionSummary](docs/DesktopNodeApplicationVersionSummary.md)
  - [DesktopNodeConnectionType](docs/DesktopNodeConnectionType.md)
  - [DesktopNodeLaunchSpec](docs/DesktopNodeLaunchSpec.md)
+ - [DesktopNodeQuote](docs/DesktopNodeQuote.md)
  - [DesktopNodeType](docs/DesktopNodeType.md)
  - [Discount](docs/Discount.md)
  - [Folder](docs/Folder.md)

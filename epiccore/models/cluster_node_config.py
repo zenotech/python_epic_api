@@ -36,6 +36,7 @@ class ClusterNodeConfig(object):
     openapi_types = {
         'accelerator': 'AcceleratorConfig',
         'cpus': 'int',
+        'cpu_generation': 'str',
         'cores_per_cpu': 'int',
         'threads_per_core': 'int',
         'memory': 'str'
@@ -44,12 +45,13 @@ class ClusterNodeConfig(object):
     attribute_map = {
         'accelerator': 'accelerator',
         'cpus': 'cpus',
+        'cpu_generation': 'cpu_generation',
         'cores_per_cpu': 'cores_per_cpu',
         'threads_per_core': 'threads_per_core',
         'memory': 'memory'
     }
 
-    def __init__(self, accelerator=None, cpus=None, cores_per_cpu=None, threads_per_core=None, memory=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accelerator=None, cpus=None, cpu_generation=None, cores_per_cpu=None, threads_per_core=None, memory=None, local_vars_configuration=None):  # noqa: E501
         """ClusterNodeConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class ClusterNodeConfig(object):
 
         self._accelerator = None
         self._cpus = None
+        self._cpu_generation = None
         self._cores_per_cpu = None
         self._threads_per_core = None
         self._memory = None
@@ -65,6 +68,8 @@ class ClusterNodeConfig(object):
         self.accelerator = accelerator
         if cpus is not None:
             self.cpus = cpus
+        if cpu_generation is not None:
+            self.cpu_generation = cpu_generation
         if cores_per_cpu is not None:
             self.cores_per_cpu = cores_per_cpu
         if threads_per_core is not None:
@@ -119,6 +124,33 @@ class ClusterNodeConfig(object):
             raise ValueError("Invalid value for `cpus`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._cpus = cpus
+
+    @property
+    def cpu_generation(self):
+        """Gets the cpu_generation of this ClusterNodeConfig.  # noqa: E501
+
+
+        :return: The cpu_generation of this ClusterNodeConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._cpu_generation
+
+    @cpu_generation.setter
+    def cpu_generation(self, cpu_generation):
+        """Sets the cpu_generation of this ClusterNodeConfig.
+
+
+        :param cpu_generation: The cpu_generation of this ClusterNodeConfig.  # noqa: E501
+        :type cpu_generation: str
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                cpu_generation is not None and len(cpu_generation) > 255):
+            raise ValueError("Invalid value for `cpu_generation`, length must be less than or equal to `255`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cpu_generation is not None and len(cpu_generation) < 1):
+            raise ValueError("Invalid value for `cpu_generation`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._cpu_generation = cpu_generation
 
     @property
     def cores_per_cpu(self):

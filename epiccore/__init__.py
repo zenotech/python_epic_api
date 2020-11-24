@@ -59,6 +59,7 @@ from epiccore.models.desktop_node_application_version import DesktopNodeApplicat
 from epiccore.models.desktop_node_application_version_summary import DesktopNodeApplicationVersionSummary
 from epiccore.models.desktop_node_connection_type import DesktopNodeConnectionType
 from epiccore.models.desktop_node_launch_spec import DesktopNodeLaunchSpec
+from epiccore.models.desktop_node_quote import DesktopNodeQuote
 from epiccore.models.desktop_node_type import DesktopNodeType
 from epiccore.models.discount import Discount
 from epiccore.models.folder import Folder

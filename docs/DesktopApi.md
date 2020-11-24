@@ -205,7 +205,7 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.DesktopApi(api_client)
-    data = epiccore.DesktopNodeLaunchSpec() # DesktopNodeLaunchSpec | 
+    data = epiccore.DesktopNodeQuote() # DesktopNodeQuote | 
 
     try:
         api_response = api_instance.desktop_quote(data)
@@ -218,7 +218,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**DesktopNodeLaunchSpec**](DesktopNodeLaunchSpec.md)|  | 
+ **data** | [**DesktopNodeQuote**](DesktopNodeQuote.md)|  | 
 
 ### Return type
 

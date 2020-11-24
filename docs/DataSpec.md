@@ -1,6 +1,6 @@
 # DataSpec
 
-Input Data specification for this job
+Input data specification for this desktop
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

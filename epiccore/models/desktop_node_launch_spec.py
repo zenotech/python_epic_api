@@ -34,97 +34,69 @@ class DesktopNodeLaunchSpec(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'node_type': 'int',
         'application_version': 'int',
-        'connection': 'int',
-        'folder': 'int',
-        'project': 'int',
+        'node_type': 'int',
+        'connection_type': 'int',
         'runtime': 'int',
-        'mount_type': 'str',
         'secure_ip': 'bool',
         'ip_address': 'str',
-        'invoice_reference': 'str'
+        'invoice_reference': 'str',
+        'data_path': 'DataSpec',
+        'mount_type': 'str',
+        'project': 'int'
     }
 
     attribute_map = {
-        'node_type': 'node_type',
         'application_version': 'application_version',
-        'connection': 'connection',
-        'folder': 'folder',
-        'project': 'project',
+        'node_type': 'node_type',
+        'connection_type': 'connection_type',
         'runtime': 'runtime',
-        'mount_type': 'mount_type',
         'secure_ip': 'secure_ip',
         'ip_address': 'ip_address',
-        'invoice_reference': 'invoice_reference'
+        'invoice_reference': 'invoice_reference',
+        'data_path': 'data_path',
+        'mount_type': 'mount_type',
+        'project': 'project'
     }
 
-    def __init__(self, node_type=None, application_version=None, connection=None, folder=None, project=None, runtime=None, mount_type=None, secure_ip=False, ip_address=None, invoice_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, application_version=None, node_type=None, connection_type=None, runtime=None, secure_ip=False, ip_address=None, invoice_reference=None, data_path=None, mount_type=None, project=None, local_vars_configuration=None):  # noqa: E501
         """DesktopNodeLaunchSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._node_type = None
         self._application_version = None
-        self._connection = None
-        self._folder = None
-        self._project = None
+        self._node_type = None
+        self._connection_type = None
         self._runtime = None
-        self._mount_type = None
         self._secure_ip = None
         self._ip_address = None
         self._invoice_reference = None
+        self._data_path = None
+        self._mount_type = None
+        self._project = None
         self.discriminator = None
 
-        self.node_type = node_type
         self.application_version = application_version
-        self.connection = connection
-        self.folder = folder
-        if project is not None:
-            self.project = project
+        self.node_type = node_type
+        self.connection_type = connection_type
         self.runtime = runtime
-        self.mount_type = mount_type
         if secure_ip is not None:
             self.secure_ip = secure_ip
         if ip_address is not None:
             self.ip_address = ip_address
         if invoice_reference is not None:
             self.invoice_reference = invoice_reference
-
-    @property
-    def node_type(self):
-        """Gets the node_type of this DesktopNodeLaunchSpec.  # noqa: E501
-
-        ID of the node_type. Valid values are obtained from the catalog/viznodetype/<application_version>/ endpoint  # noqa: E501
-
-        :return: The node_type of this DesktopNodeLaunchSpec.  # noqa: E501
-        :rtype: int
-        """
-        return self._node_type
-
-    @node_type.setter
-    def node_type(self, node_type):
-        """Sets the node_type of this DesktopNodeLaunchSpec.
-
-        ID of the node_type. Valid values are obtained from the catalog/viznodetype/<application_version>/ endpoint  # noqa: E501
-
-        :param node_type: The node_type of this DesktopNodeLaunchSpec.  # noqa: E501
-        :type node_type: int
-        """
-        if self.local_vars_configuration.client_side_validation and node_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `node_type`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                node_type is not None and node_type < 1):  # noqa: E501
-            raise ValueError("Invalid value for `node_type`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._node_type = node_type
+        self.data_path = data_path
+        self.mount_type = mount_type
+        if project is not None:
+            self.project = project
 
     @property
     def application_version(self):
         """Gets the application_version of this DesktopNodeLaunchSpec.  # noqa: E501
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/viz/ endpoint  # noqa: E501
+        ID of the application_version to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
         :return: The application_version of this DesktopNodeLaunchSpec.  # noqa: E501
         :rtype: int
@@ -135,7 +107,7 @@ class DesktopNodeLaunchSpec(object):
     def application_version(self, application_version):
         """Sets the application_version of this DesktopNodeLaunchSpec.
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/viz/ endpoint  # noqa: E501
+        ID of the application_version to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
         :param application_version: The application_version of this DesktopNodeLaunchSpec.  # noqa: E501
         :type application_version: int
@@ -149,84 +121,60 @@ class DesktopNodeLaunchSpec(object):
         self._application_version = application_version
 
     @property
-    def connection(self):
-        """Gets the connection of this DesktopNodeLaunchSpec.  # noqa: E501
+    def node_type(self):
+        """Gets the node_type of this DesktopNodeLaunchSpec.  # noqa: E501
 
+        ID of the node_type. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
-        :return: The connection of this DesktopNodeLaunchSpec.  # noqa: E501
+        :return: The node_type of this DesktopNodeLaunchSpec.  # noqa: E501
         :rtype: int
         """
-        return self._connection
+        return self._node_type
 
-    @connection.setter
-    def connection(self, connection):
-        """Sets the connection of this DesktopNodeLaunchSpec.
+    @node_type.setter
+    def node_type(self, node_type):
+        """Sets the node_type of this DesktopNodeLaunchSpec.
 
+        ID of the node_type. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
-        :param connection: The connection of this DesktopNodeLaunchSpec.  # noqa: E501
-        :type connection: int
+        :param node_type: The node_type of this DesktopNodeLaunchSpec.  # noqa: E501
+        :type node_type: int
         """
-        if self.local_vars_configuration.client_side_validation and connection is None:  # noqa: E501
-            raise ValueError("Invalid value for `connection`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and node_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `node_type`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                connection is not None and connection < 1):  # noqa: E501
-            raise ValueError("Invalid value for `connection`, must be a value greater than or equal to `1`")  # noqa: E501
+                node_type is not None and node_type < 1):  # noqa: E501
+            raise ValueError("Invalid value for `node_type`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._connection = connection
+        self._node_type = node_type
 
     @property
-    def folder(self):
-        """Gets the folder of this DesktopNodeLaunchSpec.  # noqa: E501
+    def connection_type(self):
+        """Gets the connection_type of this DesktopNodeLaunchSpec.  # noqa: E501
 
-        ID of the root folder to use for the viz node  # noqa: E501
+        The connection type to use for the Desktop  # noqa: E501
 
-        :return: The folder of this DesktopNodeLaunchSpec.  # noqa: E501
+        :return: The connection_type of this DesktopNodeLaunchSpec.  # noqa: E501
         :rtype: int
         """
-        return self._folder
+        return self._connection_type
 
-    @folder.setter
-    def folder(self, folder):
-        """Sets the folder of this DesktopNodeLaunchSpec.
+    @connection_type.setter
+    def connection_type(self, connection_type):
+        """Sets the connection_type of this DesktopNodeLaunchSpec.
 
-        ID of the root folder to use for the viz node  # noqa: E501
+        The connection type to use for the Desktop  # noqa: E501
 
-        :param folder: The folder of this DesktopNodeLaunchSpec.  # noqa: E501
-        :type folder: int
+        :param connection_type: The connection_type of this DesktopNodeLaunchSpec.  # noqa: E501
+        :type connection_type: int
         """
-        if self.local_vars_configuration.client_side_validation and folder is None:  # noqa: E501
-            raise ValueError("Invalid value for `folder`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and connection_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `connection_type`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                folder is not None and folder < 1):  # noqa: E501
-            raise ValueError("Invalid value for `folder`, must be a value greater than or equal to `1`")  # noqa: E501
+                connection_type is not None and connection_type < 1):  # noqa: E501
+            raise ValueError("Invalid value for `connection_type`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._folder = folder
-
-    @property
-    def project(self):
-        """Gets the project of this DesktopNodeLaunchSpec.  # noqa: E501
-
-        Project ID to bill this desktop node against  # noqa: E501
-
-        :return: The project of this DesktopNodeLaunchSpec.  # noqa: E501
-        :rtype: int
-        """
-        return self._project
-
-    @project.setter
-    def project(self, project):
-        """Sets the project of this DesktopNodeLaunchSpec.
-
-        Project ID to bill this desktop node against  # noqa: E501
-
-        :param project: The project of this DesktopNodeLaunchSpec.  # noqa: E501
-        :type project: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                project is not None and project < -1):  # noqa: E501
-            raise ValueError("Invalid value for `project`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._project = project
+        self._connection_type = connection_type
 
     @property
     def runtime(self):
@@ -255,37 +203,6 @@ class DesktopNodeLaunchSpec(object):
             raise ValueError("Invalid value for `runtime`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._runtime = runtime
-
-    @property
-    def mount_type(self):
-        """Gets the mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
-
-        Valid values are online or offline. Offline takes a copy of the data and will not be automatically synced back to the data store.  # noqa: E501
-
-        :return: The mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._mount_type
-
-    @mount_type.setter
-    def mount_type(self, mount_type):
-        """Sets the mount_type of this DesktopNodeLaunchSpec.
-
-        Valid values are online or offline. Offline takes a copy of the data and will not be automatically synced back to the data store.  # noqa: E501
-
-        :param mount_type: The mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
-        :type mount_type: str
-        """
-        if self.local_vars_configuration.client_side_validation and mount_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `mount_type`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                mount_type is not None and len(mount_type) > 7):
-            raise ValueError("Invalid value for `mount_type`, length must be less than or equal to `7`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                mount_type is not None and len(mount_type) < 6):
-            raise ValueError("Invalid value for `mount_type`, length must be greater than or equal to `6`")  # noqa: E501
-
-        self._mount_type = mount_type
 
     @property
     def secure_ip(self):
@@ -364,6 +281,86 @@ class DesktopNodeLaunchSpec(object):
             raise ValueError("Invalid value for `invoice_reference`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._invoice_reference = invoice_reference
+
+    @property
+    def data_path(self):
+        """Gets the data_path of this DesktopNodeLaunchSpec.  # noqa: E501
+
+
+        :return: The data_path of this DesktopNodeLaunchSpec.  # noqa: E501
+        :rtype: DataSpec
+        """
+        return self._data_path
+
+    @data_path.setter
+    def data_path(self, data_path):
+        """Sets the data_path of this DesktopNodeLaunchSpec.
+
+
+        :param data_path: The data_path of this DesktopNodeLaunchSpec.  # noqa: E501
+        :type data_path: DataSpec
+        """
+        if self.local_vars_configuration.client_side_validation and data_path is None:  # noqa: E501
+            raise ValueError("Invalid value for `data_path`, must not be `None`")  # noqa: E501
+
+        self._data_path = data_path
+
+    @property
+    def mount_type(self):
+        """Gets the mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
+
+        How should the data folder be mounted to the desktop. Offline takes a copy of the data and will not be automatically synced back to the data store.  # noqa: E501
+
+        :return: The mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
+        :rtype: str
+        """
+        return self._mount_type
+
+    @mount_type.setter
+    def mount_type(self, mount_type):
+        """Sets the mount_type of this DesktopNodeLaunchSpec.
+
+        How should the data folder be mounted to the desktop. Offline takes a copy of the data and will not be automatically synced back to the data store.  # noqa: E501
+
+        :param mount_type: The mount_type of this DesktopNodeLaunchSpec.  # noqa: E501
+        :type mount_type: str
+        """
+        if self.local_vars_configuration.client_side_validation and mount_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `mount_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["online", "offline"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and mount_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `mount_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(mount_type, allowed_values)
+            )
+
+        self._mount_type = mount_type
+
+    @property
+    def project(self):
+        """Gets the project of this DesktopNodeLaunchSpec.  # noqa: E501
+
+        Project ID to bill this desktop node against  # noqa: E501
+
+        :return: The project of this DesktopNodeLaunchSpec.  # noqa: E501
+        :rtype: int
+        """
+        return self._project
+
+    @project.setter
+    def project(self, project):
+        """Sets the project of this DesktopNodeLaunchSpec.
+
+        Project ID to bill this desktop node against  # noqa: E501
+
+        :param project: The project of this DesktopNodeLaunchSpec.  # noqa: E501
+        :type project: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                project is not None and project < -1):  # noqa: E501
+            raise ValueError("Invalid value for `project`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._project = project
 
     def to_dict(self):
         """Returns the model properties as a dict"""
