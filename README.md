@@ -77,55 +77,48 @@ All URIs are relative to *https://epic.zenotech.com/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BillingApi* | [**billing_limits_list**](docs/BillingApi.md#billing_limits_list) | **GET** /billing/limits/ |
-*BillingApi* | [**billing_limits_partial_update**](docs/BillingApi.md#billing_limits_partial_update) | **PATCH** /billing/limits/ |
-*CatalogApi* | [**catalog_applications_list**](docs/CatalogApi.md#catalog_applications_list) | **GET** /catalog/applications/ |
-*CatalogApi* | [**catalog_applications_read**](docs/CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{id}/ |
-*CatalogApi* | [**catalog_clusters_list**](docs/CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ |
-*CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{id}/ |
-*CatalogApi* | [**catalog_desktop_list**](docs/CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ |
-*CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ |
-*DataApi* | [**data_folder_list**](docs/DataApi.md#data_folder_list) | **GET** /data/folder/ |
-*DataApi* | [**data_folder_read**](docs/DataApi.md#data_folder_read) | **GET** /data/folder/{id}/ |
-*DesktopApi* | [**desktop_create**](docs/DesktopApi.md#desktop_create) | **POST** /desktop/ |
-*DesktopApi* | [**desktop_list**](docs/DesktopApi.md#desktop_list) | **GET** /desktop/ |
-*DesktopApi* | [**desktop_quote**](docs/DesktopApi.md#desktop_quote) | **POST** /desktop/quote/ |
-*DesktopApi* | [**desktop_read**](docs/DesktopApi.md#desktop_read) | **GET** /desktop/{id}/ |
-*JobApi* | [**job_auth_read**](docs/JobApi.md#job_auth_read) | **GET** /job/{id}/auth/ |
-*JobApi* | [**job_auth_update**](docs/JobApi.md#job_auth_update) | **PUT** /job/{id}/auth/ |
-*JobApi* | [**job_cancel**](docs/JobApi.md#job_cancel) | **POST** /job/{id}/cancel/ |
-*JobApi* | [**job_create**](docs/JobApi.md#job_create) | **POST** /job/ |
-*JobApi* | [**job_list**](docs/JobApi.md#job_list) | **GET** /job/ |
-*JobApi* | [**job_partial_update**](docs/JobApi.md#job_partial_update) | **PATCH** /job/{id}/ |
-*JobApi* | [**job_quote**](docs/JobApi.md#job_quote) | **POST** /job/quote/ |
-*JobApi* | [**job_read**](docs/JobApi.md#job_read) | **GET** /job/{id}/ |
-*JobauthApi* | [**jobauth_list**](docs/JobauthApi.md#jobauth_list) | **GET** /jobauth/ |
-*JobauthApi* | [**jobauth_read**](docs/JobauthApi.md#jobauth_read) | **GET** /jobauth/{job}/ |
-*JobauthApi* | [**jobauth_update**](docs/JobauthApi.md#jobauth_update) | **PUT** /jobauth/{job}/ |
-*JobstepApi* | [**jobstep_cancel**](docs/JobstepApi.md#jobstep_cancel) | **POST** /jobstep/{id}/cancel/ |
-*JobstepApi* | [**jobstep_list**](docs/JobstepApi.md#jobstep_list) | **GET** /jobstep/ |
-*JobstepApi* | [**jobstep_logs_read**](docs/JobstepApi.md#jobstep_logs_read) | **GET** /jobstep/{id}/logs/ |
-*JobstepApi* | [**jobstep_logs_update**](docs/JobstepApi.md#jobstep_logs_update) | **PUT** /jobstep/{id}/logs/ |
-*JobstepApi* | [**jobstep_read**](docs/JobstepApi.md#jobstep_read) | **GET** /jobstep/{id}/ |
-*LicensesApi* | [**licenses_ansys**](docs/LicensesApi.md#licenses_ansys) | **POST** /licenses/ansys/ |
-*LicensesApi* | [**licenses_create**](docs/LicensesApi.md#licenses_create) | **POST** /licenses/ |
-*LicensesApi* | [**licenses_list**](docs/LicensesApi.md#licenses_list) | **GET** /licenses/ |
-*LicensesApi* | [**licenses_read**](docs/LicensesApi.md#licenses_read) | **GET** /licenses/{id}/ |
-*LicensesApi* | [**licenses_update**](docs/LicensesApi.md#licenses_update) | **PUT** /licenses/{id}/ |
-*LicensesApi* | [**licenses_zcad**](docs/LicensesApi.md#licenses_zcad) | **POST** /licenses/zcad/ |
-*LicensesApi* | [**licenses_zcfd**](docs/LicensesApi.md#licenses_zcfd) | **POST** /licenses/zcfd/ |
-*ProfileApi* | [**profile_settings_list**](docs/ProfileApi.md#profile_settings_list) | **GET** /profile/settings/ |
-*ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects/ |
-*ProjectsApi* | [**projects_partial_update**](docs/ProjectsApi.md#projects_partial_update) | **PATCH** /projects/{id}/ |
-*ProjectsApi* | [**projects_read**](docs/ProjectsApi.md#projects_read) | **GET** /projects/{id}/ |
-*TeamsApi* | [**teams_list**](docs/TeamsApi.md#teams_list) | **GET** /teams/ |
-*TeamsApi* | [**teams_read**](docs/TeamsApi.md#teams_read) | **GET** /teams/{id}/ |
+*BillingApi* | [**billing_limits_list**](docs/BillingApi.md#billing_limits_list) | **GET** /billing/limits/ | 
+*BillingApi* | [**billing_limits_partial_update**](docs/BillingApi.md#billing_limits_partial_update) | **PATCH** /billing/limits/ | 
+*CatalogApi* | [**catalog_applications_list**](docs/CatalogApi.md#catalog_applications_list) | **GET** /catalog/applications/ | 
+*CatalogApi* | [**catalog_applications_read**](docs/CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{id}/ | 
+*CatalogApi* | [**catalog_clusters_list**](docs/CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ | 
+*CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{id}/ | 
+*CatalogApi* | [**catalog_desktop_list**](docs/CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
+*CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
+*DataApi* | [**data_folder_list**](docs/DataApi.md#data_folder_list) | **GET** /data/folder/ | 
+*DataApi* | [**data_folder_read**](docs/DataApi.md#data_folder_read) | **GET** /data/folder/{id}/ | 
+*DesktopApi* | [**desktop_create**](docs/DesktopApi.md#desktop_create) | **POST** /desktop/ | 
+*DesktopApi* | [**desktop_list**](docs/DesktopApi.md#desktop_list) | **GET** /desktop/ | 
+*DesktopApi* | [**desktop_quote**](docs/DesktopApi.md#desktop_quote) | **POST** /desktop/quote/ | 
+*DesktopApi* | [**desktop_read**](docs/DesktopApi.md#desktop_read) | **GET** /desktop/{id}/ | 
+*DesktopApi* | [**desktop_terminate**](docs/DesktopApi.md#desktop_terminate) | **POST** /desktop/{id}/terminate/ | 
+*JobApi* | [**job_auth_read**](docs/JobApi.md#job_auth_read) | **GET** /job/{id}/auth/ | 
+*JobApi* | [**job_auth_update**](docs/JobApi.md#job_auth_update) | **PUT** /job/{id}/auth/ | 
+*JobApi* | [**job_cancel**](docs/JobApi.md#job_cancel) | **POST** /job/{id}/cancel/ | 
+*JobApi* | [**job_create**](docs/JobApi.md#job_create) | **POST** /job/ | 
+*JobApi* | [**job_list**](docs/JobApi.md#job_list) | **GET** /job/ | 
+*JobApi* | [**job_partial_update**](docs/JobApi.md#job_partial_update) | **PATCH** /job/{id}/ | 
+*JobApi* | [**job_quote**](docs/JobApi.md#job_quote) | **POST** /job/quote/ | 
+*JobApi* | [**job_read**](docs/JobApi.md#job_read) | **GET** /job/{id}/ | 
+*JobauthApi* | [**jobauth_list**](docs/JobauthApi.md#jobauth_list) | **GET** /jobauth/ | 
+*JobauthApi* | [**jobauth_read**](docs/JobauthApi.md#jobauth_read) | **GET** /jobauth/{job}/ | 
+*JobauthApi* | [**jobauth_update**](docs/JobauthApi.md#jobauth_update) | **PUT** /jobauth/{job}/ | 
+*JobstepApi* | [**jobstep_cancel**](docs/JobstepApi.md#jobstep_cancel) | **POST** /jobstep/{id}/cancel/ | 
+*JobstepApi* | [**jobstep_list**](docs/JobstepApi.md#jobstep_list) | **GET** /jobstep/ | 
+*JobstepApi* | [**jobstep_logs_read**](docs/JobstepApi.md#jobstep_logs_read) | **GET** /jobstep/{id}/logs/ | 
+*JobstepApi* | [**jobstep_logs_update**](docs/JobstepApi.md#jobstep_logs_update) | **PUT** /jobstep/{id}/logs/ | 
+*JobstepApi* | [**jobstep_read**](docs/JobstepApi.md#jobstep_read) | **GET** /jobstep/{id}/ | 
+*ProfileApi* | [**profile_settings_list**](docs/ProfileApi.md#profile_settings_list) | **GET** /profile/settings/ | 
+*ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects/ | 
+*ProjectsApi* | [**projects_partial_update**](docs/ProjectsApi.md#projects_partial_update) | **PATCH** /projects/{id}/ | 
+*ProjectsApi* | [**projects_read**](docs/ProjectsApi.md#projects_read) | **GET** /projects/{id}/ | 
+*TeamsApi* | [**teams_list**](docs/TeamsApi.md#teams_list) | **GET** /teams/ | 
+*TeamsApi* | [**teams_read**](docs/TeamsApi.md#teams_read) | **GET** /teams/{id}/ | 
 
 
 ## Documentation For Models
 
  - [AcceleratorConfig](docs/AcceleratorConfig.md)
- - [AnsysLicense](docs/AnsysLicense.md)
  - [BatchApplicationDetails](docs/BatchApplicationDetails.md)
  - [BatchApplicationList](docs/BatchApplicationList.md)
  - [BatchApplicationVersionDetails](docs/BatchApplicationVersionDetails.md)
@@ -151,7 +144,6 @@ Class | Method | HTTP request | Description
  - [IaasCost](docs/IaasCost.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
- - [InlineResponse20010](docs/InlineResponse20010.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -175,7 +167,6 @@ Class | Method | HTTP request | Description
  - [JobStepDetails](docs/JobStepDetails.md)
  - [JobSummary](docs/JobSummary.md)
  - [JobTaskSpec](docs/JobTaskSpec.md)
- - [License](docs/License.md)
  - [Limit](docs/Limit.md)
  - [Limits](docs/Limits.md)
  - [MaxLimit](docs/MaxLimit.md)
@@ -193,11 +184,9 @@ Class | Method | HTTP request | Description
  - [Tax](docs/Tax.md)
  - [Team](docs/Team.md)
  - [TeamDetails](docs/TeamDetails.md)
- - [TeamSelect](docs/TeamSelect.md)
  - [Total](docs/Total.md)
  - [Total1](docs/Total1.md)
  - [UserName](docs/UserName.md)
- - [ZenotechLicense](docs/ZenotechLicense.md)
 
 
 ## Documentation For Authorization

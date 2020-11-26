@@ -68,7 +68,7 @@ class TeamsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: InlineResponse20010
+        :rtype: InlineResponse2009
         """
         kwargs['_return_http_data_only'] = True
         return self.teams_list_with_http_info(**kwargs)  # noqa: E501
@@ -111,7 +111,7 @@ class TeamsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(InlineResponse20010, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(InlineResponse2009, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -176,7 +176,7 @@ class TeamsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse20010',  # noqa: E501
+            response_type='InlineResponse2009',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

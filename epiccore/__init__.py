@@ -25,7 +25,6 @@ from epiccore.api.desktop_api import DesktopApi
 from epiccore.api.job_api import JobApi
 from epiccore.api.jobauth_api import JobauthApi
 from epiccore.api.jobstep_api import JobstepApi
-from epiccore.api.licenses_api import LicensesApi
 from epiccore.api.profile_api import ProfileApi
 from epiccore.api.projects_api import ProjectsApi
 from epiccore.api.teams_api import TeamsApi
@@ -41,7 +40,6 @@ from epiccore.exceptions import ApiAttributeError
 from epiccore.exceptions import ApiException
 # import models into sdk package
 from epiccore.models.accelerator_config import AcceleratorConfig
-from epiccore.models.ansys_license import AnsysLicense
 from epiccore.models.batch_application_details import BatchApplicationDetails
 from epiccore.models.batch_application_list import BatchApplicationList
 from epiccore.models.batch_application_version_details import BatchApplicationVersionDetails
@@ -67,7 +65,6 @@ from epiccore.models.folder_details import FolderDetails
 from epiccore.models.iaas_cost import IaasCost
 from epiccore.models.inline_response200 import InlineResponse200
 from epiccore.models.inline_response2001 import InlineResponse2001
-from epiccore.models.inline_response20010 import InlineResponse20010
 from epiccore.models.inline_response2002 import InlineResponse2002
 from epiccore.models.inline_response2003 import InlineResponse2003
 from epiccore.models.inline_response2004 import InlineResponse2004
@@ -91,7 +88,6 @@ from epiccore.models.job_step import JobStep
 from epiccore.models.job_step_details import JobStepDetails
 from epiccore.models.job_summary import JobSummary
 from epiccore.models.job_task_spec import JobTaskSpec
-from epiccore.models.license import License
 from epiccore.models.limit import Limit
 from epiccore.models.limits import Limits
 from epiccore.models.max_limit import MaxLimit
@@ -109,9 +105,7 @@ from epiccore.models.task_quote import TaskQuote
 from epiccore.models.tax import Tax
 from epiccore.models.team import Team
 from epiccore.models.team_details import TeamDetails
-from epiccore.models.team_select import TeamSelect
 from epiccore.models.total import Total
 from epiccore.models.total1 import Total1
 from epiccore.models.user_name import UserName
-from epiccore.models.zenotech_license import ZenotechLicense
 

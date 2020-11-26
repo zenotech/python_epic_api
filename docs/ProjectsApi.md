@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **projects_list**
-> InlineResponse2009 projects_list(name=name, limit=limit, offset=offset)
+> InlineResponse2008 projects_list(name=name, limit=limit, offset=offset)
 
 
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
