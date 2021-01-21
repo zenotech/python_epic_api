@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | jobstep id | [optional] [readonly] 
+**parent_job** | **int** | The id of the parent job for this step | [optional] [readonly] 
 **run_if_previous_step_fails** | **bool** | Whether this job step will run if the previous step fails | [optional] 
 **step_name** | **str** | The name of this job step | 
 **node_count** | **int** | Number of nodes this job step will run on | [optional] 

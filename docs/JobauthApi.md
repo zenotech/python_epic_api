@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **jobauth_list**
-> InlineResponse2006 jobauth_list(limit=limit, offset=offset)
+> InlineResponse2007 jobauth_list(limit=limit, offset=offset)
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

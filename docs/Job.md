@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **invoice_reference** | **str** | Invoice reference - this text will appear on the monthly invoice against this jobs charges | [optional] 
 **config** | [**JobConfiguration**](JobConfiguration.md) |  | [optional] 
 **job_steps** | [**list[JobStep]**](JobStep.md) | The job steps associated with this Job | [optional] [readonly] 
+**input_data** | [**DataSpec**](DataSpec.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

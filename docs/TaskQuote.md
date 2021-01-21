@@ -1,6 +1,6 @@
 # TaskQuote
 
-List of job quotes for this request
+List of job quotes for individual tasks in this request
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
