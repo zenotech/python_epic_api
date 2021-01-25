@@ -34,115 +34,138 @@ class SessionToken(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'access_key_id': 'str',
-        'secret_access_key': 'str',
-        'session_token': 'str'
+        'aws_key_id': 'str',
+        'aws_secret_key': 'str',
+        'aws_session_token': 'str',
+        'expiration': 'datetime'
     }
 
     attribute_map = {
-        'access_key_id': 'AccessKeyId',
-        'secret_access_key': 'SecretAccessKey',
-        'session_token': 'SessionToken'
+        'aws_key_id': 'aws_key_id',
+        'aws_secret_key': 'aws_secret_key',
+        'aws_session_token': 'aws_session_token',
+        'expiration': 'expiration'
     }
 
-    def __init__(self, access_key_id=None, secret_access_key=None, session_token=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aws_key_id=None, aws_secret_key=None, aws_session_token=None, expiration=None, local_vars_configuration=None):  # noqa: E501
         """SessionToken - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._access_key_id = None
-        self._secret_access_key = None
-        self._session_token = None
+        self._aws_key_id = None
+        self._aws_secret_key = None
+        self._aws_session_token = None
+        self._expiration = None
         self.discriminator = None
 
-        self.access_key_id = access_key_id
-        self.secret_access_key = secret_access_key
-        self.session_token = session_token
+        if aws_key_id is not None:
+            self.aws_key_id = aws_key_id
+        if aws_secret_key is not None:
+            self.aws_secret_key = aws_secret_key
+        if aws_session_token is not None:
+            self.aws_session_token = aws_session_token
+        if expiration is not None:
+            self.expiration = expiration
 
     @property
-    def access_key_id(self):
-        """Gets the access_key_id of this SessionToken.  # noqa: E501
+    def aws_key_id(self):
+        """Gets the aws_key_id of this SessionToken.  # noqa: E501
 
         AWS Access Key  # noqa: E501
 
-        :return: The access_key_id of this SessionToken.  # noqa: E501
+        :return: The aws_key_id of this SessionToken.  # noqa: E501
         :rtype: str
         """
-        return self._access_key_id
+        return self._aws_key_id
 
-    @access_key_id.setter
-    def access_key_id(self, access_key_id):
-        """Sets the access_key_id of this SessionToken.
+    @aws_key_id.setter
+    def aws_key_id(self, aws_key_id):
+        """Sets the aws_key_id of this SessionToken.
 
         AWS Access Key  # noqa: E501
 
-        :param access_key_id: The access_key_id of this SessionToken.  # noqa: E501
-        :type access_key_id: str
+        :param aws_key_id: The aws_key_id of this SessionToken.  # noqa: E501
+        :type aws_key_id: str
         """
-        if self.local_vars_configuration.client_side_validation and access_key_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `access_key_id`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                access_key_id is not None and len(access_key_id) < 1):
-            raise ValueError("Invalid value for `access_key_id`, length must be greater than or equal to `1`")  # noqa: E501
+                aws_key_id is not None and len(aws_key_id) < 1):
+            raise ValueError("Invalid value for `aws_key_id`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._access_key_id = access_key_id
+        self._aws_key_id = aws_key_id
 
     @property
-    def secret_access_key(self):
-        """Gets the secret_access_key of this SessionToken.  # noqa: E501
+    def aws_secret_key(self):
+        """Gets the aws_secret_key of this SessionToken.  # noqa: E501
 
         AWS Secret Key  # noqa: E501
 
-        :return: The secret_access_key of this SessionToken.  # noqa: E501
+        :return: The aws_secret_key of this SessionToken.  # noqa: E501
         :rtype: str
         """
-        return self._secret_access_key
+        return self._aws_secret_key
 
-    @secret_access_key.setter
-    def secret_access_key(self, secret_access_key):
-        """Sets the secret_access_key of this SessionToken.
+    @aws_secret_key.setter
+    def aws_secret_key(self, aws_secret_key):
+        """Sets the aws_secret_key of this SessionToken.
 
         AWS Secret Key  # noqa: E501
 
-        :param secret_access_key: The secret_access_key of this SessionToken.  # noqa: E501
-        :type secret_access_key: str
+        :param aws_secret_key: The aws_secret_key of this SessionToken.  # noqa: E501
+        :type aws_secret_key: str
         """
-        if self.local_vars_configuration.client_side_validation and secret_access_key is None:  # noqa: E501
-            raise ValueError("Invalid value for `secret_access_key`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                secret_access_key is not None and len(secret_access_key) < 1):
-            raise ValueError("Invalid value for `secret_access_key`, length must be greater than or equal to `1`")  # noqa: E501
+                aws_secret_key is not None and len(aws_secret_key) < 1):
+            raise ValueError("Invalid value for `aws_secret_key`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._secret_access_key = secret_access_key
+        self._aws_secret_key = aws_secret_key
 
     @property
-    def session_token(self):
-        """Gets the session_token of this SessionToken.  # noqa: E501
+    def aws_session_token(self):
+        """Gets the aws_session_token of this SessionToken.  # noqa: E501
 
-        AWS Session Token  # noqa: E501
 
-        :return: The session_token of this SessionToken.  # noqa: E501
+        :return: The aws_session_token of this SessionToken.  # noqa: E501
         :rtype: str
         """
-        return self._session_token
+        return self._aws_session_token
 
-    @session_token.setter
-    def session_token(self, session_token):
-        """Sets the session_token of this SessionToken.
+    @aws_session_token.setter
+    def aws_session_token(self, aws_session_token):
+        """Sets the aws_session_token of this SessionToken.
 
-        AWS Session Token  # noqa: E501
 
-        :param session_token: The session_token of this SessionToken.  # noqa: E501
-        :type session_token: str
+        :param aws_session_token: The aws_session_token of this SessionToken.  # noqa: E501
+        :type aws_session_token: str
         """
-        if self.local_vars_configuration.client_side_validation and session_token is None:  # noqa: E501
-            raise ValueError("Invalid value for `session_token`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                session_token is not None and len(session_token) < 1):
-            raise ValueError("Invalid value for `session_token`, length must be greater than or equal to `1`")  # noqa: E501
+                aws_session_token is not None and len(aws_session_token) < 1):
+            raise ValueError("Invalid value for `aws_session_token`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._session_token = session_token
+        self._aws_session_token = aws_session_token
+
+    @property
+    def expiration(self):
+        """Gets the expiration of this SessionToken.  # noqa: E501
+
+        Expiration time of token  # noqa: E501
+
+        :return: The expiration of this SessionToken.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration
+
+    @expiration.setter
+    def expiration(self, expiration):
+        """Sets the expiration of this SessionToken.
+
+        Expiration time of token  # noqa: E501
+
+        :param expiration: The expiration of this SessionToken.  # noqa: E501
+        :type expiration: datetime
+        """
+
+        self._expiration = expiration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
