@@ -85,8 +85,11 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{id}/ | 
 *CatalogApi* | [**catalog_desktop_list**](docs/CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
 *CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
+*DataApi* | [**data_file_list**](docs/DataApi.md#data_file_list) | **GET** /data/file/ | 
+*DataApi* | [**data_file_read**](docs/DataApi.md#data_file_read) | **GET** /data/file/{id}/ | 
 *DataApi* | [**data_folder_list**](docs/DataApi.md#data_folder_list) | **GET** /data/folder/ | 
 *DataApi* | [**data_folder_read**](docs/DataApi.md#data_folder_read) | **GET** /data/folder/{id}/ | 
+*DataApi* | [**data_session_list**](docs/DataApi.md#data_session_list) | **GET** /data/session/ | 
 *DesktopApi* | [**desktop_create**](docs/DesktopApi.md#desktop_create) | **POST** /desktop/ | 
 *DesktopApi* | [**desktop_list**](docs/DesktopApi.md#desktop_list) | **GET** /desktop/ | 
 *DesktopApi* | [**desktop_quote**](docs/DesktopApi.md#desktop_quote) | **POST** /desktop/quote/ | 
@@ -100,14 +103,23 @@ Class | Method | HTTP request | Description
 *JobApi* | [**job_partial_update**](docs/JobApi.md#job_partial_update) | **PATCH** /job/{id}/ | 
 *JobApi* | [**job_quote**](docs/JobApi.md#job_quote) | **POST** /job/quote/ | 
 *JobApi* | [**job_read**](docs/JobApi.md#job_read) | **GET** /job/{id}/ | 
+*JobApi* | [**job_residuals_read**](docs/JobApi.md#job_residuals_read) | **GET** /job/{id}/residuals/ | 
 *JobauthApi* | [**jobauth_list**](docs/JobauthApi.md#jobauth_list) | **GET** /jobauth/ | 
 *JobauthApi* | [**jobauth_read**](docs/JobauthApi.md#jobauth_read) | **GET** /jobauth/{job}/ | 
 *JobauthApi* | [**jobauth_update**](docs/JobauthApi.md#jobauth_update) | **PUT** /jobauth/{job}/ | 
+*JobrefreshApi* | [**jobrefresh_create**](docs/JobrefreshApi.md#jobrefresh_create) | **POST** /jobrefresh/ | 
+*JobrefreshApi* | [**jobrefresh_read**](docs/JobrefreshApi.md#jobrefresh_read) | **GET** /jobrefresh/{id}/ | 
 *JobstepApi* | [**jobstep_cancel**](docs/JobstepApi.md#jobstep_cancel) | **POST** /jobstep/{id}/cancel/ | 
 *JobstepApi* | [**jobstep_list**](docs/JobstepApi.md#jobstep_list) | **GET** /jobstep/ | 
 *JobstepApi* | [**jobstep_logs_read**](docs/JobstepApi.md#jobstep_logs_read) | **GET** /jobstep/{id}/logs/ | 
-*JobstepApi* | [**jobstep_logs_update**](docs/JobstepApi.md#jobstep_logs_update) | **PUT** /jobstep/{id}/logs/ | 
 *JobstepApi* | [**jobstep_read**](docs/JobstepApi.md#jobstep_read) | **GET** /jobstep/{id}/ | 
+*LicensesApi* | [**licenses_ansys**](docs/LicensesApi.md#licenses_ansys) | **POST** /licenses/ansys/ | 
+*LicensesApi* | [**licenses_create**](docs/LicensesApi.md#licenses_create) | **POST** /licenses/ | 
+*LicensesApi* | [**licenses_list**](docs/LicensesApi.md#licenses_list) | **GET** /licenses/ | 
+*LicensesApi* | [**licenses_read**](docs/LicensesApi.md#licenses_read) | **GET** /licenses/{id}/ | 
+*LicensesApi* | [**licenses_update**](docs/LicensesApi.md#licenses_update) | **PUT** /licenses/{id}/ | 
+*LicensesApi* | [**licenses_zcad**](docs/LicensesApi.md#licenses_zcad) | **POST** /licenses/zcad/ | 
+*LicensesApi* | [**licenses_zcfd**](docs/LicensesApi.md#licenses_zcfd) | **POST** /licenses/zcfd/ | 
 *ProfileApi* | [**profile_settings_list**](docs/ProfileApi.md#profile_settings_list) | **GET** /profile/settings/ | 
 *ProjectsApi* | [**projects_list**](docs/ProjectsApi.md#projects_list) | **GET** /projects/ | 
 *ProjectsApi* | [**projects_partial_update**](docs/ProjectsApi.md#projects_partial_update) | **PATCH** /projects/{id}/ | 
@@ -119,6 +131,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AcceleratorConfig](docs/AcceleratorConfig.md)
+ - [AnsysLicense](docs/AnsysLicense.md)
  - [BatchApplicationDetails](docs/BatchApplicationDetails.md)
  - [BatchApplicationList](docs/BatchApplicationList.md)
  - [BatchApplicationVersionDetails](docs/BatchApplicationVersionDetails.md)
@@ -128,6 +141,7 @@ Class | Method | HTTP request | Description
  - [Cost](docs/Cost.md)
  - [CostThreshold](docs/CostThreshold.md)
  - [CurrentSpend](docs/CurrentSpend.md)
+ - [DataLocation](docs/DataLocation.md)
  - [DataSpec](docs/DataSpec.md)
  - [DesktopInstance](docs/DesktopInstance.md)
  - [DesktopNodeApp](docs/DesktopNodeApp.md)
@@ -139,11 +153,14 @@ Class | Method | HTTP request | Description
  - [DesktopNodeQuote](docs/DesktopNodeQuote.md)
  - [DesktopNodeType](docs/DesktopNodeType.md)
  - [Discount](docs/Discount.md)
+ - [File](docs/File.md)
  - [Folder](docs/Folder.md)
  - [FolderDetails](docs/FolderDetails.md)
  - [IaasCost](docs/IaasCost.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [InlineResponse20010](docs/InlineResponse20010.md)
+ - [InlineResponse20011](docs/InlineResponse20011.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -162,11 +179,15 @@ Class | Method | HTTP request | Description
  - [JobDataBinding](docs/JobDataBinding.md)
  - [JobLog](docs/JobLog.md)
  - [JobQuote](docs/JobQuote.md)
+ - [JobResidual](docs/JobResidual.md)
+ - [JobResidualData](docs/JobResidualData.md)
  - [JobSpec](docs/JobSpec.md)
  - [JobStep](docs/JobStep.md)
  - [JobStepDetails](docs/JobStepDetails.md)
  - [JobSummary](docs/JobSummary.md)
  - [JobTaskSpec](docs/JobTaskSpec.md)
+ - [JobstepResponseRequest](docs/JobstepResponseRequest.md)
+ - [License](docs/License.md)
  - [Limit](docs/Limit.md)
  - [Limits](docs/Limits.md)
  - [MaxLimit](docs/MaxLimit.md)
@@ -178,15 +199,18 @@ Class | Method | HTTP request | Description
  - [ProjectDetails](docs/ProjectDetails.md)
  - [SLA](docs/SLA.md)
  - [ServiceCharge](docs/ServiceCharge.md)
+ - [SessionToken](docs/SessionToken.md)
  - [SoftwareCost](docs/SoftwareCost.md)
  - [SpendLimit](docs/SpendLimit.md)
  - [TaskQuote](docs/TaskQuote.md)
  - [Tax](docs/Tax.md)
  - [Team](docs/Team.md)
  - [TeamDetails](docs/TeamDetails.md)
+ - [TeamSelect](docs/TeamSelect.md)
  - [Total](docs/Total.md)
  - [Total1](docs/Total1.md)
  - [UserName](docs/UserName.md)
+ - [ZenotechLicense](docs/ZenotechLicense.md)
 
 
 ## Documentation For Authorization
@@ -202,3 +226,4 @@ Class | Method | HTTP request | Description
 ## Author
 
 support@zenotech.com
+

@@ -64,11 +64,14 @@ from epiccore.models.job_configuration import JobConfiguration
 from epiccore.models.job_data_binding import JobDataBinding
 from epiccore.models.job_log import JobLog
 from epiccore.models.job_quote import JobQuote
+from epiccore.models.job_residual import JobResidual
+from epiccore.models.job_residual_data import JobResidualData
 from epiccore.models.job_spec import JobSpec
 from epiccore.models.job_step import JobStep
 from epiccore.models.job_step_details import JobStepDetails
 from epiccore.models.job_summary import JobSummary
 from epiccore.models.job_task_spec import JobTaskSpec
+from epiccore.models.jobstep_response_request import JobstepResponseRequest
 from epiccore.models.license import License
 from epiccore.models.limit import Limit
 from epiccore.models.limits import Limits
