@@ -80,9 +80,9 @@ Class | Method | HTTP request | Description
 *BillingApi* | [**billing_limits_list**](docs/BillingApi.md#billing_limits_list) | **GET** /billing/limits/ | 
 *BillingApi* | [**billing_limits_partial_update**](docs/BillingApi.md#billing_limits_partial_update) | **PATCH** /billing/limits/ | 
 *CatalogApi* | [**catalog_applications_list**](docs/CatalogApi.md#catalog_applications_list) | **GET** /catalog/applications/ | 
-*CatalogApi* | [**catalog_applications_read**](docs/CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{id}/ | 
+*CatalogApi* | [**catalog_applications_read**](docs/CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{application}/ | 
 *CatalogApi* | [**catalog_clusters_list**](docs/CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ | 
-*CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{id}/ | 
+*CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{queue_code}/ | 
 *CatalogApi* | [**catalog_desktop_list**](docs/CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
 *CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
 *DataApi* | [**data_file_list**](docs/DataApi.md#data_file_list) | **GET** /data/file/ | 
