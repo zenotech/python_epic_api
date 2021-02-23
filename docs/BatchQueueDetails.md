@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [readonly] 
+**queue_code** | **str** |  | 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **cluster_name** | **str** |  | [optional] [readonly] 

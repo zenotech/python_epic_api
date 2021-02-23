@@ -459,6 +459,7 @@ class JobApi(object):
     def job_create(self, data, **kwargs):  # noqa: E501
         """job_create  # noqa: E501
 
+        Create a new job bssased on the submitted job specification. App and Queue codes can be retreived from the catalog endpoints.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -488,6 +489,7 @@ class JobApi(object):
     def job_create_with_http_info(self, data, **kwargs):  # noqa: E501
         """job_create  # noqa: E501
 
+        Create a new job bssased on the submitted job specification. App and Queue codes can be retreived from the catalog endpoints.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -592,6 +594,7 @@ class JobApi(object):
     def job_list(self, **kwargs):  # noqa: E501
         """job_list  # noqa: E501
 
+        List the jobs instances in EPIC  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -623,6 +626,7 @@ class JobApi(object):
     def job_list_with_http_info(self, **kwargs):  # noqa: E501
         """job_list  # noqa: E501
 
+        List the jobs instances in EPIC  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -724,6 +728,7 @@ class JobApi(object):
     def job_partial_update(self, id, data, **kwargs):  # noqa: E501
         """job_partial_update  # noqa: E501
 
+        Update the job options for job instance with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -755,6 +760,7 @@ class JobApi(object):
     def job_partial_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
         """job_partial_update  # noqa: E501
 
+        Update the job options for job instance with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1003,6 +1009,7 @@ class JobApi(object):
     def job_read(self, id, **kwargs):  # noqa: E501
         """job_read  # noqa: E501
 
+        See the details for the job instance with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1032,6 +1039,7 @@ class JobApi(object):
     def job_read_with_http_info(self, id, **kwargs):  # noqa: E501
         """job_read  # noqa: E501
 
+        See the details for the job instance with ID {id}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

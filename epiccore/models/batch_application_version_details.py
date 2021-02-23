@@ -34,54 +34,61 @@ class BatchApplicationVersionDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
+        'app_code': 'str',
         'version': 'str',
-        'queue_ids': 'list[int]'
+        'available_on': 'list[str]'
     }
 
     attribute_map = {
-        'id': 'id',
+        'app_code': 'app_code',
         'version': 'version',
-        'queue_ids': 'queue_ids'
+        'available_on': 'available_on'
     }
 
-    def __init__(self, id=None, version=None, queue_ids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_code=None, version=None, available_on=None, local_vars_configuration=None):  # noqa: E501
         """BatchApplicationVersionDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
+        self._app_code = None
         self._version = None
-        self._queue_ids = None
+        self._available_on = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        self.app_code = app_code
         self.version = version
-        if queue_ids is not None:
-            self.queue_ids = queue_ids
+        if available_on is not None:
+            self.available_on = available_on
 
     @property
-    def id(self):
-        """Gets the id of this BatchApplicationVersionDetails.  # noqa: E501
+    def app_code(self):
+        """Gets the app_code of this BatchApplicationVersionDetails.  # noqa: E501
 
 
-        :return: The id of this BatchApplicationVersionDetails.  # noqa: E501
-        :rtype: int
+        :return: The app_code of this BatchApplicationVersionDetails.  # noqa: E501
+        :rtype: str
         """
-        return self._id
+        return self._app_code
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this BatchApplicationVersionDetails.
+    @app_code.setter
+    def app_code(self, app_code):
+        """Sets the app_code of this BatchApplicationVersionDetails.
 
 
-        :param id: The id of this BatchApplicationVersionDetails.  # noqa: E501
-        :type id: int
+        :param app_code: The app_code of this BatchApplicationVersionDetails.  # noqa: E501
+        :type app_code: str
         """
+        if self.local_vars_configuration.client_side_validation and app_code is None:  # noqa: E501
+            raise ValueError("Invalid value for `app_code`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                app_code is not None and len(app_code) > 100):
+            raise ValueError("Invalid value for `app_code`, length must be less than or equal to `100`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                app_code is not None and len(app_code) < 1):
+            raise ValueError("Invalid value for `app_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._id = id
+        self._app_code = app_code
 
     @property
     def version(self):
@@ -113,27 +120,27 @@ class BatchApplicationVersionDetails(object):
         self._version = version
 
     @property
-    def queue_ids(self):
-        """Gets the queue_ids of this BatchApplicationVersionDetails.  # noqa: E501
+    def available_on(self):
+        """Gets the available_on of this BatchApplicationVersionDetails.  # noqa: E501
 
-        List of the batch cluster queues with the application available  # noqa: E501
+        List of the batch cluster queue codes with the application available  # noqa: E501
 
-        :return: The queue_ids of this BatchApplicationVersionDetails.  # noqa: E501
-        :rtype: list[int]
+        :return: The available_on of this BatchApplicationVersionDetails.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._queue_ids
+        return self._available_on
 
-    @queue_ids.setter
-    def queue_ids(self, queue_ids):
-        """Sets the queue_ids of this BatchApplicationVersionDetails.
+    @available_on.setter
+    def available_on(self, available_on):
+        """Sets the available_on of this BatchApplicationVersionDetails.
 
-        List of the batch cluster queues with the application available  # noqa: E501
+        List of the batch cluster queue codes with the application available  # noqa: E501
 
-        :param queue_ids: The queue_ids of this BatchApplicationVersionDetails.  # noqa: E501
-        :type queue_ids: list[int]
+        :param available_on: The available_on of this BatchApplicationVersionDetails.  # noqa: E501
+        :type available_on: list[str]
         """
 
-        self._queue_ids = queue_ids
+        self._available_on = available_on
 
     def to_dict(self):
         """Returns the model properties as a dict"""

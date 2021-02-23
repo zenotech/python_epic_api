@@ -35,7 +35,7 @@ class TaskQuote(object):
     """
     openapi_types = {
         'reference': 'str',
-        'queue_id': 'int',
+        'queue_code': 'str',
         'iaas_cost': 'IaasCost',
         'software_cost': 'SoftwareCost',
         'service_charge': 'ServiceCharge',
@@ -46,7 +46,7 @@ class TaskQuote(object):
 
     attribute_map = {
         'reference': 'reference',
-        'queue_id': 'queue_id',
+        'queue_code': 'queue_code',
         'iaas_cost': 'iaas_cost',
         'software_cost': 'software_cost',
         'service_charge': 'service_charge',
@@ -55,14 +55,14 @@ class TaskQuote(object):
         'total': 'total'
     }
 
-    def __init__(self, reference=None, queue_id=None, iaas_cost=None, software_cost=None, service_charge=None, discount=None, tax=None, total=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, reference=None, queue_code=None, iaas_cost=None, software_cost=None, service_charge=None, discount=None, tax=None, total=None, local_vars_configuration=None):  # noqa: E501
         """TaskQuote - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._reference = None
-        self._queue_id = None
+        self._queue_code = None
         self._iaas_cost = None
         self._software_cost = None
         self._service_charge = None
@@ -73,8 +73,8 @@ class TaskQuote(object):
 
         if reference is not None:
             self.reference = reference
-        if queue_id is not None:
-            self.queue_id = queue_id
+        if queue_code is not None:
+            self.queue_code = queue_code
         if iaas_cost is not None:
             self.iaas_cost = iaas_cost
         if software_cost is not None:
@@ -118,30 +118,30 @@ class TaskQuote(object):
         self._reference = reference
 
     @property
-    def queue_id(self):
-        """Gets the queue_id of this TaskQuote.  # noqa: E501
+    def queue_code(self):
+        """Gets the queue_code of this TaskQuote.  # noqa: E501
 
-        The ID of the queue for this quote  # noqa: E501
+        The Queue code of the queue for this quote  # noqa: E501
 
-        :return: The queue_id of this TaskQuote.  # noqa: E501
-        :rtype: int
+        :return: The queue_code of this TaskQuote.  # noqa: E501
+        :rtype: str
         """
-        return self._queue_id
+        return self._queue_code
 
-    @queue_id.setter
-    def queue_id(self, queue_id):
-        """Sets the queue_id of this TaskQuote.
+    @queue_code.setter
+    def queue_code(self, queue_code):
+        """Sets the queue_code of this TaskQuote.
 
-        The ID of the queue for this quote  # noqa: E501
+        The Queue code of the queue for this quote  # noqa: E501
 
-        :param queue_id: The queue_id of this TaskQuote.  # noqa: E501
-        :type queue_id: int
+        :param queue_code: The queue_code of this TaskQuote.  # noqa: E501
+        :type queue_code: str
         """
         if (self.local_vars_configuration.client_side_validation and
-                queue_id is not None and queue_id < -1):  # noqa: E501
-            raise ValueError("Invalid value for `queue_id`, must be a value greater than or equal to `-1`")  # noqa: E501
+                queue_code is not None and len(queue_code) < 1):
+            raise ValueError("Invalid value for `queue_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._queue_id = queue_id
+        self._queue_code = queue_code
 
     @property
     def iaas_cost(self):

@@ -34,51 +34,51 @@ class JobClusterSpec(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'queue': 'int'
+        'queue_code': 'str'
     }
 
     attribute_map = {
-        'queue': 'queue'
+        'queue_code': 'queue_code'
     }
 
-    def __init__(self, queue=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, queue_code=None, local_vars_configuration=None):  # noqa: E501
         """JobClusterSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._queue = None
+        self._queue_code = None
         self.discriminator = None
 
-        self.queue = queue
+        self.queue_code = queue_code
 
     @property
-    def queue(self):
-        """Gets the queue of this JobClusterSpec.  # noqa: E501
+    def queue_code(self):
+        """Gets the queue_code of this JobClusterSpec.  # noqa: E501
 
-        ID of cluster queue to run this job on  # noqa: E501
+        Queue code of cluster queue to run this job on  # noqa: E501
 
-        :return: The queue of this JobClusterSpec.  # noqa: E501
-        :rtype: int
+        :return: The queue_code of this JobClusterSpec.  # noqa: E501
+        :rtype: str
         """
-        return self._queue
+        return self._queue_code
 
-    @queue.setter
-    def queue(self, queue):
-        """Sets the queue of this JobClusterSpec.
+    @queue_code.setter
+    def queue_code(self, queue_code):
+        """Sets the queue_code of this JobClusterSpec.
 
-        ID of cluster queue to run this job on  # noqa: E501
+        Queue code of cluster queue to run this job on  # noqa: E501
 
-        :param queue: The queue of this JobClusterSpec.  # noqa: E501
-        :type queue: int
+        :param queue_code: The queue_code of this JobClusterSpec.  # noqa: E501
+        :type queue_code: str
         """
-        if self.local_vars_configuration.client_side_validation and queue is None:  # noqa: E501
-            raise ValueError("Invalid value for `queue`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and queue_code is None:  # noqa: E501
+            raise ValueError("Invalid value for `queue_code`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                queue is not None and queue < 1):  # noqa: E501
-            raise ValueError("Invalid value for `queue`, must be a value greater than or equal to `1`")  # noqa: E501
+                queue_code is not None and len(queue_code) < 1):
+            raise ValueError("Invalid value for `queue_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._queue = queue
+        self._queue_code = queue_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -5,9 +5,9 @@ All URIs are relative to *https://epic.zenotech.com/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**catalog_applications_list**](CatalogApi.md#catalog_applications_list) | **GET** /catalog/applications/ | 
-[**catalog_applications_read**](CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{id}/ | 
+[**catalog_applications_read**](CatalogApi.md#catalog_applications_read) | **GET** /catalog/applications/{application}/ | 
 [**catalog_clusters_list**](CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ | 
-[**catalog_clusters_read**](CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{id}/ | 
+[**catalog_clusters_read**](CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{queue_code}/ | 
 [**catalog_desktop_list**](CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
 [**catalog_desktop_read**](CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-View available applications
+List all available applications and the versions for that application
 
 ### Example
 
@@ -93,11 +93,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_applications_read**
-> BatchApplicationDetails catalog_applications_read(id)
+> BatchApplicationDetails catalog_applications_read(application)
 
 
 
-View available applications
+Retreive the details for the application with the application product name {product}
 
 ### Example
 
@@ -133,10 +133,10 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
-    id = 'id_example' # str | 
+    application = 'application_example' # str | 
 
     try:
-        api_response = api_instance.catalog_applications_read(id)
+        api_response = api_instance.catalog_applications_read(application)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CatalogApi->catalog_applications_read: %s\n" % e)
@@ -146,7 +146,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **application** | **str**|  | 
 
 ### Return type
 
@@ -211,7 +211,7 @@ with epiccore.ApiClient(configuration) as api_client:
     api_instance = epiccore.CatalogApi(api_client)
     cluster_name = 'cluster_name_example' # str | Filter by cluster name (optional)
 queue_name = 'queue_name_example' # str | Filter by queue name (optional)
-allowed_apps = 'allowed_apps_example' # str | Filter by application id available on queue (optional)
+allowed_apps = 'allowed_apps_example' # str | Filter by application code available on queue (optional)
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster_name** | **str**| Filter by cluster name | [optional] 
  **queue_name** | **str**| Filter by queue name | [optional] 
- **allowed_apps** | **str**| Filter by application id available on queue | [optional] 
+ **allowed_apps** | **str**| Filter by application code available on queue | [optional] 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
 
@@ -253,11 +253,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_clusters_read**
-> BatchQueueDetails catalog_clusters_read(id)
+> BatchQueueDetails catalog_clusters_read(queue_code)
 
 
 
-View available cluster queues
+Retreive the details for the cluster queue with queue code {queue_code}
 
 ### Example
 
@@ -293,10 +293,10 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
-    id = 'id_example' # str | 
+    queue_code = 'queue_code_example' # str | 
 
     try:
-        api_response = api_instance.catalog_clusters_read(id)
+        api_response = api_instance.catalog_clusters_read(queue_code)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CatalogApi->catalog_clusters_read: %s\n" % e)
@@ -306,7 +306,7 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **queue_code** | **str**|  | 
 
 ### Return type
 

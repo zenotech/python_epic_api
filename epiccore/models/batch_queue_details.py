@@ -34,7 +34,7 @@ class BatchQueueDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
+        'queue_code': 'str',
         'name': 'str',
         'description': 'str',
         'cluster_name': 'str',
@@ -48,7 +48,7 @@ class BatchQueueDetails(object):
     }
 
     attribute_map = {
-        'id': 'id',
+        'queue_code': 'queue_code',
         'name': 'name',
         'description': 'description',
         'cluster_name': 'cluster_name',
@@ -61,13 +61,13 @@ class BatchQueueDetails(object):
         'resource_config': 'resource_config'
     }
 
-    def __init__(self, id=None, name=None, description=None, cluster_name=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, queue_code=None, name=None, description=None, cluster_name=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, local_vars_configuration=None):  # noqa: E501
         """BatchQueueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
+        self._queue_code = None
         self._name = None
         self._description = None
         self._cluster_name = None
@@ -80,8 +80,7 @@ class BatchQueueDetails(object):
         self._resource_config = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        self.queue_code = queue_code
         if name is not None:
             self.name = name
         self.description = description
@@ -99,25 +98,33 @@ class BatchQueueDetails(object):
         self.resource_config = resource_config
 
     @property
-    def id(self):
-        """Gets the id of this BatchQueueDetails.  # noqa: E501
+    def queue_code(self):
+        """Gets the queue_code of this BatchQueueDetails.  # noqa: E501
 
 
-        :return: The id of this BatchQueueDetails.  # noqa: E501
-        :rtype: int
+        :return: The queue_code of this BatchQueueDetails.  # noqa: E501
+        :rtype: str
         """
-        return self._id
+        return self._queue_code
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this BatchQueueDetails.
+    @queue_code.setter
+    def queue_code(self, queue_code):
+        """Sets the queue_code of this BatchQueueDetails.
 
 
-        :param id: The id of this BatchQueueDetails.  # noqa: E501
-        :type id: int
+        :param queue_code: The queue_code of this BatchQueueDetails.  # noqa: E501
+        :type queue_code: str
         """
+        if self.local_vars_configuration.client_side_validation and queue_code is None:  # noqa: E501
+            raise ValueError("Invalid value for `queue_code`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                queue_code is not None and len(queue_code) > 100):
+            raise ValueError("Invalid value for `queue_code`, length must be less than or equal to `100`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                queue_code is not None and len(queue_code) < 1):
+            raise ValueError("Invalid value for `queue_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._id = id
+        self._queue_code = queue_code
 
     @property
     def name(self):

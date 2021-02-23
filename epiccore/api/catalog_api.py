@@ -40,7 +40,7 @@ class CatalogApi(object):
     def catalog_applications_list(self, **kwargs):  # noqa: E501
         """catalog_applications_list  # noqa: E501
 
-        View available applications  # noqa: E501
+        List all available applications and the versions for that application  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -74,7 +74,7 @@ class CatalogApi(object):
     def catalog_applications_list_with_http_info(self, **kwargs):  # noqa: E501
         """catalog_applications_list  # noqa: E501
 
-        View available applications  # noqa: E501
+        List all available applications and the versions for that application  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -178,18 +178,18 @@ class CatalogApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def catalog_applications_read(self, id, **kwargs):  # noqa: E501
+    def catalog_applications_read(self, application, **kwargs):  # noqa: E501
         """catalog_applications_read  # noqa: E501
 
-        View available applications  # noqa: E501
+        Retreive the details for the application with the application product name {product}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.catalog_applications_read(id, async_req=True)
+        >>> thread = api.catalog_applications_read(application, async_req=True)
         >>> result = thread.get()
 
-        :param id: (required)
-        :type id: str
+        :param application: (required)
+        :type application: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -206,20 +206,20 @@ class CatalogApi(object):
         :rtype: BatchApplicationDetails
         """
         kwargs['_return_http_data_only'] = True
-        return self.catalog_applications_read_with_http_info(id, **kwargs)  # noqa: E501
+        return self.catalog_applications_read_with_http_info(application, **kwargs)  # noqa: E501
 
-    def catalog_applications_read_with_http_info(self, id, **kwargs):  # noqa: E501
+    def catalog_applications_read_with_http_info(self, application, **kwargs):  # noqa: E501
         """catalog_applications_read  # noqa: E501
 
-        View available applications  # noqa: E501
+        Retreive the details for the application with the application product name {product}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.catalog_applications_read_with_http_info(id, async_req=True)
+        >>> thread = api.catalog_applications_read_with_http_info(application, async_req=True)
         >>> result = thread.get()
 
-        :param id: (required)
-        :type id: str
+        :param application: (required)
+        :type application: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -246,7 +246,7 @@ class CatalogApi(object):
         local_var_params = locals()
 
         all_params = [
-            'id'
+            'application'
         ]
         all_params.extend(
             [
@@ -266,16 +266,16 @@ class CatalogApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `id` when calling `catalog_applications_read`")  # noqa: E501
+        # verify the required parameter 'application' is set
+        if self.api_client.client_side_validation and ('application' not in local_var_params or  # noqa: E501
+                                                        local_var_params['application'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `application` when calling `catalog_applications_read`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in local_var_params:
-            path_params['id'] = local_var_params['id']  # noqa: E501
+        if 'application' in local_var_params:
+            path_params['application'] = local_var_params['application']  # noqa: E501
 
         query_params = []
 
@@ -293,7 +293,7 @@ class CatalogApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/catalog/applications/{id}/', 'GET',
+            '/catalog/applications/{application}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -323,7 +323,7 @@ class CatalogApi(object):
         :type cluster_name: str
         :param queue_name: Filter by queue name
         :type queue_name: str
-        :param allowed_apps: Filter by application id available on queue
+        :param allowed_apps: Filter by application code available on queue
         :type allowed_apps: str
         :param limit: Number of results to return per page.
         :type limit: int
@@ -361,7 +361,7 @@ class CatalogApi(object):
         :type cluster_name: str
         :param queue_name: Filter by queue name
         :type queue_name: str
-        :param allowed_apps: Filter by application id available on queue
+        :param allowed_apps: Filter by application code available on queue
         :type allowed_apps: str
         :param limit: Number of results to return per page.
         :type limit: int
@@ -464,18 +464,18 @@ class CatalogApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def catalog_clusters_read(self, id, **kwargs):  # noqa: E501
+    def catalog_clusters_read(self, queue_code, **kwargs):  # noqa: E501
         """catalog_clusters_read  # noqa: E501
 
-        View available cluster queues  # noqa: E501
+        Retreive the details for the cluster queue with queue code {queue_code}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.catalog_clusters_read(id, async_req=True)
+        >>> thread = api.catalog_clusters_read(queue_code, async_req=True)
         >>> result = thread.get()
 
-        :param id: (required)
-        :type id: str
+        :param queue_code: (required)
+        :type queue_code: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -492,20 +492,20 @@ class CatalogApi(object):
         :rtype: BatchQueueDetails
         """
         kwargs['_return_http_data_only'] = True
-        return self.catalog_clusters_read_with_http_info(id, **kwargs)  # noqa: E501
+        return self.catalog_clusters_read_with_http_info(queue_code, **kwargs)  # noqa: E501
 
-    def catalog_clusters_read_with_http_info(self, id, **kwargs):  # noqa: E501
+    def catalog_clusters_read_with_http_info(self, queue_code, **kwargs):  # noqa: E501
         """catalog_clusters_read  # noqa: E501
 
-        View available cluster queues  # noqa: E501
+        Retreive the details for the cluster queue with queue code {queue_code}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.catalog_clusters_read_with_http_info(id, async_req=True)
+        >>> thread = api.catalog_clusters_read_with_http_info(queue_code, async_req=True)
         >>> result = thread.get()
 
-        :param id: (required)
-        :type id: str
+        :param queue_code: (required)
+        :type queue_code: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -532,7 +532,7 @@ class CatalogApi(object):
         local_var_params = locals()
 
         all_params = [
-            'id'
+            'queue_code'
         ]
         all_params.extend(
             [
@@ -552,16 +552,16 @@ class CatalogApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `id` when calling `catalog_clusters_read`")  # noqa: E501
+        # verify the required parameter 'queue_code' is set
+        if self.api_client.client_side_validation and ('queue_code' not in local_var_params or  # noqa: E501
+                                                        local_var_params['queue_code'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `queue_code` when calling `catalog_clusters_read`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in local_var_params:
-            path_params['id'] = local_var_params['id']  # noqa: E501
+        if 'queue_code' in local_var_params:
+            path_params['queue_code'] = local_var_params['queue_code']  # noqa: E501
 
         query_params = []
 
@@ -579,7 +579,7 @@ class CatalogApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/catalog/clusters/{id}/', 'GET',
+            '/catalog/clusters/{queue_code}/', 'GET',
             path_params,
             query_params,
             header_params,

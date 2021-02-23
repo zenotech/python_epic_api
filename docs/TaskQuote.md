@@ -5,7 +5,7 @@ List of job quotes for individual tasks in this request
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reference** | **str** | The reference given in the quote request, to help you identify this task. | [optional] [readonly] 
-**queue_id** | **int** | The ID of the queue for this quote | [optional] 
+**queue_code** | **str** | The Queue code of the queue for this quote | [optional] 
 **iaas_cost** | [**IaasCost**](IaasCost.md) |  | [optional] 
 **software_cost** | [**SoftwareCost**](SoftwareCost.md) |  | [optional] 
 **service_charge** | [**ServiceCharge**](ServiceCharge.md) |  | [optional] 

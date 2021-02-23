@@ -38,7 +38,7 @@ class Job(object):
         'name': 'str',
         'app': 'str',
         'app_options': 'object',
-        'application_version': 'int',
+        'application_version': 'str',
         'cost': 'str',
         'status': 'str',
         'submitted_by': 'str',
@@ -233,7 +233,7 @@ class Job(object):
         Application version ID  # noqa: E501
 
         :return: The application_version of this Job.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._application_version
 
@@ -244,11 +244,11 @@ class Job(object):
         Application version ID  # noqa: E501
 
         :param application_version: The application_version of this Job.  # noqa: E501
-        :type application_version: int
+        :type application_version: str
         """
         if (self.local_vars_configuration.client_side_validation and
-                application_version is not None and application_version < 1):  # noqa: E501
-            raise ValueError("Invalid value for `application_version`, must be a value greater than or equal to `1`")  # noqa: E501
+                application_version is not None and len(application_version) < 1):
+            raise ValueError("Invalid value for `application_version`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._application_version = application_version
 

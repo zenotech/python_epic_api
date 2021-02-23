@@ -34,65 +34,65 @@ class JobSpec(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'application_version': 'int',
+        'app_code': 'str',
         'project': 'int',
         'tasks': 'list[JobTaskSpec]',
-        'queue': 'int'
+        'queue_code': 'str'
     }
 
     attribute_map = {
-        'application_version': 'application_version',
+        'app_code': 'app_code',
         'project': 'project',
         'tasks': 'tasks',
-        'queue': 'queue'
+        'queue_code': 'queue_code'
     }
 
-    def __init__(self, application_version=None, project=None, tasks=None, queue=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, app_code=None, project=None, tasks=None, queue_code=None, local_vars_configuration=None):  # noqa: E501
         """JobSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._application_version = None
+        self._app_code = None
         self._project = None
         self._tasks = None
-        self._queue = None
+        self._queue_code = None
         self.discriminator = None
 
-        self.application_version = application_version
+        self.app_code = app_code
         if project is not None:
             self.project = project
         self.tasks = tasks
-        if queue is not None:
-            self.queue = queue
+        if queue_code is not None:
+            self.queue_code = queue_code
 
     @property
-    def application_version(self):
-        """Gets the application_version of this JobSpec.  # noqa: E501
+    def app_code(self):
+        """Gets the app_code of this JobSpec.  # noqa: E501
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/applications/ endpoint  # noqa: E501
+        The App Code of the application_version to launch. Valid values are obtained from the catalog/applications/ endpoint  # noqa: E501
 
-        :return: The application_version of this JobSpec.  # noqa: E501
-        :rtype: int
+        :return: The app_code of this JobSpec.  # noqa: E501
+        :rtype: str
         """
-        return self._application_version
+        return self._app_code
 
-    @application_version.setter
-    def application_version(self, application_version):
-        """Sets the application_version of this JobSpec.
+    @app_code.setter
+    def app_code(self, app_code):
+        """Sets the app_code of this JobSpec.
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/applications/ endpoint  # noqa: E501
+        The App Code of the application_version to launch. Valid values are obtained from the catalog/applications/ endpoint  # noqa: E501
 
-        :param application_version: The application_version of this JobSpec.  # noqa: E501
-        :type application_version: int
+        :param app_code: The app_code of this JobSpec.  # noqa: E501
+        :type app_code: str
         """
-        if self.local_vars_configuration.client_side_validation and application_version is None:  # noqa: E501
-            raise ValueError("Invalid value for `application_version`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and app_code is None:  # noqa: E501
+            raise ValueError("Invalid value for `app_code`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                application_version is not None and application_version < 1):  # noqa: E501
-            raise ValueError("Invalid value for `application_version`, must be a value greater than or equal to `1`")  # noqa: E501
+                app_code is not None and len(app_code) < 1):
+            raise ValueError("Invalid value for `app_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._application_version = application_version
+        self._app_code = app_code
 
     @property
     def project(self):
@@ -146,27 +146,30 @@ class JobSpec(object):
         self._tasks = tasks
 
     @property
-    def queue(self):
-        """Gets the queue of this JobSpec.  # noqa: E501
+    def queue_code(self):
+        """Gets the queue_code of this JobSpec.  # noqa: E501
 
-        (Optional) ID of cluster queue for the quote. This will just return the quotes for that queue. If not present the quote will be for all available queues  # noqa: E501
+        (Optional) Code of cluster queue for the quote. This will just return the quotes for that queue. If not present the quote will be for all available queues  # noqa: E501
 
-        :return: The queue of this JobSpec.  # noqa: E501
-        :rtype: int
+        :return: The queue_code of this JobSpec.  # noqa: E501
+        :rtype: str
         """
-        return self._queue
+        return self._queue_code
 
-    @queue.setter
-    def queue(self, queue):
-        """Sets the queue of this JobSpec.
+    @queue_code.setter
+    def queue_code(self, queue_code):
+        """Sets the queue_code of this JobSpec.
 
-        (Optional) ID of cluster queue for the quote. This will just return the quotes for that queue. If not present the quote will be for all available queues  # noqa: E501
+        (Optional) Code of cluster queue for the quote. This will just return the quotes for that queue. If not present the quote will be for all available queues  # noqa: E501
 
-        :param queue: The queue of this JobSpec.  # noqa: E501
-        :type queue: int
+        :param queue_code: The queue_code of this JobSpec.  # noqa: E501
+        :type queue_code: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                queue_code is not None and len(queue_code) < 1):
+            raise ValueError("Invalid value for `queue_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._queue = queue
+        self._queue_code = queue_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

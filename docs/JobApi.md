@@ -251,6 +251,8 @@ void (empty response body)
 
 
 
+Create a new job bssased on the submitted job specification. App and Queue codes can be retreived from the catalog endpoints.
+
 ### Example
 
 * Api Key Authentication (Bearer):
@@ -324,6 +326,8 @@ Name | Type | Description  | Notes
 > InlineResponse2006 job_list(limit=limit, offset=offset)
 
 
+
+List the jobs instances in EPIC
 
 ### Example
 
@@ -400,6 +404,8 @@ Name | Type | Description  | Notes
 > JobAppOptions job_partial_update(id, data)
 
 
+
+Update the job options for job instance with ID {id}
 
 ### Example
 
@@ -552,6 +558,8 @@ Name | Type | Description  | Notes
 > Job job_read(id)
 
 
+
+See the details for the job instance with ID {id}
 
 ### Example
 
