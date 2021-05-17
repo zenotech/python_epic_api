@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**catalog_clusters_list**](CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ | 
 [**catalog_clusters_read**](CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{queue_code}/ | 
 [**catalog_desktop_list**](CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
-[**catalog_desktop_read**](CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
+[**catalog_desktop_read**](CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{node_code}/ | 
 
 
 # **catalog_applications_list**
@@ -333,6 +333,8 @@ Name | Type | Description  | Notes
 
 
 
+List the available node types for desktop instances
+
 ### Example
 
 * Api Key Authentication (Bearer):
@@ -405,9 +407,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_desktop_read**
-> DesktopNodeApp catalog_desktop_read(id)
+> DesktopNodeType catalog_desktop_read(node_code)
 
 
+
+Get the details of the desktop node type with code node_code
 
 ### Example
 
@@ -443,10 +447,10 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
-    id = 'id_example' # str | 
+    node_code = 'node_code_example' # str | 
 
     try:
-        api_response = api_instance.catalog_desktop_read(id)
+        api_response = api_instance.catalog_desktop_read(node_code)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CatalogApi->catalog_desktop_read: %s\n" % e)
@@ -456,11 +460,11 @@ with epiccore.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **node_code** | **str**|  | 
 
 ### Return type
 
-[**DesktopNodeApp**](DesktopNodeApp.md)
+[**DesktopNodeType**](DesktopNodeType.md)
 
 ### Authorization
 

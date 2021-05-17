@@ -34,119 +34,55 @@ class DesktopNodeQuote(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'application_version': 'int',
-        'node_type': 'int',
-        'connection_type': 'int',
+        'node_code': 'str',
         'runtime': 'int'
     }
 
     attribute_map = {
-        'application_version': 'application_version',
-        'node_type': 'node_type',
-        'connection_type': 'connection_type',
+        'node_code': 'node_code',
         'runtime': 'runtime'
     }
 
-    def __init__(self, application_version=None, node_type=None, connection_type=None, runtime=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, node_code=None, runtime=None, local_vars_configuration=None):  # noqa: E501
         """DesktopNodeQuote - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._application_version = None
-        self._node_type = None
-        self._connection_type = None
+        self._node_code = None
         self._runtime = None
         self.discriminator = None
 
-        self.application_version = application_version
-        self.node_type = node_type
-        self.connection_type = connection_type
+        self.node_code = node_code
         self.runtime = runtime
 
     @property
-    def application_version(self):
-        """Gets the application_version of this DesktopNodeQuote.  # noqa: E501
+    def node_code(self):
+        """Gets the node_code of this DesktopNodeQuote.  # noqa: E501
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
+        node_code of the node type to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
-        :return: The application_version of this DesktopNodeQuote.  # noqa: E501
-        :rtype: int
+        :return: The node_code of this DesktopNodeQuote.  # noqa: E501
+        :rtype: str
         """
-        return self._application_version
+        return self._node_code
 
-    @application_version.setter
-    def application_version(self, application_version):
-        """Sets the application_version of this DesktopNodeQuote.
+    @node_code.setter
+    def node_code(self, node_code):
+        """Sets the node_code of this DesktopNodeQuote.
 
-        ID of the application_version to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
+        node_code of the node type to launch. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
 
-        :param application_version: The application_version of this DesktopNodeQuote.  # noqa: E501
-        :type application_version: int
+        :param node_code: The node_code of this DesktopNodeQuote.  # noqa: E501
+        :type node_code: str
         """
-        if self.local_vars_configuration.client_side_validation and application_version is None:  # noqa: E501
-            raise ValueError("Invalid value for `application_version`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and node_code is None:  # noqa: E501
+            raise ValueError("Invalid value for `node_code`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                application_version is not None and application_version < 1):  # noqa: E501
-            raise ValueError("Invalid value for `application_version`, must be a value greater than or equal to `1`")  # noqa: E501
+                node_code is not None and len(node_code) < 1):
+            raise ValueError("Invalid value for `node_code`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._application_version = application_version
-
-    @property
-    def node_type(self):
-        """Gets the node_type of this DesktopNodeQuote.  # noqa: E501
-
-        ID of the node_type. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
-
-        :return: The node_type of this DesktopNodeQuote.  # noqa: E501
-        :rtype: int
-        """
-        return self._node_type
-
-    @node_type.setter
-    def node_type(self, node_type):
-        """Sets the node_type of this DesktopNodeQuote.
-
-        ID of the node_type. Valid values are obtained from the catalog/desktop/ endpoint  # noqa: E501
-
-        :param node_type: The node_type of this DesktopNodeQuote.  # noqa: E501
-        :type node_type: int
-        """
-        if self.local_vars_configuration.client_side_validation and node_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `node_type`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                node_type is not None and node_type < 1):  # noqa: E501
-            raise ValueError("Invalid value for `node_type`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._node_type = node_type
-
-    @property
-    def connection_type(self):
-        """Gets the connection_type of this DesktopNodeQuote.  # noqa: E501
-
-        The connection type to use for the Desktop  # noqa: E501
-
-        :return: The connection_type of this DesktopNodeQuote.  # noqa: E501
-        :rtype: int
-        """
-        return self._connection_type
-
-    @connection_type.setter
-    def connection_type(self, connection_type):
-        """Sets the connection_type of this DesktopNodeQuote.
-
-        The connection type to use for the Desktop  # noqa: E501
-
-        :param connection_type: The connection_type of this DesktopNodeQuote.  # noqa: E501
-        :type connection_type: int
-        """
-        if self.local_vars_configuration.client_side_validation and connection_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `connection_type`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                connection_type is not None and connection_type < 1):  # noqa: E501
-            raise ValueError("Invalid value for `connection_type`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._connection_type = connection_type
+        self._node_code = node_code
 
     @property
     def runtime(self):

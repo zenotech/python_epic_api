@@ -36,26 +36,26 @@ class DesktopInstance(object):
     openapi_types = {
         'id': 'int',
         'status': 'str',
-        'connection_type': 'DesktopNodeConnectionType',
         'connection_string': 'str',
-        'application': 'DesktopNodeApplicationVersionSummary',
+        'node_type': 'DesktopNodeType',
         'launched_by': 'str',
         'team': 'str',
-        'created': 'datetime'
+        'created': 'datetime',
+        'runtime': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'status': 'status',
-        'connection_type': 'connection_type',
         'connection_string': 'connection_string',
-        'application': 'application',
+        'node_type': 'node_type',
         'launched_by': 'launched_by',
         'team': 'team',
-        'created': 'created'
+        'created': 'created',
+        'runtime': 'runtime'
     }
 
-    def __init__(self, id=None, status=None, connection_type=None, connection_string=None, application=None, launched_by=None, team=None, created=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, status=None, connection_string=None, node_type=None, launched_by=None, team=None, created=None, runtime=None, local_vars_configuration=None):  # noqa: E501
         """DesktopInstance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,27 +63,28 @@ class DesktopInstance(object):
 
         self._id = None
         self._status = None
-        self._connection_type = None
         self._connection_string = None
-        self._application = None
+        self._node_type = None
         self._launched_by = None
         self._team = None
         self._created = None
+        self._runtime = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if status is not None:
             self.status = status
-        self.connection_type = connection_type
         self.connection_string = connection_string
-        if application is not None:
-            self.application = application
+        if node_type is not None:
+            self.node_type = node_type
         if launched_by is not None:
             self.launched_by = launched_by
         self.team = team
         if created is not None:
             self.created = created
+        if runtime is not None:
+            self.runtime = runtime
 
     @property
     def id(self):
@@ -130,29 +131,6 @@ class DesktopInstance(object):
         self._status = status
 
     @property
-    def connection_type(self):
-        """Gets the connection_type of this DesktopInstance.  # noqa: E501
-
-
-        :return: The connection_type of this DesktopInstance.  # noqa: E501
-        :rtype: DesktopNodeConnectionType
-        """
-        return self._connection_type
-
-    @connection_type.setter
-    def connection_type(self, connection_type):
-        """Sets the connection_type of this DesktopInstance.
-
-
-        :param connection_type: The connection_type of this DesktopInstance.  # noqa: E501
-        :type connection_type: DesktopNodeConnectionType
-        """
-        if self.local_vars_configuration.client_side_validation and connection_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `connection_type`, must not be `None`")  # noqa: E501
-
-        self._connection_type = connection_type
-
-    @property
     def connection_string(self):
         """Gets the connection_string of this DesktopInstance.  # noqa: E501
 
@@ -176,25 +154,25 @@ class DesktopInstance(object):
         self._connection_string = connection_string
 
     @property
-    def application(self):
-        """Gets the application of this DesktopInstance.  # noqa: E501
+    def node_type(self):
+        """Gets the node_type of this DesktopInstance.  # noqa: E501
 
 
-        :return: The application of this DesktopInstance.  # noqa: E501
-        :rtype: DesktopNodeApplicationVersionSummary
+        :return: The node_type of this DesktopInstance.  # noqa: E501
+        :rtype: DesktopNodeType
         """
-        return self._application
+        return self._node_type
 
-    @application.setter
-    def application(self, application):
-        """Sets the application of this DesktopInstance.
+    @node_type.setter
+    def node_type(self, node_type):
+        """Sets the node_type of this DesktopInstance.
 
 
-        :param application: The application of this DesktopInstance.  # noqa: E501
-        :type application: DesktopNodeApplicationVersionSummary
+        :param node_type: The node_type of this DesktopInstance.  # noqa: E501
+        :type node_type: DesktopNodeType
         """
 
-        self._application = application
+        self._node_type = node_type
 
     @property
     def launched_by(self):
@@ -262,6 +240,29 @@ class DesktopInstance(object):
         """
 
         self._created = created
+
+    @property
+    def runtime(self):
+        """Gets the runtime of this DesktopInstance.  # noqa: E501
+
+        The requested runtime in hours  # noqa: E501
+
+        :return: The runtime of this DesktopInstance.  # noqa: E501
+        :rtype: str
+        """
+        return self._runtime
+
+    @runtime.setter
+    def runtime(self, runtime):
+        """Sets the runtime of this DesktopInstance.
+
+        The requested runtime in hours  # noqa: E501
+
+        :param runtime: The runtime of this DesktopInstance.  # noqa: E501
+        :type runtime: str
+        """
+
+        self._runtime = runtime
 
     def to_dict(self):
         """Returns the model properties as a dict"""

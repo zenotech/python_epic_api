@@ -37,17 +37,19 @@ class BatchApplicationList(object):
         'id': 'int',
         'product': 'ProductName',
         'versions': 'list[BatchApplicationVersionDetails]',
-        'permission_to_use': 'bool'
+        'permission_to_use': 'bool',
+        'supports_cases': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'product': 'product',
         'versions': 'versions',
-        'permission_to_use': 'permission_to_use'
+        'permission_to_use': 'permission_to_use',
+        'supports_cases': 'supports_cases'
     }
 
-    def __init__(self, id=None, product=None, versions=None, permission_to_use=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, product=None, versions=None, permission_to_use=None, supports_cases=None, local_vars_configuration=None):  # noqa: E501
         """BatchApplicationList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class BatchApplicationList(object):
         self._product = None
         self._versions = None
         self._permission_to_use = None
+        self._supports_cases = None
         self.discriminator = None
 
         if id is not None:
@@ -66,6 +69,8 @@ class BatchApplicationList(object):
             self.versions = versions
         if permission_to_use is not None:
             self.permission_to_use = permission_to_use
+        if supports_cases is not None:
+            self.supports_cases = supports_cases
 
     @property
     def id(self):
@@ -154,6 +159,27 @@ class BatchApplicationList(object):
         """
 
         self._permission_to_use = permission_to_use
+
+    @property
+    def supports_cases(self):
+        """Gets the supports_cases of this BatchApplicationList.  # noqa: E501
+
+
+        :return: The supports_cases of this BatchApplicationList.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_cases
+
+    @supports_cases.setter
+    def supports_cases(self, supports_cases):
+        """Sets the supports_cases of this BatchApplicationList.
+
+
+        :param supports_cases: The supports_cases of this BatchApplicationList.  # noqa: E501
+        :type supports_cases: bool
+        """
+
+        self._supports_cases = supports_cases
 
     def to_dict(self):
         """Returns the model properties as a dict"""

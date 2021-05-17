@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ID for this node_type to be used in DesktopNodeLaunchSpec | [optional] [readonly] 
+**node_code** | **str** | The code for this node type to be used in DesktopNodeLaunchSpec | [optional] 
 **name** | **str** | This provides the name of this node type | [optional] [readonly] 
 **description** | **str** | This provides a detailed description of this node type | [optional] [readonly] 
 **cores** | **int** | Number of cores that this desktop node has | [optional] [readonly] 

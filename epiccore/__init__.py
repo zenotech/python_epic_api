@@ -55,11 +55,6 @@ from epiccore.models.current_spend import CurrentSpend
 from epiccore.models.data_location import DataLocation
 from epiccore.models.data_spec import DataSpec
 from epiccore.models.desktop_instance import DesktopInstance
-from epiccore.models.desktop_node_app import DesktopNodeApp
-from epiccore.models.desktop_node_app_summary import DesktopNodeAppSummary
-from epiccore.models.desktop_node_application_version import DesktopNodeApplicationVersion
-from epiccore.models.desktop_node_application_version_summary import DesktopNodeApplicationVersionSummary
-from epiccore.models.desktop_node_connection_type import DesktopNodeConnectionType
 from epiccore.models.desktop_node_launch_spec import DesktopNodeLaunchSpec
 from epiccore.models.desktop_node_quote import DesktopNodeQuote
 from epiccore.models.desktop_node_type import DesktopNodeType

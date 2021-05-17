@@ -34,7 +34,7 @@ class DesktopNodeType(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
+        'node_code': 'str',
         'name': 'str',
         'description': 'str',
         'cores': 'int',
@@ -42,28 +42,27 @@ class DesktopNodeType(object):
     }
 
     attribute_map = {
-        'id': 'id',
+        'node_code': 'node_code',
         'name': 'name',
         'description': 'description',
         'cores': 'cores',
         'gpus': 'gpus'
     }
 
-    def __init__(self, id=None, name=None, description=None, cores=None, gpus=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, node_code=None, name=None, description=None, cores=None, gpus=None, local_vars_configuration=None):  # noqa: E501
         """DesktopNodeType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
+        self._node_code = None
         self._name = None
         self._description = None
         self._cores = None
         self._gpus = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        self.node_code = node_code
         if name is not None:
             self.name = name
         if description is not None:
@@ -74,27 +73,30 @@ class DesktopNodeType(object):
             self.gpus = gpus
 
     @property
-    def id(self):
-        """Gets the id of this DesktopNodeType.  # noqa: E501
+    def node_code(self):
+        """Gets the node_code of this DesktopNodeType.  # noqa: E501
 
-        ID for this node_type to be used in DesktopNodeLaunchSpec  # noqa: E501
+        The code for this node type to be used in DesktopNodeLaunchSpec  # noqa: E501
 
-        :return: The id of this DesktopNodeType.  # noqa: E501
-        :rtype: int
+        :return: The node_code of this DesktopNodeType.  # noqa: E501
+        :rtype: str
         """
-        return self._id
+        return self._node_code
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this DesktopNodeType.
+    @node_code.setter
+    def node_code(self, node_code):
+        """Sets the node_code of this DesktopNodeType.
 
-        ID for this node_type to be used in DesktopNodeLaunchSpec  # noqa: E501
+        The code for this node type to be used in DesktopNodeLaunchSpec  # noqa: E501
 
-        :param id: The id of this DesktopNodeType.  # noqa: E501
-        :type id: int
+        :param node_code: The node_code of this DesktopNodeType.  # noqa: E501
+        :type node_code: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                node_code is not None and len(node_code) > 50):
+            raise ValueError("Invalid value for `node_code`, length must be less than or equal to `50`")  # noqa: E501
 
-        self._id = id
+        self._node_code = node_code
 
     @property
     def name(self):
