@@ -36,16 +36,18 @@ class JobConfiguration(object):
     openapi_types = {
         'upload': 'list[str]',
         'overwrite_existing': 'bool',
-        'data_sync_interval': 'int'
+        'data_sync_interval': 'int',
+        'local_submission': 'bool'
     }
 
     attribute_map = {
         'upload': 'upload',
         'overwrite_existing': 'overwrite_existing',
-        'data_sync_interval': 'data_sync_interval'
+        'data_sync_interval': 'data_sync_interval',
+        'local_submission': 'local_submission'
     }
 
-    def __init__(self, upload=None, overwrite_existing=True, data_sync_interval=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, upload=None, overwrite_existing=True, data_sync_interval=None, local_submission=False, local_vars_configuration=None):  # noqa: E501
         """JobConfiguration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class JobConfiguration(object):
         self._upload = None
         self._overwrite_existing = None
         self._data_sync_interval = None
+        self._local_submission = None
         self.discriminator = None
 
         if upload is not None:
@@ -62,6 +65,8 @@ class JobConfiguration(object):
             self.overwrite_existing = overwrite_existing
         if data_sync_interval is not None:
             self.data_sync_interval = data_sync_interval
+        if local_submission is not None:
+            self.local_submission = local_submission
 
     @property
     def upload(self):
@@ -142,6 +147,29 @@ class JobConfiguration(object):
             raise ValueError("Invalid value for `data_sync_interval`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._data_sync_interval = data_sync_interval
+
+    @property
+    def local_submission(self):
+        """Gets the local_submission of this JobConfiguration.  # noqa: E501
+
+        Is this job being submitted locally?  # noqa: E501
+
+        :return: The local_submission of this JobConfiguration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._local_submission
+
+    @local_submission.setter
+    def local_submission(self, local_submission):
+        """Sets the local_submission of this JobConfiguration.
+
+        Is this job being submitted locally?  # noqa: E501
+
+        :param local_submission: The local_submission of this JobConfiguration.  # noqa: E501
+        :type local_submission: bool
+        """
+
+        self._local_submission = local_submission
 
     def to_dict(self):
         """Returns the model properties as a dict"""

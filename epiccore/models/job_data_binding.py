@@ -66,7 +66,8 @@ class JobDataBinding(object):
         self.spec = spec
         self.app_options = app_options
         self.cluster = cluster
-        self.input_data = input_data
+        if input_data is not None:
+            self.input_data = input_data
 
     @property
     def name(self):
@@ -188,8 +189,6 @@ class JobDataBinding(object):
         :param input_data: The input_data of this JobDataBinding.  # noqa: E501
         :type input_data: DataSpec
         """
-        if self.local_vars_configuration.client_side_validation and input_data is None:  # noqa: E501
-            raise ValueError("Invalid value for `input_data`, must not be `None`")  # noqa: E501
 
         self._input_data = input_data
 

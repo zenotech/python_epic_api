@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **sla** | [**SLA**](SLA.md) |  | 
 **maintenance_mode** | **bool** |  | [optional] [readonly] 
 **resource_config** | [**ClusterNodeConfig**](ClusterNodeConfig.md) |  | 
+**supports_local_submission** | **bool** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

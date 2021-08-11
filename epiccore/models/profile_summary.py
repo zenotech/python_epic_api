@@ -102,7 +102,7 @@ class ProfileSummary(object):
         :param display_currency: The display_currency of this ProfileSummary.  # noqa: E501
         :type display_currency: str
         """
-        allowed_values = ["EUR", "GBP", "USD"]  # noqa: E501
+        allowed_values = ["GBP", "EUR", "USD"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and display_currency not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `display_currency` ({0}), must be one of {1}"  # noqa: E501

@@ -44,7 +44,8 @@ class BatchQueueDetails(object):
         'reported_max_tasks': 'int',
         'sla': 'SLA',
         'maintenance_mode': 'bool',
-        'resource_config': 'ClusterNodeConfig'
+        'resource_config': 'ClusterNodeConfig',
+        'supports_local_submission': 'bool'
     }
 
     attribute_map = {
@@ -58,10 +59,11 @@ class BatchQueueDetails(object):
         'reported_max_tasks': 'reported_max_tasks',
         'sla': 'sla',
         'maintenance_mode': 'maintenance_mode',
-        'resource_config': 'resource_config'
+        'resource_config': 'resource_config',
+        'supports_local_submission': 'supports_local_submission'
     }
 
-    def __init__(self, queue_code=None, name=None, description=None, cluster_name=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, queue_code=None, name=None, description=None, cluster_name=None, max_runtime=None, max_allocation=None, reported_avail_tasks=None, reported_max_tasks=None, sla=None, maintenance_mode=None, resource_config=None, supports_local_submission=None, local_vars_configuration=None):  # noqa: E501
         """BatchQueueDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class BatchQueueDetails(object):
         self._sla = None
         self._maintenance_mode = None
         self._resource_config = None
+        self._supports_local_submission = None
         self.discriminator = None
 
         self.queue_code = queue_code
@@ -96,6 +99,8 @@ class BatchQueueDetails(object):
         if maintenance_mode is not None:
             self.maintenance_mode = maintenance_mode
         self.resource_config = resource_config
+        if supports_local_submission is not None:
+            self.supports_local_submission = supports_local_submission
 
     @property
     def queue_code(self):
@@ -378,6 +383,27 @@ class BatchQueueDetails(object):
             raise ValueError("Invalid value for `resource_config`, must not be `None`")  # noqa: E501
 
         self._resource_config = resource_config
+
+    @property
+    def supports_local_submission(self):
+        """Gets the supports_local_submission of this BatchQueueDetails.  # noqa: E501
+
+
+        :return: The supports_local_submission of this BatchQueueDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_local_submission
+
+    @supports_local_submission.setter
+    def supports_local_submission(self, supports_local_submission):
+        """Sets the supports_local_submission of this BatchQueueDetails.
+
+
+        :param supports_local_submission: The supports_local_submission of this BatchQueueDetails.  # noqa: E501
+        :type supports_local_submission: bool
+        """
+
+        self._supports_local_submission = supports_local_submission
 
     def to_dict(self):
         """Returns the model properties as a dict"""
