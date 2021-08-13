@@ -5,6 +5,7 @@ from __future__ import absolute_import
 # import apis into api package
 from epiccore.api.billing_api import BillingApi
 from epiccore.api.catalog_api import CatalogApi
+from epiccore.api.config_api import ConfigApi
 from epiccore.api.data_api import DataApi
 from epiccore.api.desktop_api import DesktopApi
 from epiccore.api.job_api import JobApi

@@ -84,7 +84,8 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**catalog_clusters_list**](docs/CatalogApi.md#catalog_clusters_list) | **GET** /catalog/clusters/ | 
 *CatalogApi* | [**catalog_clusters_read**](docs/CatalogApi.md#catalog_clusters_read) | **GET** /catalog/clusters/{queue_code}/ | 
 *CatalogApi* | [**catalog_desktop_list**](docs/CatalogApi.md#catalog_desktop_list) | **GET** /catalog/desktop/ | 
-*CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{id}/ | 
+*CatalogApi* | [**catalog_desktop_read**](docs/CatalogApi.md#catalog_desktop_read) | **GET** /catalog/desktop/{node_code}/ | 
+*ConfigApi* | [**config_read**](docs/ConfigApi.md#config_read) | **GET** /config/{app_code}/{queue_code}/ | 
 *DataApi* | [**data_file_list**](docs/DataApi.md#data_file_list) | **GET** /data/file/ | 
 *DataApi* | [**data_file_read**](docs/DataApi.md#data_file_read) | **GET** /data/file/{id}/ | 
 *DataApi* | [**data_folder_list**](docs/DataApi.md#data_folder_list) | **GET** /data/folder/ | 
@@ -132,6 +133,7 @@ Class | Method | HTTP request | Description
 
  - [AcceleratorConfig](docs/AcceleratorConfig.md)
  - [AnsysLicense](docs/AnsysLicense.md)
+ - [ApplicationConfigurationSerialiser](docs/ApplicationConfigurationSerialiser.md)
  - [BatchApplicationDetails](docs/BatchApplicationDetails.md)
  - [BatchApplicationList](docs/BatchApplicationList.md)
  - [BatchApplicationVersionDetails](docs/BatchApplicationVersionDetails.md)
@@ -144,15 +146,11 @@ Class | Method | HTTP request | Description
  - [DataLocation](docs/DataLocation.md)
  - [DataSpec](docs/DataSpec.md)
  - [DesktopInstance](docs/DesktopInstance.md)
- - [DesktopNodeApp](docs/DesktopNodeApp.md)
- - [DesktopNodeAppSummary](docs/DesktopNodeAppSummary.md)
- - [DesktopNodeApplicationVersion](docs/DesktopNodeApplicationVersion.md)
- - [DesktopNodeApplicationVersionSummary](docs/DesktopNodeApplicationVersionSummary.md)
- - [DesktopNodeConnectionType](docs/DesktopNodeConnectionType.md)
  - [DesktopNodeLaunchSpec](docs/DesktopNodeLaunchSpec.md)
  - [DesktopNodeQuote](docs/DesktopNodeQuote.md)
  - [DesktopNodeType](docs/DesktopNodeType.md)
  - [Discount](docs/Discount.md)
+ - [EnvironmentVariable](docs/EnvironmentVariable.md)
  - [File](docs/File.md)
  - [Folder](docs/Folder.md)
  - [FolderDetails](docs/FolderDetails.md)
@@ -200,6 +198,7 @@ Class | Method | HTTP request | Description
  - [SLA](docs/SLA.md)
  - [ServiceCharge](docs/ServiceCharge.md)
  - [SessionToken](docs/SessionToken.md)
+ - [SiteConfigurationSerialiser](docs/SiteConfigurationSerialiser.md)
  - [SoftwareCost](docs/SoftwareCost.md)
  - [SpendLimit](docs/SpendLimit.md)
  - [TaskQuote](docs/TaskQuote.md)
@@ -207,6 +206,7 @@ Class | Method | HTTP request | Description
  - [Team](docs/Team.md)
  - [TeamDetails](docs/TeamDetails.md)
  - [TeamSelect](docs/TeamSelect.md)
+ - [Template](docs/Template.md)
  - [Total](docs/Total.md)
  - [Total1](docs/Total1.md)
  - [UserName](docs/UserName.md)

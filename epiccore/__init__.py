@@ -20,6 +20,7 @@ __version__ = "1.0.0"
 # import apis into sdk package
 from epiccore.api.billing_api import BillingApi
 from epiccore.api.catalog_api import CatalogApi
+from epiccore.api.config_api import ConfigApi
 from epiccore.api.data_api import DataApi
 from epiccore.api.desktop_api import DesktopApi
 from epiccore.api.job_api import JobApi
@@ -43,6 +44,7 @@ from epiccore.exceptions import ApiException
 # import models into sdk package
 from epiccore.models.accelerator_config import AcceleratorConfig
 from epiccore.models.ansys_license import AnsysLicense
+from epiccore.models.application_configuration_serialiser import ApplicationConfigurationSerialiser
 from epiccore.models.batch_application_details import BatchApplicationDetails
 from epiccore.models.batch_application_list import BatchApplicationList
 from epiccore.models.batch_application_version_details import BatchApplicationVersionDetails
@@ -59,6 +61,7 @@ from epiccore.models.desktop_node_launch_spec import DesktopNodeLaunchSpec
 from epiccore.models.desktop_node_quote import DesktopNodeQuote
 from epiccore.models.desktop_node_type import DesktopNodeType
 from epiccore.models.discount import Discount
+from epiccore.models.environment_variable import EnvironmentVariable
 from epiccore.models.file import File
 from epiccore.models.folder import Folder
 from epiccore.models.folder_details import FolderDetails
@@ -106,6 +109,7 @@ from epiccore.models.project_details import ProjectDetails
 from epiccore.models.sla import SLA
 from epiccore.models.service_charge import ServiceCharge
 from epiccore.models.session_token import SessionToken
+from epiccore.models.site_configuration_serialiser import SiteConfigurationSerialiser
 from epiccore.models.software_cost import SoftwareCost
 from epiccore.models.spend_limit import SpendLimit
 from epiccore.models.task_quote import TaskQuote
@@ -113,6 +117,7 @@ from epiccore.models.tax import Tax
 from epiccore.models.team import Team
 from epiccore.models.team_details import TeamDetails
 from epiccore.models.team_select import TeamSelect
+from epiccore.models.template import Template
 from epiccore.models.total import Total
 from epiccore.models.total1 import Total1
 from epiccore.models.user_name import UserName
