@@ -47,7 +47,8 @@ class JobStep(object):
         'exit_code': 'int',
         'start': 'datetime',
         'end': 'datetime',
-        'wallclock': 'str'
+        'wallclock': 'str',
+        'local_job_id': 'int'
     }
 
     attribute_map = {
@@ -64,10 +65,11 @@ class JobStep(object):
         'exit_code': 'exit_code',
         'start': 'start',
         'end': 'end',
-        'wallclock': 'wallclock'
+        'wallclock': 'wallclock',
+        'local_job_id': 'local_job_id'
     }
 
-    def __init__(self, id=None, parent_job=None, run_if_previous_step_fails=None, step_name=None, node_count=None, num_tasks=None, tasks_per_node=None, threads_per_task=None, max_runtime=None, status=None, exit_code=None, start=None, end=None, wallclock=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, parent_job=None, run_if_previous_step_fails=None, step_name=None, node_count=None, num_tasks=None, tasks_per_node=None, threads_per_task=None, max_runtime=None, status=None, exit_code=None, start=None, end=None, wallclock=None, local_job_id=None, local_vars_configuration=None):  # noqa: E501
         """JobStep - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class JobStep(object):
         self._start = None
         self._end = None
         self._wallclock = None
+        self._local_job_id = None
         self.discriminator = None
 
         if id is not None:
@@ -111,6 +114,7 @@ class JobStep(object):
         self.start = start
         self.end = end
         self.wallclock = wallclock
+        self.local_job_id = local_job_id
 
     @property
     def id(self):
@@ -478,6 +482,33 @@ class JobStep(object):
         """
 
         self._wallclock = wallclock
+
+    @property
+    def local_job_id(self):
+        """Gets the local_job_id of this JobStep.  # noqa: E501
+
+
+        :return: The local_job_id of this JobStep.  # noqa: E501
+        :rtype: int
+        """
+        return self._local_job_id
+
+    @local_job_id.setter
+    def local_job_id(self, local_job_id):
+        """Sets the local_job_id of this JobStep.
+
+
+        :param local_job_id: The local_job_id of this JobStep.  # noqa: E501
+        :type local_job_id: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                local_job_id is not None and local_job_id > 2147483647):  # noqa: E501
+            raise ValueError("Invalid value for `local_job_id`, must be a value less than or equal to `2147483647`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                local_job_id is not None and local_job_id < -2147483648):  # noqa: E501
+            raise ValueError("Invalid value for `local_job_id`, must be a value greater than or equal to `-2147483648`")  # noqa: E501
+
+        self._local_job_id = local_job_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

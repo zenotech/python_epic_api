@@ -40,6 +40,7 @@ class ConfigApi(object):
     def config_read(self, app_code, queue_code, **kwargs):  # noqa: E501
         """config_read  # noqa: E501
 
+        Fetch the application configuration for <app_code> running on <queue_code>. Only accessable to authorised users.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -71,6 +72,7 @@ class ConfigApi(object):
     def config_read_with_http_info(self, app_code, queue_code, **kwargs):  # noqa: E501
         """config_read  # noqa: E501
 
+        Fetch the application configuration for <app_code> running on <queue_code>. Only accessable to authorised users.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

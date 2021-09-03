@@ -12,6 +12,8 @@ Method | HTTP request | Description
 
 
 
+Fetch the application configuration for <app_code> running on <queue_code>. Only accessable to authorised users.
+
 ### Example
 
 * Api Key Authentication (Bearer):
