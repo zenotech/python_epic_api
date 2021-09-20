@@ -49,7 +49,8 @@ class Job(object):
         'invoice_reference': 'str',
         'config': 'JobConfiguration',
         'job_steps': 'list[JobStep]',
-        'input_data': 'DataSpec'
+        'input_data': 'DataSpec',
+        'requires_auth': 'bool'
     }
 
     attribute_map = {
@@ -68,10 +69,11 @@ class Job(object):
         'invoice_reference': 'invoice_reference',
         'config': 'config',
         'job_steps': 'job_steps',
-        'input_data': 'input_data'
+        'input_data': 'input_data',
+        'requires_auth': 'requires_auth'
     }
 
-    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, job_steps=None, input_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, job_steps=None, input_data=None, requires_auth=None, local_vars_configuration=None):  # noqa: E501
         """Job - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class Job(object):
         self._config = None
         self._job_steps = None
         self._input_data = None
+        self._requires_auth = None
         self.discriminator = None
 
         if id is not None:
@@ -127,6 +130,8 @@ class Job(object):
             self.job_steps = job_steps
         if input_data is not None:
             self.input_data = input_data
+        if requires_auth is not None:
+            self.requires_auth = requires_auth
 
     @property
     def id(self):
@@ -519,6 +524,29 @@ class Job(object):
         """
 
         self._input_data = input_data
+
+    @property
+    def requires_auth(self):
+        """Gets the requires_auth of this Job.  # noqa: E501
+
+        Does this job require additional authorisation?  # noqa: E501
+
+        :return: The requires_auth of this Job.  # noqa: E501
+        :rtype: bool
+        """
+        return self._requires_auth
+
+    @requires_auth.setter
+    def requires_auth(self, requires_auth):
+        """Sets the requires_auth of this Job.
+
+        Does this job require additional authorisation?  # noqa: E501
+
+        :param requires_auth: The requires_auth of this Job.  # noqa: E501
+        :type requires_auth: bool
+        """
+
+        self._requires_auth = requires_auth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

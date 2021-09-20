@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **config** | [**JobConfiguration**](JobConfiguration.md) |  | [optional] 
 **job_steps** | [**list[JobStep]**](JobStep.md) | The job steps associated with this Job | [optional] [readonly] 
 **input_data** | [**DataSpec**](DataSpec.md) |  | [optional] 
+**requires_auth** | **bool** | Does this job require additional authorisation? | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
