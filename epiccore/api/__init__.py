@@ -12,7 +12,6 @@ from epiccore.api.job_api import JobApi
 from epiccore.api.jobauth_api import JobauthApi
 from epiccore.api.jobrefresh_api import JobrefreshApi
 from epiccore.api.jobstep_api import JobstepApi
-from epiccore.api.licenses_api import LicensesApi
 from epiccore.api.profile_api import ProfileApi
 from epiccore.api.projects_api import ProjectsApi
 from epiccore.api.teams_api import TeamsApi
