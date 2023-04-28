@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **teams_list**
-> InlineResponse20010 teams_list(name=name, role=role, limit=limit, offset=offset)
+> InlineResponse20011 teams_list(name=name, role=role, limit=limit, offset=offset)
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **partitions** | **int** | How many partitions/tasks will this task be submitted as. | 
 **runtime** | **int** | Maximum runtime for this task in whole hours. | 
 **task_distribution** | **str** | How should the partitions be distributed on the HPC cluster | 
+**tasks_per_device** | **int** | How many tasks should be scheduled per device. | [optional] 
 **hyperthreading** | **bool** | Make use of hyperthreaded core where available | [optional] [default to True]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

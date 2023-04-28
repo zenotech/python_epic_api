@@ -38,6 +38,7 @@ class JobTaskSpec(object):
         'partitions': 'int',
         'runtime': 'int',
         'task_distribution': 'str',
+        'tasks_per_device': 'int',
         'hyperthreading': 'bool'
     }
 
@@ -46,10 +47,11 @@ class JobTaskSpec(object):
         'partitions': 'partitions',
         'runtime': 'runtime',
         'task_distribution': 'task_distribution',
+        'tasks_per_device': 'tasks_per_device',
         'hyperthreading': 'hyperthreading'
     }
 
-    def __init__(self, reference=None, partitions=None, runtime=None, task_distribution=None, hyperthreading=True, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, reference=None, partitions=None, runtime=None, task_distribution=None, tasks_per_device=None, hyperthreading=True, local_vars_configuration=None):  # noqa: E501
         """JobTaskSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class JobTaskSpec(object):
         self._partitions = None
         self._runtime = None
         self._task_distribution = None
+        self._tasks_per_device = None
         self._hyperthreading = None
         self.discriminator = None
 
@@ -66,6 +69,8 @@ class JobTaskSpec(object):
         self.partitions = partitions
         self.runtime = runtime
         self.task_distribution = task_distribution
+        if tasks_per_device is not None:
+            self.tasks_per_device = tasks_per_device
         if hyperthreading is not None:
             self.hyperthreading = hyperthreading
 
@@ -186,6 +191,32 @@ class JobTaskSpec(object):
             )
 
         self._task_distribution = task_distribution
+
+    @property
+    def tasks_per_device(self):
+        """Gets the tasks_per_device of this JobTaskSpec.  # noqa: E501
+
+        How many tasks should be scheduled per device.  # noqa: E501
+
+        :return: The tasks_per_device of this JobTaskSpec.  # noqa: E501
+        :rtype: int
+        """
+        return self._tasks_per_device
+
+    @tasks_per_device.setter
+    def tasks_per_device(self, tasks_per_device):
+        """Sets the tasks_per_device of this JobTaskSpec.
+
+        How many tasks should be scheduled per device.  # noqa: E501
+
+        :param tasks_per_device: The tasks_per_device of this JobTaskSpec.  # noqa: E501
+        :type tasks_per_device: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                tasks_per_device is not None and tasks_per_device < 1):  # noqa: E501
+            raise ValueError("Invalid value for `tasks_per_device`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._tasks_per_device = tasks_per_device
 
     @property
     def hyperthreading(self):

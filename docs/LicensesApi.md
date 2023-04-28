@@ -1,22 +1,20 @@
-# epiccore.DataApi
+# epiccore.LicensesApi
 
 All URIs are relative to *https://epic.zenotech.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**data_file_list**](DataApi.md#data_file_list) | **GET** /data/file/ | 
-[**data_file_read**](DataApi.md#data_file_read) | **GET** /data/file/{id}/ | 
-[**data_folder_list**](DataApi.md#data_folder_list) | **GET** /data/folder/ | 
-[**data_folder_read**](DataApi.md#data_folder_read) | **GET** /data/folder/{id}/ | 
-[**data_session_list**](DataApi.md#data_session_list) | **GET** /data/session/ | 
+[**licenses_create**](LicensesApi.md#licenses_create) | **POST** /licenses/ | 
+[**licenses_delete**](LicensesApi.md#licenses_delete) | **DELETE** /licenses/{id}/ | 
+[**licenses_list**](LicensesApi.md#licenses_list) | **GET** /licenses/ | 
+[**licenses_read**](LicensesApi.md#licenses_read) | **GET** /licenses/{id}/ | 
+[**licenses_templates**](LicensesApi.md#licenses_templates) | **GET** /licenses/templates/ | 
 
 
-# **data_file_list**
-> InlineResponse2003 data_file_list(name=name, path=path, limit=limit, offset=offset)
+# **licenses_create**
+> WritableLicense licenses_create(data)
 
 
-
-List all files your user has access to
 
 ### Example
 
@@ -51,31 +49,25 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epiccore.DataApi(api_client)
-    name = 'name_example' # str | Filter by file name (optional)
-path = 'path_example' # str | Filter by folder path (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    api_instance = epiccore.LicensesApi(api_client)
+    data = epiccore.WritableLicense() # WritableLicense | 
 
     try:
-        api_response = api_instance.data_file_list(name=name, path=path, limit=limit, offset=offset)
+        api_response = api_instance.licenses_create(data)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DataApi->data_file_list: %s\n" % e)
+        print("Exception when calling LicensesApi->licenses_create: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| Filter by file name | [optional] 
- **path** | **str**| Filter by folder path | [optional] 
- **limit** | **int**| Number of results to return per page. | [optional] 
- **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **data** | [**WritableLicense**](WritableLicense.md)|  | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**WritableLicense**](WritableLicense.md)
 
 ### Authorization
 
@@ -83,22 +75,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**201** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **data_file_read**
-> FileDetails data_file_read(id)
+# **licenses_delete**
+> licenses_delete(id)
 
 
-
-See the details for a particular file
 
 ### Example
 
@@ -133,14 +123,13 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epiccore.DataApi(api_client)
+    api_instance = epiccore.LicensesApi(api_client)
     id = 'id_example' # str | 
 
     try:
-        api_response = api_instance.data_file_read(id)
-        pprint(api_response)
+        api_instance.licenses_delete(id)
     except ApiException as e:
-        print("Exception when calling DataApi->data_file_read: %s\n" % e)
+        print("Exception when calling LicensesApi->licenses_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FileDetails**](FileDetails.md)
+void (empty response body)
 
 ### Authorization
 
@@ -160,21 +149,19 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**204** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **data_folder_list**
-> InlineResponse2004 data_folder_list(name=name, path=path, limit=limit, offset=offset)
+# **licenses_list**
+> InlineResponse2009 licenses_list(limit=limit, offset=offset)
 
 
-
-List all folders your user has access to
 
 ### Example
 
@@ -209,31 +196,27 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epiccore.DataApi(api_client)
-    name = 'name_example' # str | Filter by folder name (optional)
-path = 'path_example' # str | Filter by folder path (optional)
-limit = 56 # int | Number of results to return per page. (optional)
+    api_instance = epiccore.LicensesApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
-        api_response = api_instance.data_folder_list(name=name, path=path, limit=limit, offset=offset)
+        api_response = api_instance.licenses_list(limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DataApi->data_folder_list: %s\n" % e)
+        print("Exception when calling LicensesApi->licenses_list: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| Filter by folder name | [optional] 
- **path** | **str**| Filter by folder path | [optional] 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -251,12 +234,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **data_folder_read**
-> FolderDetails data_folder_read(id)
+# **licenses_read**
+> License licenses_read(id)
 
 
-
-See the details for a particular folder
 
 ### Example
 
@@ -291,14 +272,14 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epiccore.DataApi(api_client)
+    api_instance = epiccore.LicensesApi(api_client)
     id = 'id_example' # str | 
 
     try:
-        api_response = api_instance.data_folder_read(id)
+        api_response = api_instance.licenses_read(id)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DataApi->data_folder_read: %s\n" % e)
+        print("Exception when calling LicensesApi->licenses_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -309,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FolderDetails**](FolderDetails.md)
+[**License**](License.md)
 
 ### Authorization
 
@@ -327,12 +308,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **data_session_list**
-> DataLocation data_session_list()
+# **licenses_templates**
+> LicenseTemplate licenses_templates(limit=limit, offset=offset)
 
 
-
-Get connection details for accessing the EPIC data store. Returns a temporary credenital to upload and download data to EPIC
 
 ### Example
 
@@ -367,21 +346,27 @@ configuration = epiccore.Configuration(
 # Enter a context with an instance of the API client
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = epiccore.DataApi(api_client)
-    
+    api_instance = epiccore.LicensesApi(api_client)
+    limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+
     try:
-        api_response = api_instance.data_session_list()
+        api_response = api_instance.licenses_templates(limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DataApi->data_session_list: %s\n" % e)
+        print("Exception when calling LicensesApi->licenses_templates: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
 
 ### Return type
 
-[**DataLocation**](DataLocation.md)
+[**LicenseTemplate**](LicenseTemplate.md)
 
 ### Authorization
 

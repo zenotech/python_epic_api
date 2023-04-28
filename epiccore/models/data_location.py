@@ -124,7 +124,7 @@ class DataLocation(object):
     def aws_region(self):
         """Gets the aws_region of this DataLocation.  # noqa: E501
 
-        The step logs  # noqa: E501
+        AWS Region  # noqa: E501
 
         :return: The aws_region of this DataLocation.  # noqa: E501
         :rtype: str
@@ -135,7 +135,7 @@ class DataLocation(object):
     def aws_region(self, aws_region):
         """Sets the aws_region of this DataLocation.
 
-        The step logs  # noqa: E501
+        AWS Region  # noqa: E501
 
         :param aws_region: The aws_region of this DataLocation.  # noqa: E501
         :type aws_region: str

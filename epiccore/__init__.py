@@ -27,6 +27,7 @@ from epiccore.api.job_api import JobApi
 from epiccore.api.jobauth_api import JobauthApi
 from epiccore.api.jobrefresh_api import JobrefreshApi
 from epiccore.api.jobstep_api import JobstepApi
+from epiccore.api.licenses_api import LicensesApi
 from epiccore.api.profile_api import ProfileApi
 from epiccore.api.projects_api import ProjectsApi
 from epiccore.api.teams_api import TeamsApi
@@ -42,6 +43,7 @@ from epiccore.exceptions import ApiAttributeError
 from epiccore.exceptions import ApiException
 # import models into sdk package
 from epiccore.models.accelerator_config import AcceleratorConfig
+from epiccore.models.application import Application
 from epiccore.models.application_configuration_serialiser import ApplicationConfigurationSerialiser
 from epiccore.models.batch_application_details import BatchApplicationDetails
 from epiccore.models.batch_application_list import BatchApplicationList
@@ -59,14 +61,18 @@ from epiccore.models.desktop_node_launch_spec import DesktopNodeLaunchSpec
 from epiccore.models.desktop_node_quote import DesktopNodeQuote
 from epiccore.models.desktop_node_type import DesktopNodeType
 from epiccore.models.discount import Discount
+from epiccore.models.env_var import EnvVar
+from epiccore.models.env_var_template import EnvVarTemplate
 from epiccore.models.environment_variable import EnvironmentVariable
 from epiccore.models.file import File
+from epiccore.models.file_details import FileDetails
 from epiccore.models.folder import Folder
 from epiccore.models.folder_details import FolderDetails
 from epiccore.models.iaas_cost import IaasCost
 from epiccore.models.inline_response200 import InlineResponse200
 from epiccore.models.inline_response2001 import InlineResponse2001
 from epiccore.models.inline_response20010 import InlineResponse20010
+from epiccore.models.inline_response20011 import InlineResponse20011
 from epiccore.models.inline_response2002 import InlineResponse2002
 from epiccore.models.inline_response2003 import InlineResponse2003
 from epiccore.models.inline_response2004 import InlineResponse2004
@@ -93,6 +99,8 @@ from epiccore.models.job_step_details import JobStepDetails
 from epiccore.models.job_summary import JobSummary
 from epiccore.models.job_task_spec import JobTaskSpec
 from epiccore.models.jobstep_response_request import JobstepResponseRequest
+from epiccore.models.license import License
+from epiccore.models.license_template import LicenseTemplate
 from epiccore.models.limit import Limit
 from epiccore.models.limits import Limits
 from epiccore.models.max_limit import MaxLimit
@@ -116,4 +124,5 @@ from epiccore.models.template import Template
 from epiccore.models.total import Total
 from epiccore.models.total1 import Total1
 from epiccore.models.user_name import UserName
+from epiccore.models.writable_license import WritableLicense
 

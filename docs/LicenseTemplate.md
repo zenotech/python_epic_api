@@ -1,12 +1,11 @@
-# InlineResponse2009
+# LicenseTemplate
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | 
-**next** | **str** |  | [optional] 
-**previous** | **str** |  | [optional] 
-**results** | [**list[License]**](License.md) |  | 
+**id** | **str** |  | [optional] [readonly] 
+**application** | [**Application**](Application.md) |  | [optional] 
+**environment** | [**list[EnvVarTemplate]**](EnvVarTemplate.md) |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
