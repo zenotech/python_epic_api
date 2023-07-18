@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_list**
-> InlineResponse2006 job_list(limit=limit, offset=offset)
+> InlineResponse2006 job_list(job_array=job_array, limit=limit, offset=offset)
 
 
 
@@ -363,11 +363,12 @@ configuration = epiccore.Configuration(
 with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
-    limit = 56 # int | Number of results to return per page. (optional)
+    job_array = 'job_array_example' # str | Filter by ID of the parent Job Array (optional)
+limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
-        api_response = api_instance.job_list(limit=limit, offset=offset)
+        api_response = api_instance.job_list(job_array=job_array, limit=limit, offset=offset)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobApi->job_list: %s\n" % e)
@@ -377,6 +378,7 @@ offset = 56 # int | The initial index from which to return the results. (optiona
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **job_array** | **str**| Filter by ID of the parent Job Array | [optional] 
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
 

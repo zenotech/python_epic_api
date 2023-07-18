@@ -601,6 +601,8 @@ class JobApi(object):
         >>> thread = api.job_list(async_req=True)
         >>> result = thread.get()
 
+        :param job_array: Filter by ID of the parent Job Array
+        :type job_array: str
         :param limit: Number of results to return per page.
         :type limit: int
         :param offset: The initial index from which to return the results.
@@ -633,6 +635,8 @@ class JobApi(object):
         >>> thread = api.job_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
+        :param job_array: Filter by ID of the parent Job Array
+        :type job_array: str
         :param limit: Number of results to return per page.
         :type limit: int
         :param offset: The initial index from which to return the results.
@@ -663,6 +667,7 @@ class JobApi(object):
         local_var_params = locals()
 
         all_params = [
+            'job_array',
             'limit',
             'offset'
         ]
@@ -690,6 +695,8 @@ class JobApi(object):
         path_params = {}
 
         query_params = []
+        if 'job_array' in local_var_params and local_var_params['job_array'] is not None:  # noqa: E501
+            query_params.append(('job_array', local_var_params['job_array']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501

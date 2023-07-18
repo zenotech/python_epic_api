@@ -50,7 +50,8 @@ class Job(object):
         'config': 'JobConfiguration',
         'job_steps': 'list[JobStep]',
         'input_data': 'DataSpec',
-        'requires_auth': 'bool'
+        'requires_auth': 'bool',
+        'array': 'int'
     }
 
     attribute_map = {
@@ -70,10 +71,11 @@ class Job(object):
         'config': 'config',
         'job_steps': 'job_steps',
         'input_data': 'input_data',
-        'requires_auth': 'requires_auth'
+        'requires_auth': 'requires_auth',
+        'array': 'array'
     }
 
-    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, job_steps=None, input_data=None, requires_auth=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, app=None, app_options=None, application_version=None, cost=None, status=None, submitted_by=None, submitted_at=None, finished=None, resource=None, project=None, invoice_reference=None, config=None, job_steps=None, input_data=None, requires_auth=None, array=None, local_vars_configuration=None):  # noqa: E501
         """Job - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +98,7 @@ class Job(object):
         self._job_steps = None
         self._input_data = None
         self._requires_auth = None
+        self._array = None
         self.discriminator = None
 
         if id is not None:
@@ -132,6 +135,8 @@ class Job(object):
             self.input_data = input_data
         if requires_auth is not None:
             self.requires_auth = requires_auth
+        if array is not None:
+            self.array = array
 
     @property
     def id(self):
@@ -547,6 +552,29 @@ class Job(object):
         """
 
         self._requires_auth = requires_auth
+
+    @property
+    def array(self):
+        """Gets the array of this Job.  # noqa: E501
+
+        ID of associated Job Array  # noqa: E501
+
+        :return: The array of this Job.  # noqa: E501
+        :rtype: int
+        """
+        return self._array
+
+    @array.setter
+    def array(self, array):
+        """Sets the array of this Job.
+
+        ID of associated Job Array  # noqa: E501
+
+        :param array: The array of this Job.  # noqa: E501
+        :type array: int
+        """
+
+        self._array = array
 
     def to_dict(self):
         """Returns the model properties as a dict"""
