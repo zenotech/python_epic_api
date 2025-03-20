@@ -17,12 +17,15 @@ Fetch the application configuration for <app_code> running on <queue_code>. Only
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.site_configuration_serialiser import SiteConfigurationSerialiser
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -35,12 +38,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -49,16 +48,20 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.ConfigApi(api_client)
     app_code = 'app_code_example' # str | 
-queue_code = 'queue_code_example' # str | 
+    queue_code = 'queue_code_example' # str | 
 
     try:
         api_response = api_instance.config_read(app_code, queue_code)
+        print("The response of ConfigApi->config_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling ConfigApi->config_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -79,6 +82,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

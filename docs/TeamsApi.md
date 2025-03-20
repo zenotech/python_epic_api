@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **teams_list**
-> InlineResponse20011 teams_list(name=name, role=role, limit=limit, offset=offset)
+> TeamsList200Response teams_list(name=name, role=role, limit=limit, offset=offset)
 
 
 
@@ -18,12 +18,15 @@ List the teams you are a member of.
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.teams_list200_response import TeamsList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -36,12 +39,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -50,18 +49,22 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.TeamsApi(api_client)
     name = 'name_example' # str |  (optional)
-role = 'role_example' # str |  (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    role = 'role_example' # str |  (optional)
+    limit = 56 # int | Number of results to return per page. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.teams_list(name=name, role=role, limit=limit, offset=offset)
+        print("The response of TeamsApi->teams_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling TeamsApi->teams_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -72,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**TeamsList200Response**](TeamsList200Response.md)
 
 ### Authorization
 
@@ -84,6 +87,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -100,12 +104,15 @@ See the details for a team. You must be a member of the team to see the details.
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.team_details import TeamDetails
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -118,12 +125,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -135,12 +138,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.teams_read(id)
+        print("The response of TeamsApi->teams_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling TeamsApi->teams_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -160,6 +167,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

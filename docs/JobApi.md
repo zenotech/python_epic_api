@@ -25,12 +25,15 @@ Get the authorisation status for job with ID {id}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_auth_status import JobAuthStatus
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -43,12 +46,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -60,12 +59,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.job_auth_read(id)
+        print("The response of JobApi->job_auth_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_auth_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -85,6 +88,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -101,12 +105,15 @@ Update the authorisation status for job  with ID {id}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_auth_status import JobAuthStatus
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -119,12 +126,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -133,16 +136,20 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
     id = 'id_example' # str | 
-data = epiccore.JobAuthStatus() # JobAuthStatus | 
+    data = epiccore.JobAuthStatus() # JobAuthStatus | 
 
     try:
         api_response = api_instance.job_auth_update(id, data)
+        print("The response of JobApi->job_auth_update:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_auth_update: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -163,6 +170,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -179,12 +187,14 @@ Cancel a job
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -197,12 +207,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -211,15 +217,18 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
     id = 'id_example' # str | 
-data = None # object | 
+    data = None # object | 
 
     try:
         api_instance.job_cancel(id, data)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_cancel: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -240,6 +249,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Cancel request received |  -  |
@@ -247,7 +257,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_create**
-> list[Job] job_create(data)
+> List[Job] job_create(data)
 
 
 
@@ -256,12 +266,16 @@ Create a new job bssased on the submitted job specification. App and Queue codes
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job import Job
+from epiccore.models.job_array_spec import JobArraySpec
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -274,12 +288,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -291,12 +301,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.job_create(data)
+        print("The response of JobApi->job_create:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_create: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -304,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Job]**](Job.md)
+[**List[Job]**](Job.md)
 
 ### Authorization
 
@@ -316,6 +330,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
@@ -323,7 +338,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **job_list**
-> InlineResponse2006 job_list(job_array=job_array, limit=limit, offset=offset)
+> JobList200Response job_list(job_array=job_array, limit=limit, offset=offset)
 
 
 
@@ -332,12 +347,15 @@ List the jobs instances in EPIC
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_list200_response import JobList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -350,12 +368,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -364,17 +378,21 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
     job_array = 'job_array_example' # str | Filter by ID of the parent Job Array (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    limit = 56 # int | Number of results to return per page. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.job_list(job_array=job_array, limit=limit, offset=offset)
+        print("The response of JobApi->job_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -384,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**JobList200Response**](JobList200Response.md)
 
 ### Authorization
 
@@ -396,6 +414,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -412,12 +431,15 @@ Update the job options for job instance with ID {id}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_app_options import JobAppOptions
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -430,12 +452,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -444,16 +462,20 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
     id = 'id_example' # str | 
-data = epiccore.JobAppOptions() # JobAppOptions | 
+    data = epiccore.JobAppOptions() # JobAppOptions | 
 
     try:
         api_response = api_instance.job_partial_update(id, data)
+        print("The response of JobApi->job_partial_update:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_partial_update: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -474,6 +496,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -490,12 +513,16 @@ Provides a price quote based upon the given BatchJobLaunchSpec. Quotes will be r
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_quote import JobQuote
+from epiccore.models.job_spec import JobSpec
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -508,12 +535,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -525,12 +548,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.job_quote(data)
+        print("The response of JobApi->job_quote:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_quote: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -550,6 +577,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -566,12 +594,15 @@ See the details for the job instance with ID {id}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job import Job
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -584,12 +615,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -601,12 +628,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.job_read(id)
+        print("The response of JobApi->job_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -626,6 +657,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -642,12 +674,15 @@ Retreive the residuals for job with ID {id}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.job_residual import JobResidual
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -660,12 +695,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -674,21 +705,25 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.JobApi(api_client)
     id = 56 # int | A unique integer value identifying this batch job instance.
-variables = ['variables_example'] # list[str] | Return data values for these variable names (optional)
+    variables = ['variables_example'] # List[str] | Return data values for these variable names (optional)
 
     try:
         api_response = api_instance.job_residuals_read(id, variables=variables)
+        print("The response of JobApi->job_residuals_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling JobApi->job_residuals_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| A unique integer value identifying this batch job instance. | 
- **variables** | [**list[str]**](str.md)| Return data values for these variable names | [optional] 
+ **variables** | [**List[str]**](str.md)| Return data values for these variable names | [optional] 
 
 ### Return type
 
@@ -704,6 +739,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

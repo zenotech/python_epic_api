@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **projects_list**
-> InlineResponse20010 projects_list(name=name, limit=limit, offset=offset)
+> ProjectsList200Response projects_list(name=name, limit=limit, offset=offset)
 
 
 
@@ -19,12 +19,15 @@ List the projects you have access to
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.projects_list200_response import ProjectsList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -37,12 +40,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -51,17 +50,21 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.ProjectsApi(api_client)
     name = 'name_example' # str | Filter by project name (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    limit = 56 # int | Number of results to return per page. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.projects_list(name=name, limit=limit, offset=offset)
+        print("The response of ProjectsApi->projects_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectsApi->projects_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -71,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**ProjectsList200Response**](ProjectsList200Response.md)
 
 ### Authorization
 
@@ -83,6 +86,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -99,12 +103,15 @@ Update the project description or open/close a project.
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.project import Project
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -117,12 +124,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -131,16 +134,20 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.ProjectsApi(api_client)
     id = 'id_example' # str | 
-data = epiccore.Project() # Project | 
+    data = epiccore.Project() # Project | 
 
     try:
         api_response = api_instance.projects_partial_update(id, data)
+        print("The response of ProjectsApi->projects_partial_update:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectsApi->projects_partial_update: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -161,6 +168,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -177,12 +185,15 @@ See the details for a project.
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.project_details import ProjectDetails
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -195,12 +206,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -212,12 +219,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.projects_read(id)
+        print("The response of ProjectsApi->projects_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling ProjectsApi->projects_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -237,6 +248,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

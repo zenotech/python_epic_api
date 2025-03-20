@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **catalog_applications_list**
-> InlineResponse200 catalog_applications_list(product_name=product_name, limit=limit, offset=offset)
+> CatalogApplicationsList200Response catalog_applications_list(product_name=product_name, limit=limit, offset=offset)
 
 
 
@@ -22,12 +22,15 @@ List all available applications and the versions for that application
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.catalog_applications_list200_response import CatalogApplicationsList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -40,12 +43,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -54,17 +53,21 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
     product_name = 'product_name_example' # str | Filter by application name (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    limit = 56 # int | Number of results to return per page. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.catalog_applications_list(product_name=product_name, limit=limit, offset=offset)
+        print("The response of CatalogApi->catalog_applications_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_applications_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -74,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**CatalogApplicationsList200Response**](CatalogApplicationsList200Response.md)
 
 ### Authorization
 
@@ -86,6 +89,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -102,12 +106,15 @@ Retreive the details for the application with the application product name {prod
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.batch_application_details import BatchApplicationDetails
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -120,12 +127,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -137,12 +140,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.catalog_applications_read(application)
+        print("The response of CatalogApi->catalog_applications_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_applications_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -162,6 +169,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -169,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_clusters_list**
-> InlineResponse2001 catalog_clusters_list(cluster_name=cluster_name, queue_name=queue_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
+> CatalogClustersList200Response catalog_clusters_list(cluster_name=cluster_name, queue_name=queue_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
 
 
 
@@ -178,12 +186,15 @@ View available cluster queues
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.catalog_clusters_list200_response import CatalogClustersList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -196,12 +207,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -210,19 +217,23 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
     cluster_name = 'cluster_name_example' # str | Filter by cluster name (optional)
-queue_name = 'queue_name_example' # str | Filter by queue name (optional)
-allowed_apps = 'allowed_apps_example' # str | Filter by application code available on queue (optional)
-limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    queue_name = 'queue_name_example' # str | Filter by queue name (optional)
+    allowed_apps = 'allowed_apps_example' # str | Filter by application code available on queue (optional)
+    limit = 56 # int | Number of results to return per page. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.catalog_clusters_list(cluster_name=cluster_name, queue_name=queue_name, allowed_apps=allowed_apps, limit=limit, offset=offset)
+        print("The response of CatalogApi->catalog_clusters_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_clusters_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -234,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CatalogClustersList200Response**](CatalogClustersList200Response.md)
 
 ### Authorization
 
@@ -246,6 +257,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -262,12 +274,15 @@ Retreive the details for the cluster queue with queue code {queue_code}
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.batch_queue_details import BatchQueueDetails
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -280,12 +295,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -297,12 +308,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.catalog_clusters_read(queue_code)
+        print("The response of CatalogApi->catalog_clusters_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_clusters_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -322,6 +337,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -329,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_desktop_list**
-> InlineResponse2002 catalog_desktop_list(limit=limit, offset=offset)
+> CatalogDesktopList200Response catalog_desktop_list(limit=limit, offset=offset)
 
 
 
@@ -338,12 +354,15 @@ List the available node types for desktop instances
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.catalog_desktop_list200_response import CatalogDesktopList200Response
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -356,12 +375,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -370,16 +385,20 @@ with epiccore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = epiccore.CatalogApi(api_client)
     limit = 56 # int | Number of results to return per page. (optional)
-offset = 56 # int | The initial index from which to return the results. (optional)
+    offset = 56 # int | The initial index from which to return the results. (optional)
 
     try:
         api_response = api_instance.catalog_desktop_list(limit=limit, offset=offset)
+        print("The response of CatalogApi->catalog_desktop_list:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_desktop_list: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -388,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**CatalogDesktopList200Response**](CatalogDesktopList200Response.md)
 
 ### Authorization
 
@@ -400,6 +419,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
@@ -416,12 +436,15 @@ Get the details of the desktop node type with code node_code
 ### Example
 
 * Api Key Authentication (Bearer):
+
 ```python
-from __future__ import print_function
 import time
+import os
 import epiccore
+from epiccore.models.desktop_node_type import DesktopNodeType
 from epiccore.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://epic.zenotech.com/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = epiccore.Configuration(
@@ -434,12 +457,8 @@ configuration = epiccore.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = epiccore.Configuration(
-    host = "https://epic.zenotech.com/api/v2",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Bearer'] = 'Bearer'
 
@@ -451,12 +470,16 @@ with epiccore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.catalog_desktop_read(node_code)
+        print("The response of CatalogApi->catalog_desktop_read:\n")
         pprint(api_response)
-    except ApiException as e:
+    except Exception as e:
         print("Exception when calling CatalogApi->catalog_desktop_read: %s\n" % e)
 ```
 
+
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -476,6 +499,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |

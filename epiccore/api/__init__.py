@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 # flake8: noqa
 
 # import apis into api package
@@ -16,3 +14,4 @@ from epiccore.api.licenses_api import LicensesApi
 from epiccore.api.profile_api import ProfileApi
 from epiccore.api.projects_api import ProjectsApi
 from epiccore.api.teams_api import TeamsApi
+

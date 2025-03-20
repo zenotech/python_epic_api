@@ -1,6 +1,8 @@
 # JobStepDetails
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | jobstep id | [optional] [readonly] 
@@ -19,6 +21,23 @@ Name | Type | Description | Notes
 **wallclock** | **str** |  | [optional] [readonly] 
 **logs** | [**JobLog**](JobLog.md) |  | [optional] 
 
+## Example
+
+```python
+from epiccore.models.job_step_details import JobStepDetails
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of JobStepDetails from a JSON string
+job_step_details_instance = JobStepDetails.from_json(json)
+# print the JSON string representation of the object
+print JobStepDetails.to_json()
+
+# convert the object into a dict
+job_step_details_dict = job_step_details_instance.to_dict()
+# create an instance of JobStepDetails from a dict
+job_step_details_form_dict = job_step_details.from_dict(job_step_details_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
